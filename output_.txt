@@ -1,0 +1,884 @@
+history set to 16501 samples: channel=213, noise=4001
+time      6, snr=30.7, channel 77, LAP 9e8b33 ID
+time      9, snr=11.9, BTLE index=35, AA=df73f0e5, LLID=1, NESN=1, SN=1, MD=0, Length=19
+time     13, snr=15.2, BTLE index=34, AA=df40e141, LLID=3, NESN=1, SN=1, MD=1, Length=3
+time     22, snr=29.4, channel 77, LAP 9e8b33 ID
+time     26, snr=15.7, BTLE index=34, AA=1c87236f, LLID=2, NESN=1, SN=1, MD=0, Length=7
+preamble_distance=0, header_distance=1, aa_distance=0
+de_whitened: header_lsb=0x40, header_msb=0x17
+raw:         header_lsb=0x83, header_msb=0x93
+time     29, snr=20.5, BTLE index=39, AA=8e89bed6, PDUType=0, TxAdd=1, RxAdd=0, Length=23
+  AdvA=cd328d5d1979
+
+  (char) AdvData= . . . . . . . . L . . . . . - . .
+  (byte) AdvData=02011a020a0c0aff4c0010050a1c2de301
+time     33, snr=11.0, BTLE index=33, AA=ac44ea05, LLID=3, NESN=1, SN=0, MD=0, Length=7
+time     37, snr=10.5, BTLE index=34, AA=075cfd62, LLID=2, NESN=0, SN=1, MD=1, Length=18
+time     38, snr=28.8, channel 77, LAP 9e8b33 ID
+time     44, snr=13.7, BTLE index=35, AA=56df4f5e, LLID=1, NESN=1, SN=1, MD=1, Length=15
+preamble_distance=0, header_distance=1, aa_distance=0
+de_whitened: header_lsb=0x40, header_msb=0x14
+raw:         header_lsb=0x90, header_msb=0xd7
+time     52, snr=24.1, BTLE index=39, AA=8e89bed6, PDUType=0, TxAdd=1, RxAdd=0, Length=20
+  AdvA=ae880feb2e78
+
+  (char) AdvData= . . . . . L . . . . . O . 4
+  (byte) AdvData=02011a0aff4c00100503184fcb34
+time     54, snr=30.3, channel 77, LAP 9e8b33 ID
+preamble_distance=0, header_distance=1, aa_distance=0
+de_whitened: header_lsb=0x40, header_msb=0x17
+raw:         header_lsb=0x06, header_msb=0x3f
+time     54, snr=17.6, BTLE index=39, AA=8e89bed6, PDUType=0, TxAdd=1, RxAdd=0, Length=23
+  AdvA=9cea99a68741
+
+  (char) AdvData= . . . . . . . . L . . . # . { . .
+  (byte) AdvData=02011a020a070aff4c00100523187bc4b3
+time     56, snr=13.0, BTLE index=35, AA=1f8077ff, LLID=3, NESN=0, SN=1, MD=0, Length=27
+time     57, snr=13.8, BTLE index=33, AA=b622b934, LLID=1, NESN=1, SN=1, MD=1, Length=9
+time     59, snr=11.9, BTLE index=35, AA=2dfee50a, LLID=2, NESN=0, SN=1, MD=1, Length=27
+time     69, snr=30.0, channel 72, LAP 041ad1 working on UAP/CLK1-6
+reduced from 64 to 52 CLK1-6 candidates
+time     70, snr=28.7, channel 72, LAP 041ad1 working on UAP/CLK1-6
+reduced from 52 to 24 CLK1-6 candidates
+time     70, snr=28.4, channel 77, LAP 9e8b33 ID
+time     78, snr=16.1, channel 71, LAP c8edc9 working on UAP/CLK1-6
+reduced from 64 to 52 CLK1-6 candidates
+time     81, snr=15.5, channel 73, LAP 52a40b working on UAP/CLK1-6
+reduced from 64 to 52 CLK1-6 candidates
+time     86, snr=28.1, channel 77, LAP 9e8b33 ID
+time     87, snr=13.1, BTLE index=33, AA=9cd76d43, LLID=2, NESN=0, SN=0, MD=1, Length=6
+time     89, snr=12.8, BTLE index=35, AA=2c66f34c, LLID=3, NESN=0, SN=0, MD=1, Length=29
+time     90, snr=13.8, BTLE index=36, AA=2158e9c1, LLID=2, NESN=0, SN=1, MD=1, Length=29
+time     91, snr=11.5, BTLE index=36, AA=d56f3376, LLID=2, NESN=0, SN=0, MD=0, Length=11
+time     95, snr=12.7, BTLE index=36, AA=0aaab099, LLID=3, NESN=0, SN=0, MD=0, Length=25
+time    102, snr=32.5, channel 77, LAP 9e8b33 ID
+preamble_distance=0, header_distance=1, aa_distance=0
+de_whitened: header_lsb=0x40, header_msb=0x14
+raw:         header_lsb=0xeb, header_msb=0x80
+time    105, snr=35.6, BTLE index=39, AA=8e89bed6, PDUType=0, TxAdd=1, RxAdd=0, Length=20
+  AdvA=8f9b422b3d66
+
+  (char) AdvData= . . . . . L . . . K . . . .
+  (byte) AdvData=0201060aff4c0010054b1c881d14
+preamble_distance=2, header_distance=1, aa_distance=0
+preamble=0x0a6
+de_whitened: header_lsb=0x40, header_msb=0x24
+raw:         header_lsb=0xdd, header_msb=0xa1
+time    109, snr=30.3, channel 78, LAP 041ad1 working on UAP/CLK1-6
+reduced from 24 to 8 CLK1-6 candidates
+preamble_distance=0, header_distance=2, aa_distance=0
+de_whitened: header_lsb=0x42, header_msb=0x25
+raw:         header_lsb=0x92, header_msb=0x28
+time    109, snr=30.3, BTLE index=39, AA=8e89bed6, PDUType=2, TxAdd=1, RxAdd=0, Length=37
+  AdvA=53508ba55465
+
+  (char) AdvData= . . . . . .   . _ 7 f 0 . . . . ' . . % . . . . . . " P . . .
+  (byte) AdvData=1eff0600010920025f376630b77ffcb227b8dc2588918e91d0f22250a1c398
+time    113, snr=11.4, BTLE index=35, AA=5a500e69, LLID=3, NESN=0, SN=1, MD=1, Length=15
+time    118, snr=29.1, channel 77, LAP 9e8b33 ID
+time    120, snr=12.5, BTLE index=35, AA=22ac7bc1, LLID=3, NESN=0, SN=1, MD=0, Length=3
+time    136, snr=13.1, BTLE index=33, AA=0ed4d0d2, LLID=3, NESN=0, SN=1, MD=1, Length=28
+time    137, snr=14.7, BTLE index=33, AA=01466424, LLID=2, NESN=0, SN=0, MD=1, Length=4
+time    141, snr=12.2, BTLE index=36, AA=6949c717, LLID=1, NESN=1, SN=0, MD=0, Length=0
+time    142, snr=11.9, BTLE index=36, AA=f27205af, LLID=2, NESN=1, SN=1, MD=0, Length=8
+time    150, snr=15.0, BTLE index=34, AA=e9e87dd5, LLID=1, NESN=1, SN=0, MD=1, Length=7
+time    156, snr=13.5, BTLE index=33, AA=43cf89c0, LLID=1, NESN=0, SN=1, MD=1, Length=2
+preamble_distance=0, header_distance=1, aa_distance=0
+de_whitened: header_lsb=0x40, header_msb=0x24
+raw:         header_lsb=0x60, header_msb=0x71
+time    167, snr=19.4, BTLE index=39, AA=8e89bed6, PDUType=0, TxAdd=1, RxAdd=0, Length=36
+  AdvA=c59cccf6ee45
+
+  (char) AdvData= . . . . . L . . . . . . . . ] . ~ W . . . P . . . . . . . .
+  (byte) AdvData=02011a1aff4c000c0e000be20c925df67e57bc929250bd1005019883acf0
+time    171, snr=13.1, BTLE index=36, AA=348880b9, LLID=3, NESN=0, SN=0, MD=0, Length=2
+preamble_distance=0, header_distance=1, aa_distance=0
+de_whitened: header_lsb=0x40, header_msb=0x18
+raw:         header_lsb=0x37, header_msb=0x2c
+time    183, snr=31.5, BTLE index=39, AA=8e89bed6, PDUType=0, TxAdd=1, RxAdd=0, Length=24
+  AdvA=66c9bbf01057
+
+  (char) AdvData= . . . . . . . . L . . . . . t . X K
+  (byte) AdvData=02011a020a0c0bff4c001006131e74fd584b
+time    185, snr=12.8, BTLE index=35, AA=49134bce, LLID=1, NESN=0, SN=1, MD=1, Length=31
+preamble_distance=0, header_distance=1, aa_distance=0
+de_whitened: header_lsb=0x40, header_msb=0x14
+raw:         header_lsb=0xa5, header_msb=0x95
+time    190, snr=46.9, BTLE index=39, AA=8e89bed6, PDUType=0, TxAdd=1, RxAdd=0, Length=20
+  AdvA=f98c7c804e7c
+
+  (char) AdvData= . . . . . L . . . . . . . .
+  (byte) AdvData=0201060aff4c0010050b1cb419b8
+time    196, snr=11.3, BTLE index=34, AA=4dd431d2, LLID=1, NESN=0, SN=0, MD=0, Length=10
+time    198, snr=27.9, channel 77, LAP 9e8b33 ID
+time    201, snr=15.7, BTLE index=35, AA=af9aa2db, LLID=1, NESN=0, SN=1, MD=0, Length=0
+time    214, snr=12.6, BTLE index=33, AA=c559181b, LLID=3, NESN=1, SN=0, MD=1, Length=18
+time    214, snr=27.5, channel 77, LAP 9e8b33 ID
+preamble_distance=0, header_distance=1, aa_distance=0
+de_whitened: header_lsb=0x40, header_msb=0x17
+raw:         header_lsb=0xfe, header_msb=0x48
+time    222, snr=42.4, BTLE index=39, AA=8e89bed6, PDUType=0, TxAdd=1, RxAdd=0, Length=23
+  AdvA=579abb3c624f
+
+  (char) AdvData= . . . . . . . . L . . . . . . * [
+  (byte) AdvData=02011a020a0c0aff4c001005131cb82a5b
+preamble_distance=0, header_distance=1, aa_distance=0
+de_whitened: header_lsb=0x40, header_msb=0x24
+raw:         header_lsb=0xe9, header_msb=0xd2
+time    229, snr=19.6, BTLE index=39, AA=8e89bed6, PDUType=0, TxAdd=1, RxAdd=0, Length=36
+  AdvA=c59cccf6ee45
+
+  (char) AdvData= . . . . . L . . . . . . . . ] . ~ W . . . P . . . . . . . .
+  (byte) AdvData=02011a1aff4c000c0e000be20c925df67e57bc129350bd1005019893acf0
+time    230, snr=14.9, channel 77, LAP 9e8b33 ID
+time    240, snr=14.7, BTLE index=33, AA=2921ba6c, LLID=3, NESN=1, SN=0, MD=1, Length=24
+time    246, snr=28.7, channel 77, LAP 9e8b33 ID
+preamble_distance=0, header_distance=1, aa_distance=0
+de_whitened: header_lsb=0x40, header_msb=0x14
+raw:         header_lsb=0x36, header_msb=0x1a
+time    250, snr=41.5, BTLE index=39, AA=8e89bed6, PDUType=0, TxAdd=1, RxAdd=0, Length=20
+  AdvA=eb3f825cad78
+
+  (char) AdvData= . . . . . L . . . . . ! g :
+  (byte) AdvData=02011a0aff4c001005011821673a
+time    256, snr=14.8, BTLE index=36, AA=0cb90260, LLID=3, NESN=1, SN=0, MD=1, Length=8
+time    257, snr=13.2, BTLE index=33, AA=fc08f8a6, LLID=2, NESN=0, SN=1, MD=1, Length=26
+time    262, snr=28.9, channel 77, LAP 9e8b33 ID
+preamble_distance=0, header_distance=1, aa_distance=0
+de_whitened: header_lsb=0x40, header_msb=0x17
+raw:         header_lsb=0x3c, header_msb=0x92
+time    268, snr=17.6, BTLE index=39, AA=8e89bed6, PDUType=0, TxAdd=1, RxAdd=0, Length=23
+  AdvA=e0676492b246
+
+  (char) AdvData= . . . . . . . . L . . . Q . . . .
+  (byte) AdvData=02011a030a0c0aff4c0010055118a90ddc
+time    271, snr=13.2, BTLE index=33, AA=da2066cf, LLID=2, NESN=1, SN=1, MD=1, Length=19
+time    274, snr=21.4, channel 76, LAP 52a40b working on UAP/CLK1-6
+reduced from 52 to 12 CLK1-6 candidates
+time    274, snr=21.4, BTLE index=36, AA=69d9dcca, LLID=1, NESN=0, SN=1, MD=1, Length=0
+time    275, snr=19.1, channel 76, LAP 52a40b working on UAP/CLK1-6
+reduced from 12 to 12 CLK1-6 candidates
+preamble_distance=0, header_distance=2, aa_distance=0
+de_whitened: header_lsb=0x42, header_msb=0x25
+raw:         header_lsb=0x2e, header_msb=0x09
+time    275, snr=26.1, BTLE index=39, AA=8e89bed6, PDUType=2, TxAdd=1, RxAdd=0, Length=37
+  AdvA=53508ba55465
+
+  (char) AdvData= . . . . . .   . _ 7 f 0 . . . . O . . . . . . . . . . 2 . . .
+  (byte) AdvData=1eff0600010920025f376630b77fa41a4fd8c60f8cc917fdd0ca8632f881b1
+time    278, snr=27.5, channel 77, LAP 9e8b33 ID
+time    283, snr=16.5, channel 72, LAP 52a40b working on UAP/CLK1-6
+reduced from 12 to 2 CLK1-6 candidates
+preamble_distance=0, header_distance=2, aa_distance=0
+de_whitened: header_lsb=0x40, header_msb=0x34
+raw:         header_lsb=0xe3, header_msb=0x8b
+time    287, snr=17.2, BTLE index=39, AA=8e89bed6, PDUType=0, TxAdd=1, RxAdd=0, Length=52
+  AdvA=c59cccf6ee45
+
+  (char) AdvData= . 1 : . . L . . . . . . . . ] . ~ W . . . P . . . . . . . . . . . 2 . C . . U . . . . . . .
+  (byte) AdvData=02313a1aff4c000c0e000be20c925df67e57bc929250bf1005059883acf0a9810732c84304a2557f000000000000
+time    294, snr=29.3, channel 77, LAP 9e8b33 ID
+time    301, snr=13.3, BTLE index=35, AA=eeb6c0ce, LLID=3, NESN=0, SN=1, MD=0, Length=23
+time    307, snr=13.2, BTLE index=34, AA=782ca6f6, LLID=2, NESN=0, SN=1, MD=1, Length=21
+time    308, snr=12.1, BTLE index=35, AA=04b2817f, LLID=1, NESN=1, SN=1, MD=0, Length=11
+time    310, snr=29.4, channel 77, LAP 9e8b33 ID
+time    326, snr=22.8, channel 69, LAP 52a40b working on UAP/CLK1-6
+reduced from 2 to 1 CLK1-6 candidates
+We have a winner! UAP = 0x81 found after 5 total packets.
+Decoding queued packets
+time     81, channel 73, LAP 52a40b NULL
+time    274, channel 76, LAP 52a40b POLL
+time    275, channel 76, LAP 52a40b NULL
+time    283, channel 72, LAP 52a40b NULL
+time    326, channel 69, LAP 52a40b DH5/3-DH5
+  LLID: 1
+  flow: 0
+  payload length: 18
+Finished decoding queued packets
+time    326, snr=12.2, BTLE index=36, AA=0946f5c5, LLID=1, NESN=1, SN=0, MD=1, Length=3
+time    326, snr=29.7, channel 77, LAP 9e8b33 ID
+time    329, snr=12.8, BTLE index=35, AA=353b738f, LLID=1, NESN=0, SN=1, MD=0, Length=4
+time    331, snr=18.1, channel 69, LAP 52a40b NULL
+time    333, snr=12.6, BTLE index=36, AA=9ba279e9, LLID=3, NESN=0, SN=1, MD=1, Length=24
+time    339, snr=12.5, BTLE index=33, AA=124fef76, LLID=3, NESN=1, SN=0, MD=1, Length=19
+time    342, snr=31.1, channel 77, LAP 9e8b33 ID
+time    345, snr=16.7, BTLE index=39, AA=8e89bed4, PDUType=0, TxAdd=1, RxAdd=0, Length=36
+  AdvA=c59cccf6ee45
+
+  (char) AdvData= . . . + . @ . . . . . . . . ] . ~ W . . . P . . . . . . . .
+  (byte) AdvData=02011a2bff40100c0e000be20c925df67e57bc929250bd10050198a3acf0
+time    358, snr=29.3, channel 77, LAP 9e8b33 ID
+time    367, snr=13.9, BTLE index=33, AA=24caa993, LLID=1, NESN=0, SN=0, MD=1, Length=5
+time    372, snr=14.4, BTLE index=33, AA=701b5f96, LLID=3, NESN=0, SN=1, MD=0, Length=8
+time    374, snr=14.1, BTLE index=34, AA=226f2ea3, LLID=2, NESN=1, SN=1, MD=1, Length=7
+time    374, snr=29.3, channel 77, LAP 9e8b33 ID
+time    375, snr=15.2, BTLE index=35, AA=5d8be789, LLID=2, NESN=1, SN=1, MD=0, Length=9
+time    377, snr=17.7, channel 69, LAP 52a40b NULL
+time    390, snr=29.5, channel 77, LAP 9e8b33 ID
+time    391, snr=11.0, BTLE index=34, AA=68dc0e10, LLID=3, NESN=1, SN=0, MD=0, Length=1
+time    395, snr=12.6, BTLE index=36, AA=ca846877, LLID=1, NESN=1, SN=0, MD=1, Length=0
+time    398, snr=12.9, BTLE index=34, AA=1eabe40f, LLID=1, NESN=0, SN=1, MD=1, Length=29
+preamble_distance=2, header_distance=1, aa_distance=0
+preamble=0x082
+de_whitened: header_lsb=0x40, header_msb=0x14
+raw:         header_lsb=0xd7, header_msb=0x1b
+time    402, snr=11.7, BTLE index=36, AA=e581c2cd, LLID=2, NESN=0, SN=0, MD=0, Length=20
+time    404, snr=18.2, channel 70, LAP c8edc9 working on UAP/CLK1-6
+reduced from 52 to 6 CLK1-6 candidates
+time    406, snr=14.4, BTLE index=35, AA=b675cc37, LLID=1, NESN=0, SN=0, MD=0, Length=1
+time    406, snr=29.4, channel 77, LAP 9e8b33 ID
+time    413, snr=13.5, BTLE index=35, AA=a9117fe0, LLID=2, NESN=0, SN=1, MD=1, Length=14
+time    420, snr=13.0, BTLE index=36, AA=cf159cea, LLID=3, NESN=0, SN=0, MD=1, Length=1
+time    422, snr=10.4, channel 69, LAP b1be67 ID
+time    422, snr=28.3, channel 77, LAP 9e8b33 ID
+time    429, snr=29.7, channel 72, LAP 041ad1 working on UAP/CLK1-6
+reduced from 8 to 8 CLK1-6 candidates
+time    431, snr=14.3, BTLE index=34, AA=f8f0ba29, LLID=3, NESN=1, SN=0, MD=1, Length=0
+preamble_distance=0, header_distance=1, aa_distance=0
+de_whitened: header_lsb=0x40, header_msb=0x14
+raw:         header_lsb=0x7b, header_msb=0x7a
+time    432, snr=31.4, BTLE index=39, AA=8e89bed6, PDUType=0, TxAdd=1, RxAdd=0, Length=20
+  AdvA=c590c020886a
+
+  (char) AdvData= . . . . . L . . . . . . X .
+  (byte) AdvData=02011a0aff4c00100503188c58d9
+preamble_distance=0, header_distance=1, aa_distance=0
+de_whitened: header_lsb=0x40, header_msb=0x17
+raw:         header_lsb=0x6c, header_msb=0x84
+time    434, snr=25.8, BTLE index=39, AA=8e89bed6, PDUType=0, TxAdd=1, RxAdd=0, Length=23
+  AdvA=6dd91cf2fe6b
+
+  (char) AdvData= . . . . . . . . L . . . . . . . .
+  (byte) AdvData=02011a020a0c0aff4c001005131cc3aaad
+time    438, snr=28.6, channel 77, LAP 9e8b33 ID
+time    441, snr=18.8, BTLE index=33, AA=af9aa2db, LLID=1, NESN=0, SN=0, MD=0, Length=0
+preamble_distance=1, header_distance=2, aa_distance=0
+preamble=0x0ab
+de_whitened: header_lsb=0x42, header_msb=0x25
+raw:         header_lsb=0x5d, header_msb=0x12
+time    451, snr=14.9, BTLE index=35, AA=091f4dcb, LLID=1, NESN=0, SN=0, MD=1, Length=9
+time    454, snr=27.5, channel 77, LAP 9e8b33 ID
+time    456, snr=13.4, BTLE index=35, AA=6f85166a, LLID=3, NESN=0, SN=0, MD=1, Length=1
+preamble_distance=1, header_distance=1, aa_distance=0
+preamble=0x0ea
+de_whitened: header_lsb=0x40, header_msb=0x17
+raw:         header_lsb=0xe4, header_msb=0xf0
+time    463, snr=18.3, BTLE index=39, AA=8e89bed6, PDUType=0, TxAdd=1, RxAdd=0, Length=23
+  AdvA=cd328d5d1979
+
+  (char) AdvData= . . . . . . . . L . . . . . - . .
+  (byte) AdvData=02011a020a080cfe4c0010050a1c2de301
+time    470, snr=28.2, channel 77, LAP 9e8b33 ID
+time    474, snr=13.8, BTLE index=34, AA=8e09ff83, LLID=2, NESN=1, SN=0, MD=1, Length=20
+time    476, snr=30.0, channel 73, LAP 52a40b DH5/3-DH5
+  LLID: 3
+  flow: 0
+  payload length: 822
+preamble_distance=0, header_distance=1, aa_distance=0
+de_whitened: header_lsb=0x40, header_msb=0x14
+raw:         header_lsb=0x41, header_msb=0xb0
+time    480, snr=50.6, BTLE index=39, AA=8e89bed6, PDUType=0, TxAdd=1, RxAdd=0, Length=20
+  AdvA=f98c7c804e7c
+
+  (char) AdvData= . . . . . L . . . . . . . .
+  (byte) AdvData=0201060aff4c0010050b1cb419b8
+preamble_distance=0, header_distance=1, aa_distance=0
+de_whitened: header_lsb=0x40, header_msb=0x14
+raw:         header_lsb=0x6d, header_msb=0xd1
+time    484, snr=23.1, BTLE index=39, AA=8e89bed6, PDUType=0, TxAdd=1, RxAdd=0, Length=20
+  AdvA=ae880feb2e78
+
+  (char) AdvData= . . . . . L . . . . . O . 4
+  (byte) AdvData=02011a0aff4c00100503184fcb34
+time    486, snr=27.7, channel 77, LAP 9e8b33 ID
+time    493, snr=13.3, BTLE index=34, AA=a86e5e6b, LLID=1, NESN=0, SN=0, MD=0, Length=8
+time    495, snr=12.8, channel 70, LAP ef648f ID
+time    502, snr=28.5, channel 77, LAP 9e8b33 ID
+preamble_distance=0, header_distance=1, aa_distance=0
+de_whitened: header_lsb=0x40, header_msb=0x24
+raw:         header_lsb=0x23, header_msb=0x8d
+time    513, snr=17.8, BTLE index=39, AA=8e89bed6, PDUType=0, TxAdd=1, RxAdd=0, Length=36
+  AdvA=c59cccf6ee45
+
+  (char) AdvData= . . . . . L . . . . . . . . ] . ~ . . . . P . . E . . . . .
+  (byte) AdvData=02011a1aff4c000c0e000be20c925df67e17bc929250bd1045019883acf0
+time    515, snr=11.9, BTLE index=33, AA=73632f52, LLID=2, NESN=0, SN=0, MD=1, Length=3
+time    518, snr=27.4, channel 77, LAP 9e8b33 ID
+time    534, snr=28.7, channel 77, LAP 9e8b33 ID
+time    539, snr=11.9, BTLE index=33, AA=eee1eb04, LLID=1, NESN=0, SN=1, MD=1, Length=30
+preamble_distance=0, header_distance=1, aa_distance=0
+de_whitened: header_lsb=0x40, header_msb=0x14
+raw:         header_lsb=0x98, header_msb=0x39
+time    540, snr=39.0, BTLE index=39, AA=8e89bed6, PDUType=0, TxAdd=1, RxAdd=0, Length=20
+  AdvA=eb3f825cad78
+
+  (char) AdvData= . . . . . L . . . . . ! g :
+  (byte) AdvData=02011a0aff4c001005011821673a
+time    543, snr=13.5, BTLE index=35, AA=28cb4c86, LLID=1, NESN=1, SN=0, MD=0, Length=0
+time    548, snr=15.8, channel 72, LAP c8edc9 working on UAP/CLK1-6
+reduced from 6 to 6 CLK1-6 candidates
+time    550, snr=29.0, channel 77, LAP 9e8b33 ID
+time    560, snr=12.5, BTLE index=34, AA=b963cf5f, LLID=3, NESN=0, SN=0, MD=0, Length=30
+time    566, snr=27.5, channel 77, LAP 9e8b33 ID
+preamble_distance=0, header_distance=1, aa_distance=0
+de_whitened: header_lsb=0x40, header_msb=0x24
+raw:         header_lsb=0x8b, header_msb=0x9f
+time    567, snr=16.8, BTLE index=39, AA=8e89bed6, PDUType=0, TxAdd=1, RxAdd=0, Length=36
+  AdvA=c59cccf6ee45
+
+  (char) AdvData= . . . . . L . . . . . . . . ] . ~ W . . . P . . . . . . . .
+  (byte) AdvData=02011a1aff4c000c0e000be20c925df67e57bc929250bd1005019883acf0
+time    576, snr=14.1, BTLE index=34, AA=b0774f4f, LLID=2, NESN=1, SN=1, MD=0, Length=18
+time    582, snr=12.9, BTLE index=36, AA=594b3c35, LLID=2, NESN=0, SN=1, MD=0, Length=29
+time    582, snr=27.9, channel 77, LAP 9e8b33 ID
+time    592, snr=14.0, BTLE index=34, AA=6792972d, LLID=2, NESN=1, SN=0, MD=1, Length=20
+time    597, snr=13.8, BTLE index=34, AA=28cb4c86, LLID=1, NESN=1, SN=0, MD=0, Length=0
+time    598, snr=28.6, channel 77, LAP 9e8b33 ID
+preamble_distance=1, header_distance=0, aa_distance=0
+preamble=0x0ea
+time    606, snr=18.5, BTLE index=39, AA=8e89bed6, PDUType=0, TxAdd=0, RxAdd=0, Length=27
+  AdvA=a17734c75204
+
+  (char) AdvData= . . . . . . . . . . . @ . . A . . . . . .
+  (byte) AdvData=02011a0303befe0dff1001400c02419800c6c8edc9
+time    608, snr=12.8, BTLE index=34, AA=72e0d6d5, LLID=2, NESN=1, SN=0, MD=1, Length=17
+time    614, snr=29.8, channel 77, LAP 9e8b33 ID
+preamble_distance=0, header_distance=1, aa_distance=0
+de_whitened: header_lsb=0x40, header_msb=0x18
+raw:         header_lsb=0x50, header_msb=0x3a
+time    617, snr=31.7, BTLE index=39, AA=8e89bed6, PDUType=0, TxAdd=1, RxAdd=0, Length=24
+  AdvA=66c9bbf01057
+
+  (char) AdvData= . . . . . . . . L . . . . . t . X K
+  (byte) AdvData=02011a020a0c0bff4c001006131e74fd584b
+time    621, snr=14.1, BTLE index=35, AA=8c8f46ee, LLID=2, NESN=1, SN=0, MD=0, Length=11
+time    621, snr=14.4, BTLE index=36, AA=686e5bf4, LLID=3, NESN=0, SN=0, MD=1, Length=30
+preamble_distance=0, header_distance=2, aa_distance=0
+de_whitened: header_lsb=0x42, header_msb=0x25
+raw:         header_lsb=0xd8, header_msb=0x25
+time    621, snr=24.6, BTLE index=39, AA=8e89bed6, PDUType=2, TxAdd=1, RxAdd=0, Length=37
+  AdvA=53508ba55465
+
+  (char) AdvData= . . . . . .   . _ 7 f 0 . . . . O . . . . . . . . . . 2 . . .
+  (byte) AdvData=1eff0600010920025f376630b77fa41a4fd8c60f8cc917fdd0ca8632f881b1
+preamble_distance=2, header_distance=1, aa_distance=0
+preamble=0x06a
+de_whitened: header_lsb=0x40, header_msb=0x24
+raw:         header_lsb=0xc4, header_msb=0x38
+time    627, snr=10.1, BTLE index=34, AA=33c6e95f, LLID=2, NESN=1, SN=1, MD=1, Length=1
+time    630, snr=29.0, channel 77, LAP 9e8b33 ID
+time    635, snr=17.6, channel 69, LAP 92391a working on UAP/CLK1-6
+reduced from 64 to 52 CLK1-6 candidates
+time    643, snr=13.7, BTLE index=35, AA=9b9c6030, LLID=2, NESN=0, SN=1, MD=0, Length=14
+time    646, snr=29.9, channel 77, LAP 9e8b33 ID
+preamble_distance=0, header_distance=1, aa_distance=0
+de_whitened: header_lsb=0x40, header_msb=0x17
+raw:         header_lsb=0x07, header_msb=0x6e
+time    654, snr=42.4, BTLE index=39, AA=8e89bed6, PDUType=0, TxAdd=1, RxAdd=0, Length=23
+  AdvA=579abb3c624f
+
+  (char) AdvData= . . . . . . . . L . . . . . . * [
+  (byte) AdvData=02011a020a0c0aff4c001005131cb82a5b
+time    662, snr=29.6, channel 77, LAP 9e8b33 ID
+time    672, snr=13.2, BTLE index=33, AA=a512c2b1, LLID=3, NESN=0, SN=1, MD=0, Length=5
+preamble_distance=0, header_distance=1, aa_distance=0
+de_whitened: header_lsb=0x40, header_msb=0x24
+raw:         header_lsb=0x2e, header_msb=0xe4
+time    673, snr=16.7, BTLE index=39, AA=8e89bed6, PDUType=0, TxAdd=1, RxAdd=0, Length=36
+  AdvA=c59cccf6ee45
+
+  (char) AdvData= . . . . . L . . . . . . . . ] . ~ . . . . P . . . . . . . .
+  (byte) AdvData=02011a1aff4c000c0e000be20c925df67ed7bd929250bd1005019883acf0
+time    678, snr=29.1, channel 77, LAP 9e8b33 ID
+time    685, snr=14.1, BTLE index=33, AA=3d034985, LLID=1, NESN=0, SN=1, MD=0, Length=9
+preamble_distance=4, header_distance=1, aa_distance=0
+preamble=0x001
+de_whitened: header_lsb=0x40, header_msb=0x14
+raw:         header_lsb=0xa6, header_msb=0xfd
+time    692, snr=13.7, BTLE index=34, AA=a00eeb2a, LLID=1, NESN=0, SN=0, MD=0, Length=30
+time    694, snr=28.7, channel 77, LAP 9e8b33 ID
+preamble_distance=4, header_distance=2, aa_distance=0
+preamble=0x0d2
+de_whitened: header_lsb=0x46, header_msb=0x25
+raw:         header_lsb=0x89, header_msb=0xac
+preamble_distance=0, header_distance=1, aa_distance=0
+de_whitened: header_lsb=0x40, header_msb=0x17
+raw:         header_lsb=0xc3, header_msb=0xfb
+time    702, snr=17.2, BTLE index=39, AA=8e89bed6, PDUType=0, TxAdd=1, RxAdd=0, Length=23
+  AdvA=e0676492b246
+
+  (char) AdvData= . . . . . . . . L . . . Q . . . .
+  (byte) AdvData=02011a020a0c0aff4c0010055118a90ddc
+time    710, snr=29.7, channel 77, LAP 9e8b33 ID
+time    717, snr=34.0, channel 76, LAP 041ad1 working on UAP/CLK1-6
+reduced from 8 to 8 CLK1-6 candidates
+time    718, snr=28.6, channel 76, LAP 041ad1 working on UAP/CLK1-6
+reduced from 8 to 8 CLK1-6 candidates
+time    720, snr=13.2, BTLE index=33, AA=fc72d5a1, LLID=2, NESN=0, SN=0, MD=1, Length=31
+time    722, snr=13.4, BTLE index=34, AA=adad778e, LLID=2, NESN=1, SN=0, MD=0, Length=7
+preamble_distance=0, header_distance=1, aa_distance=0
+de_whitened: header_lsb=0x40, header_msb=0x24
+raw:         header_lsb=0xea, header_msb=0x98
+time    725, snr=19.8, BTLE index=39, AA=8e89bed6, PDUType=0, TxAdd=1, RxAdd=0, Length=36
+  AdvA=c59cccf6ee45
+
+  (char) AdvData= . . . . . L . . . . . . . . ] . ~ W . . . P . . . . . . . .
+  (byte) AdvData=02011a1aff4c000c0e000be20c925df67e57bc929250bd1005019883acf0
+time    726, snr=14.8, channel 77, LAP 9e8b33 ID
+time    737, snr=12.9, BTLE index=34, AA=eae4c26e, LLID=1, NESN=0, SN=0, MD=0, Length=7
+time    742, snr=28.2, channel 77, LAP 9e8b33 ID
+time    758, snr=28.9, channel 77, LAP 9e8b33 ID
+time    771, snr=12.9, BTLE index=33, AA=1fcf241c, LLID=3, NESN=1, SN=1, MD=0, Length=23
+preamble_distance=0, header_distance=1, aa_distance=0
+de_whitened: header_lsb=0x40, header_msb=0x14
+raw:         header_lsb=0x03, header_msb=0x3e
+time    774, snr=50.1, BTLE index=39, AA=8e89bed6, PDUType=0, TxAdd=1, RxAdd=0, Length=20
+  AdvA=f98c7c804e7c
+
+  (char) AdvData= . . . . . L . . . . . . . .
+  (byte) AdvData=0201060aff4c0010050b1cb419b8
+preamble_distance=0, header_distance=1, aa_distance=0
+de_whitened: header_lsb=0x40, header_msb=0x24
+raw:         header_lsb=0x48, header_msb=0x1f
+time    779, snr=19.5, BTLE index=39, AA=8e89bed6, PDUType=0, TxAdd=1, RxAdd=0, Length=36
+  AdvA=c59cccf6ee45
+
+  (char) AdvData= . . . . . L . . . . . . L . ] . ~ . . . . P . . . . . . . .
+  (byte) AdvData=02011a1aff4c000c0e000be24c925df67ed7bc929250bd1005019883acf0
+time    782, snr=14.7, BTLE index=36, AA=9381d19f, LLID=3, NESN=0, SN=0, MD=0, Length=31
+time    790, snr=12.5, channel 77, LAP 9e8b33 ID
+preamble_distance=1, header_distance=2, aa_distance=0
+preamble=0x055
+de_whitened: header_lsb=0x42, header_msb=0x25
+raw:         header_lsb=0x2a, header_msb=0x92
+time    796, snr=13.2, BTLE index=36, AA=d08074bc, LLID=3, NESN=0, SN=1, MD=0, Length=8
+time    801, snr=30.1, channel 77, LAP 52a40b NULL
+time    804, snr=27.0, channel 75, LAP 52a40b DH5/3-DH5
+  LLID: 3
+  flow: 0
+  payload length: 172
+time    804, snr=15.7, BTLE index=36, AA=d4827b8f, LLID=2, NESN=0, SN=0, MD=0, Length=23
+time    806, snr=29.4, channel 77, LAP 9e8b33 ID
+time    812, snr=20.7, BTLE index=36, AA=6fc66ed6, LLID=3, NESN=0, SN=1, MD=0, Length=30
+time    817, snr=13.2, BTLE index=33, AA=facfd44f, LLID=1, NESN=1, SN=1, MD=1, Length=18
+time    822, snr=27.9, channel 77, LAP 9e8b33 ID
+time    829, snr=11.5, BTLE index=35, AA=171d3e77, LLID=3, NESN=0, SN=0, MD=1, Length=16
+preamble_distance=0, header_distance=1, aa_distance=0
+de_whitened: header_lsb=0x40, header_msb=0x14
+raw:         header_lsb=0x69, header_msb=0x6d
+time    836, snr=39.1, BTLE index=39, AA=8e89bed6, PDUType=0, TxAdd=1, RxAdd=0, Length=20
+  AdvA=eb3f825cad78
+
+  (char) AdvData= . . . . . L . . . . . ! g :
+  (byte) AdvData=02011a0aff4c001005011821673a
+time    838, snr=28.4, channel 77, LAP 9e8b33 ID
+time    840, snr=14.3, BTLE index=35, AA=ccf0e160, LLID=3, NESN=0, SN=1, MD=1, Length=26
+preamble_distance=0, header_distance=1, aa_distance=0
+de_whitened: header_lsb=0x40, header_msb=0x24
+raw:         header_lsb=0x12, header_msb=0x09
+time    843, snr=18.1, BTLE index=39, AA=8e89bed6, PDUType=0, TxAdd=1, RxAdd=0, Length=36
+  AdvA=c59cccf6ee45
+
+  (char) AdvData= . . . . . L . . . . . . . . ] . ~ W . . . P . . . . . . . .
+  (byte) AdvData=02011a1aff4c000c0e000be20c925df67e57bc929250bd1005019883acf0
+time    845, snr=14.3, BTLE index=35, AA=bd32bd6c, LLID=3, NESN=1, SN=0, MD=0, Length=20
+time    845, snr=13.0, BTLE index=36, AA=8f1e3b36, LLID=2, NESN=0, SN=1, MD=1, Length=31
+time    854, snr=29.3, channel 77, LAP 9e8b33 ID
+time    855, snr=15.0, BTLE index=33, AA=e7a2340c, LLID=3, NESN=1, SN=0, MD=1, Length=23
+time    858, snr=27.8, channel 73, LAP 52a40b DH5/3-DH5
+  LLID: 1
+  flow: 0
+  payload length: 959
+time    868, snr=11.7, BTLE index=35, AA=bbf45a8f, LLID=3, NESN=1, SN=0, MD=1, Length=19
+time    870, snr=21.8, channel 77, LAP 9e8b33 ID
+preamble_distance=0, header_distance=1, aa_distance=0
+de_whitened: header_lsb=0x40, header_msb=0x17
+raw:         header_lsb=0x5a, header_msb=0xcd
+time    870, snr=25.7, BTLE index=39, AA=8e89bed6, PDUType=0, TxAdd=1, RxAdd=0, Length=23
+  AdvA=6dd91cf2fe6b
+
+  (char) AdvData= . . . . . . . . L . . . . . . . .
+  (byte) AdvData=02011a020a0c0aff4c001005131cc3aaad
+preamble_distance=0, header_distance=1, aa_distance=0
+de_whitened: header_lsb=0x40, header_msb=0x14
+raw:         header_lsb=0x07, header_msb=0xc6
+time    876, snr=30.3, BTLE index=39, AA=8e89bed6, PDUType=0, TxAdd=1, RxAdd=0, Length=20
+  AdvA=c590c020886a
+
+  (char) AdvData= . . . . . L . . . . . . X .
+  (byte) AdvData=02011a0aff4c00100503188c58d9
+time    882, snr=12.2, BTLE index=33, AA=bfdcceba, LLID=1, NESN=0, SN=0, MD=0, Length=10
+time    886, snr=28.4, channel 77, LAP 9e8b33 ID
+preamble_distance=0, header_distance=1, aa_distance=0
+de_whitened: header_lsb=0x40, header_msb=0x17
+raw:         header_lsb=0x9a, header_msb=0xca
+time    899, snr=20.4, BTLE index=39, AA=8e89bed6, PDUType=0, TxAdd=1, RxAdd=0, Length=23
+  AdvA=cd328d5d1979
+
+  (char) AdvData= . . . . . . . . L . . . . . - . .
+  (byte) AdvData=02011a020a0c0aff4c0010050a1c2de301
+time    902, snr=29.0, channel 77, LAP 9e8b33 ID
+time    915, snr=13.4, BTLE index=34, AA=53e05897, LLID=1, NESN=1, SN=1, MD=1, Length=6
+time    918, snr=29.6, channel 77, LAP 9e8b33 ID
+time    919, snr=13.6, BTLE index=34, AA=87e8d9ab, LLID=1, NESN=1, SN=0, MD=1, Length=0
+preamble_distance=0, header_distance=1, aa_distance=0
+de_whitened: header_lsb=0x40, header_msb=0x14
+raw:         header_lsb=0x46, header_msb=0xd9
+time    922, snr=22.3, BTLE index=39, AA=8e89bed6, PDUType=0, TxAdd=1, RxAdd=0, Length=20
+  AdvA=ae880feb2e78
+
+  (char) AdvData= . . . . . L . . . . . O . 4
+  (byte) AdvData=02011a0aff4c00100503184fcb34
+time    932, snr=28.8, channel 77, LAP 693b93 ID
+time    934, snr=26.3, channel 77, LAP 9e8b33 ID
+time    938, snr=13.8, BTLE index=35, AA=fe6a9ec8, LLID=3, NESN=0, SN=1, MD=1, Length=13
+time    950, snr=13.1, BTLE index=34, AA=8daf6e57, LLID=3, NESN=0, SN=1, MD=1, Length=8
+time    950, snr=26.4, channel 77, LAP 9e8b33 ID
+preamble_distance=0, header_distance=1, aa_distance=0
+de_whitened: header_lsb=0x40, header_msb=0x17
+raw:         header_lsb=0x09, header_msb=0xf5
+time    950, snr=17.4, BTLE index=39, AA=8e89bed6, PDUType=0, TxAdd=1, RxAdd=0, Length=23
+  AdvA=9cea99a68741
+
+  (char) AdvData= . . . . . . . . L . . . # . { . .
+  (byte) AdvData=02011a020a070aff4c00100523187bc4b3
+preamble_distance=0, header_distance=2, aa_distance=0
+de_whitened: header_lsb=0x42, header_msb=0x25
+raw:         header_lsb=0xa2, header_msb=0x63
+time    956, snr=24.5, BTLE index=39, AA=8e89bed6, PDUType=2, TxAdd=1, RxAdd=0, Length=37
+  AdvA=53508ba55465
+
+  (char) AdvData= . . . . . .   . _ 7 f 0 . . . . O . . . . . . . . . . 2 . . .
+  (byte) AdvData=1eff0600010920025f376630b77fa41a4fd8c60f8cc917fdd0ca8632f881b1
+time    963, snr=13.0, BTLE index=34, AA=99d73b3d, LLID=3, NESN=1, SN=0, MD=0, Length=16
+time    964, snr=17.1, BTLE index=36, AA=7f5c6102, LLID=3, NESN=0, SN=1, MD=0, Length=28
+time    966, snr=27.3, channel 77, LAP 9e8b33 ID
+time    969, snr=16.4, BTLE index=36, AA=af9aa2db, LLID=1, NESN=0, SN=1, MD=0, Length=0
+preamble_distance=0, header_distance=1, aa_distance=0
+de_whitened: header_lsb=0x40, header_msb=0x14
+raw:         header_lsb=0xcb, header_msb=0xdb
+time    979, snr=35.1, BTLE index=39, AA=8e89bed6, PDUType=0, TxAdd=1, RxAdd=0, Length=20
+  AdvA=8f9b422b3d66
+
+  (char) AdvData= . . . . . L . . . K . . . .
+  (byte) AdvData=0201060aff4c0010054b1c881d14
+time    980, snr=11.2, BTLE index=34, AA=f7fd1c0e, LLID=3, NESN=1, SN=1, MD=0, Length=18
+time    982, snr=27.9, channel 77, LAP 9e8b33 ID
+time    994, snr=15.0, BTLE index=36, AA=0e0c030f, LLID=2, NESN=1, SN=0, MD=0, Length=31
+time    998, snr=28.7, channel 77, LAP 9e8b33 ID
+preamble_distance=0, header_distance=2, aa_distance=0
+de_whitened: header_lsb=0x46, header_msb=0x25
+raw:         header_lsb=0xc5, header_msb=0x6c
+time    999, snr=23.3, BTLE index=39, AA=8e89bed6, PDUType=6, TxAdd=1, RxAdd=0, Length=37
+  AdvA=22c44c1b9764
+
+  (char) AdvData= . . L . . . . .   . w . . . . . . . . . K . . . . . . . . \ .
+  (byte) AdvData=1eff4c000719010e200b778f000005bee39794804bdfc6ded3c517d3d35c88
+time   1006, snr=13.2, BTLE index=35, AA=5de2dd02, LLID=2, NESN=1, SN=0, MD=0, Length=0
+time   1014, snr=12.7, BTLE index=35, AA=ea410d69, LLID=2, NESN=0, SN=0, MD=1, Length=8
+time   1014, snr=28.6, channel 77, LAP 9e8b33 ID
+time   1020, snr=13.8, BTLE index=33, AA=1278a59e, LLID=1, NESN=1, SN=1, MD=0, Length=25
+preamble_distance=0, header_distance=1, aa_distance=0
+de_whitened: header_lsb=0x40, header_msb=0x1d
+raw:         header_lsb=0xfc, header_msb=0x3f
+time   1025, snr=42.2, BTLE index=39, AA=8e89bed6, PDUType=0, TxAdd=1, RxAdd=0, Length=29
+  AdvA=c20cac74efde
+
+  (char) AdvData= . . . . . . . . . . . . . . . F l a r e   R T
+  (byte) AdvData=0319800402010605030a180f180909466c617265205254
+time   1030, snr=30.4, channel 77, LAP 9e8b33 ID
+time   1043, snr=13.4, BTLE index=35, AA=f9aa3dac, LLID=3, NESN=1, SN=0, MD=0, Length=0
+time   1044, snr=15.9, channel 73, LAP c8edc9 working on UAP/CLK1-6
+reduced from 6 to 6 CLK1-6 candidates
+time   1046, snr=14.0, BTLE index=33, AA=e6292ffd, LLID=2, NESN=1, SN=0, MD=1, Length=3
+time   1046, snr=12.3, BTLE index=34, AA=b6ec3838, LLID=2, NESN=1, SN=1, MD=1, Length=28
+time   1046, snr=28.1, channel 77, LAP 9e8b33 ID
+preamble_distance=0, header_distance=1, aa_distance=0
+de_whitened: header_lsb=0x40, header_msb=0x18
+raw:         header_lsb=0xf1, header_msb=0x75
+time   1049, snr=33.9, BTLE index=39, AA=8e89bed6, PDUType=0, TxAdd=1, RxAdd=0, Length=24
+  AdvA=66c9bbf01057
+
+  (char) AdvData= . . . . . . . . L . . . . . t . X K
+  (byte) AdvData=02011a020a0c0bff4c001006131e74fd584b
+preamble_distance=0, header_distance=1, aa_distance=0
+de_whitened: header_lsb=0x40, header_msb=0x17
+raw:         header_lsb=0x52, header_msb=0x53
+time   1053, snr=19.2, BTLE index=39, AA=8e89bed6, PDUType=0, TxAdd=1, RxAdd=0, Length=23
+  AdvA=cd328d5d1979
+
+  (char) AdvData= . . . . . . . . L . . . J . - . .
+  (byte) AdvData=02011a020a0c0aff4c0010054a1c2de301
+time   1056, snr=17.2, channel 70, LAP c8edc9 working on UAP/CLK1-6
+reduced from 6 to 3 CLK1-6 candidates
+time   1059, snr=13.2, BTLE index=33, AA=e8bac906, LLID=3, NESN=1, SN=0, MD=0, Length=21
+time   1062, snr=16.6, channel 73, LAP c8edc9 working on UAP/CLK1-6
+reduced from 3 to 3 CLK1-6 candidates
+time   1062, snr=32.2, channel 77, LAP 9e8b33 ID
+preamble_distance=0, header_distance=1, aa_distance=0
+de_whitened: header_lsb=0x40, header_msb=0x14
+raw:         header_lsb=0xb2, header_msb=0xe8
+time   1064, snr=51.7, BTLE index=39, AA=8e89bed6, PDUType=0, TxAdd=1, RxAdd=0, Length=20
+  AdvA=f98c7c804e7c
+
+  (char) AdvData= . . . . . L . . . . . . . .
+  (byte) AdvData=0201060aff4c0010050b1cb419b8
+time   1078, snr=10.5, BTLE index=33, AA=d7e1760f, LLID=3, NESN=1, SN=0, MD=1, Length=1
+time   1078, snr=28.2, channel 77, LAP 9e8b33 ID
+preamble_distance=0, header_distance=1, aa_distance=0
+de_whitened: header_lsb=0x40, header_msb=0x17
+raw:         header_lsb=0x42, header_msb=0xb4
+time   1086, snr=41.5, BTLE index=39, AA=8e89bed6, PDUType=0, TxAdd=1, RxAdd=0, Length=23
+  AdvA=579abb3c624f
+
+  (char) AdvData= . . . . . . . . L . . . . . . * [
+  (byte) AdvData=02011a020a0c0aff4c001005131cb82a5b
+time   1094, snr=25.2, channel 77, LAP 9e8b33 ID
+time   1110, snr=28.3, channel 77, LAP 9e8b33 ID
+time   1111, snr=12.4, BTLE index=36, AA=c5fa7192, LLID=3, NESN=0, SN=0, MD=0, Length=6
+time   1117, snr=29.9, channel 72, LAP 041ad1 working on UAP/CLK1-6
+reduced from 8 to 4 CLK1-6 candidates
+preamble_distance=0, header_distance=1, aa_distance=0
+de_whitened: header_lsb=0x40, header_msb=0x1f
+raw:         header_lsb=0xd5, header_msb=0x26
+time   1121, snr=43.2, BTLE index=39, AA=8e89bed6, PDUType=0, TxAdd=1, RxAdd=0, Length=31
+  AdvA=6a6b1bec0cdf
+
+  (char) AdvData= . . . . . . . . . . . . . . . I O N   P R O   R T
+  (byte) AdvData=0319800402010605030a180f180b09494f4e2050524f205254
+preamble_distance=0, header_distance=2, aa_distance=0
+de_whitened: header_lsb=0x42, header_msb=0x25
+raw:         header_lsb=0x4d, header_msb=0x74
+time   1123, snr=42.6, BTLE index=39, AA=8e89bed6, PDUType=2, TxAdd=1, RxAdd=0, Length=37
+  AdvA=53508ba55465
+
+  (char) AdvData= . . . . . .   . _ 7 f 0 . . . . O . . . . . . . . . . 2 . . .
+  (byte) AdvData=1eff0600010920025f376630b77fa41a4fd8c60f8cc917fdd0ca8632f881b1
+preamble_distance=0, header_distance=1, aa_distance=0
+de_whitened: header_lsb=0x40, header_msb=0x14
+raw:         header_lsb=0x3c, header_msb=0x14
+time   1126, snr=39.7, BTLE index=39, AA=8e89bed6, PDUType=0, TxAdd=1, RxAdd=0, Length=20
+  AdvA=eb3f825cad78
+
+  (char) AdvData= . . . . . L . . . . . ! g :
+  (byte) AdvData=02011a0aff4c001005011821673a
+time   1130, snr=13.1, BTLE index=35, AA=2d91a403, LLID=1, NESN=1, SN=1, MD=1, Length=6
+time   1132, snr=13.6, BTLE index=33, AA=57b404a4, LLID=1, NESN=0, SN=1, MD=0, Length=24
+time   1142, snr=28.2, channel 77, LAP 9e8b33 ID
+time   1150, snr=15.7, channel 78, LAP c8edc9 working on UAP/CLK1-6
+reduced from 3 to 3 CLK1-6 candidates
+time   1164, snr=12.8, BTLE index=33, AA=8ac6585e, LLID=1, NESN=0, SN=1, MD=1, Length=27
+time   1173, snr=13.6, BTLE index=35, AA=3e1a0560, LLID=1, NESN=0, SN=1, MD=1, Length=22
+time   1175, snr=12.2, BTLE index=34, AA=963677f1, LLID=2, NESN=0, SN=0, MD=0, Length=26
+time   1176, snr=13.3, BTLE index=34, AA=5bf2bc5f, LLID=2, NESN=1, SN=1, MD=1, Length=14
+time   1186, snr=12.7, BTLE index=35, AA=47070cfc, LLID=3, NESN=1, SN=0, MD=0, Length=18
+time   1187, snr=15.0, channel 71, LAP 52a40b NULL
+time   1190, snr=24.3, channel 69, LAP 52a40b DH5/3-DH5
+  LLID: 2
+  flow: 1
+  payload length: 1026
+time   1195, snr=14.6, channel 69, LAP 52a40b NULL
+time   1225, snr=13.3, BTLE index=34, AA=f88aac5e, LLID=3, NESN=1, SN=1, MD=0, Length=16
+time   1238, snr=17.5, channel 70, LAP c8edc9 working on UAP/CLK1-6
+reduced from 3 to 3 CLK1-6 candidates
+time   1242, snr=13.0, BTLE index=35, AA=b990bcd8, LLID=1, NESN=0, SN=1, MD=0, Length=19
+time   1244, snr=13.6, BTLE index=33, AA=f79b809a, LLID=2, NESN=0, SN=0, MD=1, Length=28
+time   1266, snr=12.4, BTLE index=35, AA=33300f3e, LLID=1, NESN=1, SN=1, MD=0, Length=2
+time   1273, snr=11.9, BTLE index=34, AA=dcda5649, LLID=2, NESN=0, SN=0, MD=1, Length=9
+preamble_distance=0, header_distance=1, aa_distance=0
+de_whitened: header_lsb=0x40, header_msb=0x14
+raw:         header_lsb=0xe2, header_msb=0x09
+time   1275, snr=55.3, BTLE index=39, AA=8e89bed6, PDUType=0, TxAdd=1, RxAdd=0, Length=20
+  AdvA=8f9b422b3d66
+
+  (char) AdvData= . . . . . L . . . K . . . .
+  (byte) AdvData=0201060aff4c0010054b1c881d14
+time   1295, snr=13.0, BTLE index=34, AA=bb8e977c, LLID=2, NESN=1, SN=1, MD=1, Length=8
+time   1297, snr=11.4, BTLE index=34, AA=739eddce, LLID=1, NESN=1, SN=1, MD=1, Length=30
+preamble_distance=0, header_distance=1, aa_distance=0
+de_whitened: header_lsb=0x40, header_msb=0x17
+raw:         header_lsb=0xaa, header_msb=0xb5
+time   1305, snr=27.6, BTLE index=39, AA=8e89bed6, PDUType=0, TxAdd=1, RxAdd=0, Length=23
+  AdvA=6dd91cf2fe6b
+
+  (char) AdvData= . . . . . . . . L . . . . . . . .
+  (byte) AdvData=02011a020a0c0aff4c001005131cc3aaad
+time   1322, snr=14.1, BTLE index=35, AA=89df3b81, LLID=2, NESN=1, SN=1, MD=1, Length=14
+time   1328, snr=13.6, BTLE index=34, AA=2c23997a, LLID=1, NESN=1, SN=0, MD=1, Length=20
+time   1331, snr=13.5, channel 71, LAP 52a40b NULL
+time   1333, snr=13.9, BTLE index=34, AA=feb2f57a, LLID=1, NESN=1, SN=0, MD=1, Length=8
+time   1334, snr=23.8, channel 69, LAP 52a40b DH5/3-DH5
+  LLID: 1
+  flow: 0
+  payload length: 1009
+time   1337, snr=13.3, BTLE index=33, AA=0020c08e, LLID=1, NESN=1, SN=1, MD=1, Length=1
+preamble_distance=0, header_distance=1, aa_distance=0
+de_whitened: header_lsb=0x40, header_msb=0x14
+raw:         header_lsb=0xaa, header_msb=0xaa
+time   1337, snr=29.5, BTLE index=39, AA=8e89bed6, PDUType=0, TxAdd=1, RxAdd=0, Length=20
+  AdvA=c590c020886a
+
+  (char) AdvData= . . . . . L . . . . . . X .
+  (byte) AdvData=02011a0aff4c00100503188c58d9
+time   1339, snr=14.6, channel 69, LAP 52a40b NULL
+time   1345, snr=12.2, BTLE index=36, AA=9395b7f6, LLID=1, NESN=0, SN=0, MD=0, Length=7
+time   1349, snr=13.3, BTLE index=33, AA=f7a4480c, LLID=2, NESN=0, SN=0, MD=1, Length=16
+preamble_distance=2, header_distance=1, aa_distance=0
+preamble=0x06a
+de_whitened: header_lsb=0x40, header_msb=0x24
+raw:         header_lsb=0xda, header_msb=0xcf
+preamble_distance=0, header_distance=1, aa_distance=0
+de_whitened: header_lsb=0x40, header_msb=0x14
+raw:         header_lsb=0x91, header_msb=0x5b
+time   1356, snr=50.9, BTLE index=39, AA=8e89bed6, PDUType=0, TxAdd=1, RxAdd=0, Length=20
+  AdvA=ae880feb2e78
+
+  (char) AdvData= . . . . . L . . . . . O . 4
+  (byte) AdvData=02011a0aff4c00100503184fcb34
+preamble_distance=0, header_distance=1, aa_distance=0
+de_whitened: header_lsb=0x40, header_msb=0x14
+raw:         header_lsb=0x33, header_msb=0x09
+time   1359, snr=36.9, BTLE index=39, AA=8e89bed6, PDUType=0, TxAdd=1, RxAdd=0, Length=20
+  AdvA=f98c7c804e7c
+
+  (char) AdvData= . . . . . L . . . . . . . .
+  (byte) AdvData=0201060aff4c0010050b1cb419b8
+time   1361, snr=13.4, BTLE index=36, AA=a087b930, LLID=2, NESN=0, SN=1, MD=1, Length=7
+time   1382, snr=27.3, channel 77, LAP 52a40b DH5/3-DH5
+  LLID: 2
+  flow: 0
+  payload length: 1027
+time   1387, snr=19.0, channel 77, LAP 52a40b NULL
+time   1393, snr=13.1, BTLE index=33, AA=5379601d, LLID=1, NESN=0, SN=0, MD=0, Length=3
+preamble_distance=2, header_distance=1, aa_distance=0
+preamble=0x09a
+de_whitened: header_lsb=0x40, header_msb=0x17
+raw:         header_lsb=0x9a, header_msb=0x50
+preamble_distance=2, header_distance=1, aa_distance=0
+preamble=0x09a
+de_whitened: header_lsb=0x40, header_msb=0x24
+raw:         header_lsb=0x68, header_msb=0x44
+time   1435, snr=12.8, BTLE index=35, AA=9a72484c, LLID=1, NESN=1, SN=1, MD=1, Length=18
+time   1437, snr=31.9, channel 72, LAP 041ad1 working on UAP/CLK1-6
+reduced from 4 to 4 CLK1-6 candidates
+time   1438, snr=29.0, channel 72, LAP 041ad1 working on UAP/CLK1-6
+reduced from 4 to 4 CLK1-6 candidates
+preamble_distance=0, header_distance=2, aa_distance=0
+de_whitened: header_lsb=0x42, header_msb=0x25
+raw:         header_lsb=0x8e, header_msb=0x5d
+time   1438, snr=17.4, BTLE index=39, AA=8e89bed6, PDUType=2, TxAdd=1, RxAdd=0, Length=37
+  AdvA=cf140dfad119
+
+  (char) AdvData= . . . . ! .   . t . . . E W R . . T . . P t R . . ~ . . g $ .
+  (byte) AdvData=1eff06002109200274c884f64557528af354fefc507452cad27e06a46724d6
+time   1444, snr=14.7, BTLE index=34, AA=d5529d65, LLID=2, NESN=1, SN=0, MD=1, Length=20
+time   1450, snr=14.6, BTLE index=35, AA=1235b497, LLID=1, NESN=1, SN=0, MD=1, Length=18
+preamble_distance=0, header_distance=2, aa_distance=0
+de_whitened: header_lsb=0x42, header_msb=0x25
+raw:         header_lsb=0xfb, header_msb=0x26
+time   1460, snr=25.9, BTLE index=39, AA=8e89bed6, PDUType=2, TxAdd=1, RxAdd=0, Length=37
+  AdvA=53508ba55465
+
+  (char) AdvData= . . . . . .   . _ 7 f 0 . . . . O . . . . . . . . . . 2 . . .
+  (byte) AdvData=1eff0600010920025f376630b77fa41a4fd8c60f8cc917fdd0ca8632f881b1
+time   1466, snr=13.8, BTLE index=36, AA=9783e4f7, LLID=2, NESN=1, SN=1, MD=0, Length=9
+preamble_distance=2, header_distance=1, aa_distance=0
+preamble=0x09a
+de_whitened: header_lsb=0x40, header_msb=0x24
+raw:         header_lsb=0x2e, header_msb=0xe4
+time   1473, snr=12.2, BTLE index=35, AA=3fefbf7a, LLID=3, NESN=1, SN=0, MD=1, Length=8
+time   1479, snr=12.1, BTLE index=35, AA=a8a1dbe6, LLID=2, NESN=0, SN=1, MD=1, Length=31
+preamble_distance=0, header_distance=1, aa_distance=0
+de_whitened: header_lsb=0x40, header_msb=0x18
+raw:         header_lsb=0xb8, header_msb=0x85
+time   1482, snr=34.4, BTLE index=39, AA=8e89bed6, PDUType=0, TxAdd=1, RxAdd=0, Length=24
+  AdvA=66c9bbf01057
+
+  (char) AdvData= . . . . . . . . L . . . . . t . X K
+  (byte) AdvData=02011a020a0c0bff4c001006131e74fd584b
+time   1482, snr=34.4, BTLE index=39, AA=8e89bed6, PDUType=0, TxAdd=0, RxAdd=0, Length=27
+  AdvA=a17734c75204
+
+  (char) AdvData= . . . . . . . . . . . @ . . A . . . . . .
+  (byte) AdvData=02011a0303befe0dff1001400c02419800c6c8edc9
+time   1483, snr=14.2, BTLE index=33, AA=ee214bf0, LLID=3, NESN=0, SN=1, MD=1, Length=31
+preamble_distance=0, header_distance=1, aa_distance=0
+de_whitened: header_lsb=0x40, header_msb=0x17
+raw:         header_lsb=0x2a, header_msb=0xb0
+time   1483, snr=21.0, BTLE index=39, AA=8e89bed6, PDUType=0, TxAdd=1, RxAdd=0, Length=23
+  AdvA=cd328d5d1979
+
+  (char) AdvData= . . . . . . . . L . . . J . - . .
+  (byte) AdvData=02011a020a0c0aff4c0010054a1c2de301
+time   1488, snr=13.8, BTLE index=34, AA=c06551f8, LLID=1, NESN=1, SN=0, MD=0, Length=16
+time   1488, snr=13.8, BTLE index=34, AA=205d8597, LLID=1, NESN=0, SN=1, MD=0, Length=23
+time   1492, snr=13.8, BTLE index=35, AA=78d71479, LLID=1, NESN=1, SN=0, MD=0, Length=30
+preamble_distance=2, header_distance=2, aa_distance=0
+preamble=0x0e8
+de_whitened: header_lsb=0x40, header_msb=0x25
+raw:         header_lsb=0x61, header_msb=0x26
+time   1512, snr=12.4, BTLE index=35, AA=80d1c7d8, LLID=1, NESN=0, SN=0, MD=1, Length=28
+time   1513, snr=14.1, BTLE index=35, AA=8dc728a0, LLID=1, NESN=1, SN=1, MD=0, Length=24
+time   1515, snr=19.7, channel 76, LAP c8edc9 ID
+preamble_distance=0, header_distance=1, aa_distance=0
+de_whitened: header_lsb=0x40, header_msb=0x17
+raw:         header_lsb=0x50, header_msb=0x66
+time   1523, snr=41.4, BTLE index=39, AA=8e89bed6, PDUType=0, TxAdd=1, RxAdd=0, Length=23
+  AdvA=579abb3c624f
+
+  (char) AdvData= . . . . . . . . L . . . . . . * [
+  (byte) AdvData=02011a020a0c0aff4c001005131cb82a5b
+time   1526, snr=13.6, channel 76, LAP 80602d ID
+time   1528, snr=12.4, BTLE index=33, AA=57338b2d, LLID=3, NESN=1, SN=1, MD=1, Length=10
+preamble_distance=0, header_distance=1, aa_distance=0
+de_whitened: header_lsb=0x40, header_msb=0x24
+raw:         header_lsb=0xe6, header_msb=0x66
+time   1530, snr=20.2, BTLE index=39, AA=8e89bed6, PDUType=0, TxAdd=1, RxAdd=0, Length=36
+  AdvA=c59cccf6ee45
+
+  (char) AdvData= . . . . . L . . . . . . . . ] . ~ W . . . P . . . . . . . .
+  (byte) AdvData=02011a1aff4c000c0e000be20c925df67e57bc929250bd1005019883acf0
+time   1553, snr=12.3, BTLE index=36, AA=bd53d99d, LLID=2, NESN=0, SN=1, MD=1, Length=27
+time   1558, snr=29.5, channel 77, LAP 9e8b33 ID
+time   1561, snr=13.8, BTLE index=34, AA=95be595f, LLID=2, NESN=1, SN=0, MD=0, Length=21
+time   1562, snr=12.4, BTLE index=36, AA=68489b39, LLID=1, NESN=1, SN=0, MD=1, Length=7
+preamble_distance=0, header_distance=1, aa_distance=0
+de_whitened: header_lsb=0x40, header_msb=0x17
+raw:         header_lsb=0x12, header_msb=0x92
+time   1568, snr=54.6, BTLE index=39, AA=8e89bed6, PDUType=0, TxAdd=1, RxAdd=0, Length=23
+  AdvA=e0676492b256
+
+  (char) AdvData= . . . . . . . . L . . . Q . . . .
+  (byte) AdvData=00011a020a0c0aff4c001c055118a90d19
+preamble_distance=0, header_distance=1, aa_distance=0
+de_whitened: header_lsb=0x40, header_msb=0x14
+raw:         header_lsb=0x87, header_msb=0x69
+time   1569, snr=34.8, BTLE index=39, AA=8e89bed6, PDUType=0, TxAdd=1, RxAdd=0, Length=20
+  AdvA=8f9b422b3d66
+
+  (char) AdvData= . . . . . L . . . K . . . .
+  (byte) AdvData=0201060aff4c0010054b1c881d14
+time   1574, snr=28.6, channel 77, LAP 9e8b33 ID
+time   1574, snr=14.5, channel 78, LAP 47d080 ID
+time   1578, snr=14.0, BTLE index=34, AA=66e6bd15, LLID=2, NESN=0, SN=1, MD=1, Length=1
+time   1578, snr=11.4, BTLE index=35, AA=048d5e60, LLID=3, NESN=0, SN=1, MD=1, Length=1
+time   1579, snr=13.2, BTLE index=35, AA=6ddc7b57, LLID=3, NESN=0, SN=0, MD=0, Length=22
+time   1579, snr=13.2, BTLE index=35, AA=9cd8b3f8, LLID=3, NESN=1, SN=0, MD=0, Length=15
+time   1583, snr=14.1, BTLE index=34, AA=31f8770a, LLID=2, NESN=0, SN=0, MD=1, Length=11
+time   1588, snr=13.0, BTLE index=35, AA=2f9acbba, LLID=1, NESN=1, SN=0, MD=0, Length=5
+time   1590, snr=12.1, BTLE index=35, AA=86a62220, LLID=2, NESN=1, SN=1, MD=1, Length=15
+time   1590, snr=29.3, channel 77, LAP 9e8b33 ID
+time   1592, snr=13.7, BTLE index=33, AA=924c6324, LLID=1, NESN=1, SN=0, MD=0, Length=29
+time   1594, snr=17.3, channel 75, LAP 92391a working on UAP/CLK1-6
+reduced from 52 to 24 CLK1-6 candidates
+time   1595, snr=15.8, channel 75, LAP 92391a working on UAP/CLK1-6
+reduced from 24 to 24 CLK1-6 candidates
+time   1595, snr=12.2, BTLE index=36, AA=5f5037d4, LLID=1, NESN=1, SN=0, MD=1, Length=9
+preamble_distance=4, header_distance=1, aa_distance=0
+preamble=0x099
+de_whitened: header_lsb=0x40, header_msb=0x24
+raw:         header_lsb=0xad, header_msb=0x7d
+preamble_distance=4, header_distance=2, aa_distance=0
+preamble=0x0d2
+de_whitened: header_lsb=0x46, header_msb=0x25
+raw:         header_lsb=0x97, header_msb=0xa6
