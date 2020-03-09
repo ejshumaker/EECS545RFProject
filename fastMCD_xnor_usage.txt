@@ -1,0 +1,17 @@
+To use fastMCD with the xnor net, use the following procedure:
+
+1) Build fastMCD:
+    cd fastMCD
+    mkdir build
+    cd build
+    cmake ..
+    make
+    mv fastMCD ../test
+
+2) Run fastMCD on number.m4v
+    cd fastMCD/test
+    ./fastMCD number.m4v 1
+
+3) Run xnor net on images
+    cd xnor_net
+    python3 main.py --pretrained models/LeNet_5.best.pth.tar --fastMCD ../fastMCD/test/results/

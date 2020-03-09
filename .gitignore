@@ -1,1 +1,8 @@
 *.pdf
+**__pycache__**
+*.DS_Store
+*.png
+fastMCD
+data
+*.pyc
+*.tar
