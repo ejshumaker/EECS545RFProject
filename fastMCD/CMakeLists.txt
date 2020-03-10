@@ -8,8 +8,8 @@ SET (PROJECT_NAME "fastMCD")
 project(${PROJECT_NAME})
 
 find_package( PkgConfig )
-SET (OpenCV_DIR "/usr/local/Cellar/opencv/4.2.0_3/lib/cmake/opencv4/")
-SET (OpenCV_DIR "/usr/local/Cellar/opencv@2/2.4.13.7_7/share/OpenCV")
+# SET (OpenCV_DIR "/usr/local/Cellar/opencv/4.2.0_3/lib/cmake/opencv4/")
+# SET (OpenCV_DIR "/usr/local/Cellar/opencv@2/2.4.13.7_7/share/OpenCV")
 find_package(OpenCV REQUIRED) # core imgproc highgui flann video calib3d nonfree objdetect)
 
 set(HDRS )
