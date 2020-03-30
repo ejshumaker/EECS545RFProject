@@ -1,4 +1,4 @@
-# EECS545RFProject
+# EECS545 Project: fast object classification using fastMCD for region proposal
 To use fastMCD with the xnor net, use the following basic procedure (use for MNIST case):
 
 1) Build fastMCD:
