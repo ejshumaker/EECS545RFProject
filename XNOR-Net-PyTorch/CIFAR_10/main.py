@@ -6,7 +6,7 @@ import sys
 import os
 import torch
 import argparse
-import data
+import cifar_data
 import util
 import torch.nn as nn
 import torch.optim as optim
@@ -133,10 +133,10 @@ if __name__ == '__main__':
     #     # check the data path
     #     raise Exception('Please assign the correct data path with --data <DATA_PATH>')
 
-    # trainset = data.dataset(root=args.data, train=True)
+    # trainset = cifar_data.dataset(root=args.data, train=True)
     # trainloader = torch.utils.data.DataLoader(trainset, batch_size=128, shuffle=True, num_workers=2)
 
-    # testset = data.dataset(root=args.data, train=False)
+    # testset = cifar_data.dataset(root=args.data, train=False)
     # testloader = torch.utils.data.DataLoader(testset, batch_size=100, shuffle=False, num_workers=2)
 
     # 545 Project Data

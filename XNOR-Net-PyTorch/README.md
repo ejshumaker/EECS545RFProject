@@ -1,39 +1,37 @@
 # XNOR-Net-Pytorch
-This a PyTorch implementation of the [XNOR-Net](https://github.com/allenai/XNOR-Net). I implemented Binarized Neural Network (BNN) for:  
+This is an adaptation of a [PyTorch implementation](https://github.com/jiecaoyu/XNOR-Net-PyTorch) of the [XNOR-Net](https://github.com/allenai/XNOR-Net) for an end-to-end moving object detector and classifier, using fastMCD for region proposals, and one of the below for classification.
 
-| Dataset  | Network                  | Accuracy                    | Accuracy of floating-point |
-|----------|:-------------------------|:----------------------------|:---------------------------|
-| MNIST    | LeNet-5                  | 99.23%                      | 99.34%                     |
-| CIFAR-10 | Network-in-Network (NIN) | 86.28%                      | 89.67%                     |
-| ImageNet | AlexNet                  | Top-1: 44.87% Top-5: 69.70% | Top-1: 57.1% Top-5: 80.2%  |
+# Usage:
 
 ## MNIST
-I implemented the LeNet-5 structure for the MNIST dataset. I am using the dataset reader provided by [torchvision](https://github.com/pytorch/vision). To run the training:
+To run this on the output of the fastMCD algorithm, train the model (see below), and make sure images are in `<path-to-results>`:
 ```bash
 $ cd <Repository Root>/MNIST/
-$ python main.py
-```
-Pretrained model can be downloaded [here](https://drive.google.com/open?id=0B-7I62GOSnZ8R3Jzd0ozdzlJUk0). To evaluate the pretrained model:
-```bash
-$ cp <Pretrained Model> <Repository Root>/MNIST/models/
-$ python main.py --pretrained models/LeNet_5.best.pth.tar --evaluate
+$ python3 main.py --pretrained models/LeNet_5.best.pth.tar --fastMCD <path-to-results>
 ```
 
+To train your own model
+Torchvision MNIST Dataset: [torchvision](https://github.com/pytorch/vision). To run the training:
+```bash
+$ cd <Repository Root>/MNIST/
+$ python3 main.py
+```
+OR user the [pretrained model](https://drive.google.com/open?id=0B-7I62GOSnZ8R3Jzd0ozdzlJUk0). To evaluate the pretrained model:
+```bash
+$ cp <Pretrained Model> <Repository Root>/MNIST/models/
+$ python3 main.py --pretrained models/LeNet_5.best.pth.tar --evaluate
+```
+
+
 ## CIFAR-10
-I implemented the NIN structure for the CIFAR-10 dataset. You can download the training and validation datasets [here](https://drive.google.com/open?id=0B-7I62GOSnZ8Z0ZCVXFtVnFEaTg) and uncompress the .zip file. To run the training:
+To run this on the output of the fastMCD algorithm, download the [pretrained model](https://drive.google.com/open?id=0B-7I62GOSnZ8UjJqNnR1V0dMbWs), and make sure images are in `<path-to-results>`:
 ```bash
 $ cd <Repository Root>/CIFAR_10/
-$ ln -s <Datasets Root> data
-$ python main.py
-```
-Pretrained model can be downloaded [here](https://drive.google.com/open?id=0B-7I62GOSnZ8UjJqNnR1V0dMbWs). To evaluate the pretrained model:
-```bash
-$ cp <Pretrained Model> <Repository Root>/CIFAR_10/models/
-$ python main.py --pretrained models/nin.best.pth.tar --evaluate
+$ python3 main.py --cpu --pretrained models/nin.best.pth.tar --fastMCD <path-to-results>
 ```
 
 ## ImageNet
-I implemented the AlexNet for the ImageNet dataset.
+DAK TODO. Below is just stuff from the original repo
 ### Dataset
 
 The training supports [torchvision](https://github.com/pytorch/vision).
