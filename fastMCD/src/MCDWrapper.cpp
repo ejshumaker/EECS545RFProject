@@ -138,10 +138,12 @@ void MCDWrapper::Run()
 
 	//////////////////////////////////////////////////////////////////////////
 	// Debug Output
+	/*
 	for (int i = 0; i < 100; ++i) {
 		printf("\b");
 	}
-	printf("PP: %.2f(ms)\tOF: %.2f(ms)\tBGM: %.2f(ms)\tTotal time: \t%.2f(ms)", MAX(0.0, rt_preProc), MAX(0.0, rt_motionComp), MAX(0.0, rt_modelUpdate), MAX(0.0, rt_total));
+	*/
+	//printf("PP: %.2f(ms)\tOF: %.2f(ms)\tBGM: %.2f(ms)\tTotal time: \t%.2f(ms)", MAX(0.0, rt_preProc), MAX(0.0, rt_motionComp), MAX(0.0, rt_modelUpdate), MAX(0.0, rt_total));
 
 	// Uncomment this block if you want to save runtime to txt
 	// if(rt_preProc >= 0 && rt_motionComp >= 0 && rt_modelUpdate >= 0 && rt_total >= 0){

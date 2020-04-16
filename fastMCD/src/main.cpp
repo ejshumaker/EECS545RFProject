@@ -85,13 +85,15 @@ int main(int argc, char *argv[])
 	// inVideoSize.width = (int)cvGetCaptureProperty(pInVideo, CV_CAP_PROP_FRAME_WIDTH);
 	// int inVideoFourCC = (int)cvGetCaptureProperty(pInVideo, CV_CAP_PROP_FOURCC);
 	// double inVideoFPS = cvGetCaptureProperty(pInVideo, CV_CAP_PROP_FPS);
+
 	int dTotalFrameNum = (int)cvGetCaptureProperty(pInVideo, CV_CAP_PROP_FRAME_COUNT);
 
 	// pVideoOut = cvCreateVideoWriter(mp4file_name.data(), CV_FOURCC('F', 'M', 'P', '4'), inVideoFPS, inVideoSize, 1);
 
 	// Output window to be displayed
+	/*
 	cvNamedWindow(window_name, CV_WINDOW_AUTOSIZE);
-
+    */
 	// Reset capture position
 	cvSetCaptureProperty(pInVideo, CV_CAP_PROP_POS_FRAMES, 0);
 
@@ -158,7 +160,9 @@ int main(int argc, char *argv[])
 
 		// Print some frame numbers as well
 		char buf[100];
+
 		sprintf(buf, "%d", frame_num);
+
 		CvFont font;
 		double hScale = 0.5;
 		double vScale = 0.5;
@@ -167,8 +171,9 @@ int main(int argc, char *argv[])
 		cvPutText(frame_copy, buf, cvPoint(10, 20), &font, cvScalar(255, 255, 0));
 
 		// Show image
-		cvShowImage(window_name, frame_copy);
-
+		/*
+		cvShowImage(window_name, frame_c	//printf("Hello Here\n");opy);
+		*/
 		// // DISPLAY---- and write to png
 		// cvWriteFrame(pVideoOut, frame_copy);
 

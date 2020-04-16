@@ -3,7 +3,7 @@ import cv2
 import MCDWrapper
 
 np.set_printoptions(precision=2, suppress=True)
-cap = cv2.VideoCapture('woman.mp4')
+cap = cv2.VideoCapture('../test/number.m4v')
 mcd = MCDWrapper.MCDWrapper()
 isFirst = True
 while(cap.isOpened()):
