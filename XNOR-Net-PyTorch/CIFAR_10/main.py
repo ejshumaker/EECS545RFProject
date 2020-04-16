@@ -15,7 +15,7 @@ from torchvision import transforms
 from models import nin
 from torch.autograd import Variable
 
-from png2dataset import ImageDataset
+from png2dataset import ImageDataset, ImageDataset_python
 
 
 def save_state(model, best_acc):
@@ -119,6 +119,8 @@ if __name__ == '__main__':
                         help='evaluate the model')
     parser.add_argument('--fastMCD', action='store',
                         default='data/cheetah_results', help='whether to run on fastMCD data')
+    parser.add_argument('--python_fastMCD', action='store', default=None,
+                        help='whether to use python fastMCD on data or not')
     args = parser.parse_args()
     print('==> Options:', args)
 
@@ -141,8 +143,13 @@ if __name__ == '__main__':
 
     # 545 Project Data
     tform = transforms.ToTensor()
-    proj_loader = torch.utils.data.DataLoader(
-        ImageDataset(args.fastMCD, thresh=160, transform=tform), shuffle=True)
+    proj_loader = None
+    if args.fastMCD:
+        proj_loader = torch.utils.data.DataLoader(
+            ImageDataset(args.fastMCD, thresh=160, transform=tform), shuffle=True)
+    if args.python_fastMCD:
+        proj_loader = torch.utils.data.DataLoader(
+            ImageDataset_python(args.python_fastMCD, thresh=160, transform=tform), shuffle=True)
 
     # define classes
     classes = ('plane', 'car', 'bird', 'cat', 'deer', 'dog', 'frog', 'horse', 'ship', 'truck')
@@ -163,7 +170,7 @@ if __name__ == '__main__':
                 m.weight.data.normal_(0, 0.05)
                 m.bias.data.zero_()
     else:
-        print('==> Load pretrained model form', args.pretrained, '...')
+        print('==> Load pretrained model from', args.pretrained, '...')
         if args.cuda:
             pretrained_model = torch.load(args.pretrained)
         else:
@@ -191,10 +198,13 @@ if __name__ == '__main__':
     bin_op = util.BinOp(model)
 
     # do the evaluation if specified
-    if args.evaluate:
+    if args.python_fastMCD:
         test(proj_loader)
         exit(0)
     if args.fastMCD:
+        test(proj_loader)
+        exit(0)
+    if args.evaluate:
         test(proj_loader)
         exit(0)
 

@@ -3,11 +3,13 @@ import cv2
 import MCDWrapper
 
 np.set_printoptions(precision=2, suppress=True)
-cap = cv2.VideoCapture('woman.mp4')
+cap = cv2.VideoCapture('../data/woman.mp4')
 mcd = MCDWrapper.MCDWrapper()
 isFirst = True
 while(cap.isOpened()):
     ret, frame = cap.read()
+    if not ret:
+        exit()
     gray = cv2.cvtColor(frame, cv2.COLOR_RGB2GRAY)
     mask = np.zeros(gray.shape, np.uint8)
     if (isFirst):
