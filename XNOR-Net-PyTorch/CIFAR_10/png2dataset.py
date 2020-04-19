@@ -8,6 +8,7 @@ import torch
 from torch.utils.data import Dataset
 
 import MCDWrapper
+from multiBlobDetector import multiObjectFrame
 
 
 class ImageDataset(Dataset):
@@ -125,7 +126,7 @@ class ImageDataset_python(Dataset):
         return frame, 3
 
 
-class MultiImageDataset(Dataset):
+class ImageDataset_multi(Dataset):
     '''
     TODO: need to be clever about how to properly load images.
     One image may have multiple objects to classify, so we will
@@ -133,7 +134,7 @@ class MultiImageDataset(Dataset):
     or not use a dataloader and instead simply call the forward pass on the
     network ourselves.
     '''
-    def __init__(self, root_dir, thresh=150, transform=None):
+    def __init__(self, root_dir, lazylabel=3, transform=None):
         """
         Args:
             root_dir (string): Directory with all the images.
@@ -146,8 +147,10 @@ class MultiImageDataset(Dataset):
                 self.image_files.append(filename)
         self.image_files = sorted(self.image_files)
         self.root_dir = root_dir
-        self.thresh = thresh
         self.transform = transform
+
+        # If no ground truth for each frame, use lazy label
+        self.lazylabel = lazylabel
 
     def __len__(self):
         return len(self.image_files) // 2
@@ -155,6 +158,7 @@ class MultiImageDataset(Dataset):
     def __getitem__(self, idx):
         if torch.is_tensor(idx):
             idx = idx.tolist()
+        data_label_list = []
 
         # Load Image
         img_name = os.path.join(self.root_dir, self.image_files[2 * idx + 1])
@@ -162,24 +166,32 @@ class MultiImageDataset(Dataset):
 
         # Load Mask
         mask_name = os.path.join(self.root_dir, self.image_files[2 * idx])
-        mask = cv2.imread(mask_name)
-        mask = cv2.cvtColor(mask, cv2.COLOR_BGR2GRAY)
+        mask = cv2.imread(mask_name, cv2.IMREAD_GRAYSCALE)
 
-        x, y, w, h = cv2.boundingRect(mask)
+        rects = multiObjectFrame(mask)
 
-        crop_image = image[y:y + h, x:x + w, :]
-        if crop_image.size != 0:
-            image = cv2.resize(crop_image, (32, 32))
-        else:
-            image = cv2.resize(image, (32, 32))
-        cv2.imshow('image', image)
-        cv2.waitKey(10)
-        image = Image.fromarray(image)
+        for rect in rects:
+            x, y, w, h = cv2.boundingRect(mask)
 
-        if self.transform:
-            image = self.transform(image)
+            roi = image[y:y + h, x:x + w, :]
+            if roi.size != 0:
+                roi = cv2.resize(roi, (32, 32))
+            else:
+                roi = cv2.resize(roi, (32, 32))
+            cv2.imshow('roi', roi)
+            cv2.waitKey(10)
+            roi = Image.fromarray(roi)
 
-        return image, 3
+            if self.transform:
+                roi = self.transform(roi)
+            
+            # label everything as a cat (3)
+            label = 0
+            if self.lazylabel:
+                label = self.lazylabel
+            data_label_list.append((roi, label))
+
+        return data_label_list
 
 
 # Run as standalone to get images of dataset

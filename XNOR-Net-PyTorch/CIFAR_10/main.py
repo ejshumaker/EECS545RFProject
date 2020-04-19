@@ -15,7 +15,7 @@ from torchvision import transforms
 from models import nin
 from torch.autograd import Variable
 
-from png2dataset import ImageDataset, ImageDataset_python
+from png2dataset import ImageDataset, ImageDataset_python, ImageDataset_multi
 
 
 def save_state(model, best_acc):
@@ -94,6 +94,44 @@ def test(loader):
     return
 
 
+def test_multi(loader):
+    global best_acc
+    model.eval()
+    test_loss = 0
+    correct = 0
+    bin_op.binarization()
+
+    num_evals = 0
+    for data_label_list in loader:
+        for data_label in data_label_list:
+            data, target = data_label
+            if args.cuda:
+                data, target = data.cuda(), target.cuda()
+            data, target = Variable(data), Variable(target)
+                                        
+            output = model(data)
+            test_loss += criterion(output, target).data.item()
+            num_evals += 1
+            pred = output.data.max(1, keepdim=True)[1]
+            if args.cuda:
+                correct += pred.eq(target.data.view_as(pred)).cpu().sum()
+            else:
+                correct += pred.eq(target.data.view_as(pred)).sum()
+    bin_op.restore()
+    acc = 100. * float(correct) / num_evals
+
+    if acc > best_acc:
+        best_acc = acc
+        save_state(model, best_acc)
+
+    test_loss /= num_evals
+    print('\nTest set: Average loss: {:.4f}, Accuracy: {}/{} ({:.2f}%)'.format(
+        test_loss * 128., correct, num_evals,
+        100. * float(correct) / num_evals))
+    print('Best Accuracy: {:.2f}%\n'.format(best_acc))
+    return
+
+
 def adjust_learning_rate(optimizer, epoch):
     update_list = [120, 200, 240, 280]
     if epoch in update_list:
@@ -121,6 +159,8 @@ if __name__ == '__main__':
                         default='data/cheetah_results', help='whether to run on fastMCD data')
     parser.add_argument('--python_fastMCD', action='store', default=None,
                         help='whether to use python fastMCD on data or not')
+    parser.add_argument('--multi_fastMCD', action='store', default=None,
+                        help='whether to use multi object fastMCD detection')
     args = parser.parse_args()
     print('==> Options:', args)
 
@@ -150,6 +190,9 @@ if __name__ == '__main__':
     if args.python_fastMCD:
         proj_loader = torch.utils.data.DataLoader(
             ImageDataset_python(args.python_fastMCD, thresh=160, transform=tform), shuffle=True)
+    if args.multi_fastMCD:
+        proj_loader = torch.utils.data.DataLoader(
+            ImageDataset_multi(args.multi_fastMCD, transform=tform), shuffle=True) 
 
     # define classes
     classes = ('plane', 'car', 'bird', 'cat', 'deer', 'dog', 'frog', 'horse', 'ship', 'truck')
@@ -198,6 +241,9 @@ if __name__ == '__main__':
     bin_op = util.BinOp(model)
 
     # do the evaluation if specified
+    if args.multi_fastMCD:
+        test_multi(proj_loader)
+        exit(0)
     if args.python_fastMCD:
         test(proj_loader)
         exit(0)

@@ -14,9 +14,9 @@ def proofOfConcept():
     contours, hierarchy = cv2.findContours(img, cv2.RETR_TREE, cv2.CHAIN_APPROX_SIMPLE)
 
     for contour in contours:
-        x, y, dx, dy = cv2.boundingRect(contour)
-        if dx > 10 and dy > 10:
-            cv2.rectangle(orig, (x, y), (x + dx, y + dy), (0, 255, 0))
+        x, y, w, h = cv2.boundingRect(contour)
+        if w > 10 and h > 10:
+            cv2.rectangle(orig, (x, y), (x + w, y + h), (0, 255, 0))
 
     # create an empty image for contours
     img_contours = orig.copy()
@@ -25,35 +25,60 @@ def proofOfConcept():
     cv2.waitKey(0)
 
 
-def nonMaxSuppression(boundingBoxes, inter=10):
+def nonMaxSuppression(boundingBoxes, slack=10):
     ''' Remove bounding boxes which are encapsulated by others, or within 10 pixels'''
-    suppress_list = []
-    keep_list = []
+    keepBoxes = []
 
-    for i in range(len(boundingBoxes)):
-        if i in suppress_list:
-            continue
+    # Sort tuples by area, descending
+    candidateBoxes = sorted(boundingBoxes, key=lambda x: x[2] * x[3])[::-1]
+    merged = True
+    while merged and len(candidateBoxes) > 0:
+        merged = False
+        keepBoxes = []
+        suppressBoxes = []
+        for i in range(len(candidateBoxes)):
+            if i in suppressBoxes:
+                continue
 
-        x_i, y_i, dx_i, dy_i = boundingBoxes[i]
-        
-        for j in range(i + 1, len(boundingBoxes)):
-            # check if rect i contains/overlaps with rect j
-            x_j, y_j, dx_j, dy_j = boundingBoxes[j]
+            x_i, y_i, w_i, h_i = candidateBoxes[i]
             
-            min_x = min(x_i, x_j)
-            max_x = max(x_i + dx_i, x_j + dx_j)
-            min_y = min(y_i, y_j)
-            max_y = max(y_i + dy_i, y_j + dy_j)
+            for j in range(i + 1, len(candidateBoxes)):
+                # check if rect i contains/overlaps with rect j
+                x_j, y_j, w_j, h_j = candidateBoxes[j]
+                
+                min_x = min(x_i, x_j)
+                max_x = max(x_i + w_i, x_j + w_j)
+                min_y = min(y_i, y_j)
+                max_y = max(y_i + h_i, y_j + h_j)
 
-            if (((x_j <= x_i and x_i < x_j + dx_j + inter) or (x_i <= x_j and x_j < x_i + dx_i + inter)) and
-                ((y_j <= y_i and y_i < y_j + dy_j + inter) or (y_i <= y_j and y_j < y_i + dy_i + inter))):
-                # OVERLAPPING RECTS
-                x_i, y_i, dx_i, dy_i = (min_x, min_y, max_x - min_x, max_y - min_y)
-                suppress_list.append(j)
+                if (((x_j <= x_i and x_i < x_j + w_j + slack) or (x_i <= x_j and x_j < x_i + w_i + slack)) and
+                    ((y_j <= y_i and y_i < y_j + h_j + slack) or (y_i <= y_j and y_j < y_i + h_i + slack))):
+                    # OVERLAPPING RECTS
+                    x_i, y_i, w_i, h_i = (min_x, min_y, max_x - min_x, max_y - min_y)
+                    suppressBoxes.append(j)
+                    merged = True
+            
+            keepBoxes.append((x_i, y_i, w_i, h_i))
         
-        keep_list.append((x_i, y_i, dx_i, dy_i))
+        candidateBoxes = keepBoxes
     
-    return keep_list
+    return keepBoxes
+
+
+def multiObjectFrame(mask, blobSizeThresh=20):
+    # Find contours
+    contours, hierarchy = cv2.findContours(mask, cv2.RETR_TREE, cv2.CHAIN_APPROX_SIMPLE)
+
+    # remove small blobs
+    rects = []
+    for contour in contours:
+        x, y, w, h = cv2.boundingRect(contour)
+        if w > blobSizeThresh and h > blobSizeThresh:
+            rects.append((x, y, w, h))
+
+    # combine inetersection blobs
+    nonOverlappingRects = nonMaxSuppression(rects)
+    return nonOverlappingRects
 
 
 def multiObjectVideo(dir_name='data/cheetah_results'):
@@ -78,25 +103,12 @@ def multiObjectVideo(dir_name='data/cheetah_results'):
         # Load Mask
         mask_name = os.path.join(dir_name, image_files[2 * i])
         mask = cv2.imread(mask_name, cv2.IMREAD_GRAYSCALE)
-
-        # find contours
-        contours, hierarchy = cv2.findContours(mask, cv2.RETR_TREE, cv2.CHAIN_APPROX_SIMPLE)
-
-        # remove small blobs
-        rects = []
-        for contour in contours:
-            x, y, dx, dy = cv2.boundingRect(contour)
-            if dx > 20 and dy > 20:
-                rects.append((x, y, dx, dy))
-                cv2.rectangle(image, (x, y), (x + dx, y + dy), (255, 0, 0))
-
         
-        # combine inetersection blobs
-        nonOverlappingRects = nonMaxSuppression(rects)
+        nonOverlappingRects = multiObjectFrame(mask)
 
         for rect in nonOverlappingRects:
-            x, y, dx, dy = rect
-            cv2.rectangle(image, (x, y), (x + dx, y + dy), (0, 255, 0))
+            x, y, w, h = rect
+            cv2.rectangle(image, (x, y), (x + w, y + h), (0, 255, 0))
 
         cv2.imshow('image', image)
         cv2.imshow('mask', mask)
