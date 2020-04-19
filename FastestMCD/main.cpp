@@ -2,6 +2,7 @@
 #include <opencv2/videoio.hpp>
 #include <opencv2/highgui.hpp>
 #include <iostream>
+#include <fstream>
 #include <stdio.h>
 #include <chrono>
 #include "FastMCD.h"
@@ -19,13 +20,20 @@ int main(int argc, char **argv){
 
 	//Create fastMCD Object -------------------------------------------------
 	FastMCD bgs(cfg);
-
-
-
 	cv::Mat frame;
+
+
 	//--- INITIALIZE VIDEOCAPTURE
 	cv::VideoCapture cap;
 	cap.open(cfg.video_path);
+	
+	//--- INITIALIZE CSV
+	std::ofstream timeFile;
+	timeFile.open("timeFile.csv");
+	timeFile << "PreProcess, KLT, parallelBlock, parallelUpdate" << std::endl;
+	
+	
+	
 	// check if we succeeded
 	if (!cap.isOpened()) {
 		std::cerr << "ERROR! Unable to open camera\n";
@@ -61,55 +69,62 @@ int main(int argc, char **argv){
 	
 		if(i == 0){
 			bgs.init(frame);
-		printf("INIT \n");
 		}
 		else{
 			auto start = std::chrono::high_resolution_clock::now();
 			cv::Mat grayImage;
 			cv::cvtColor(frame, grayImage, CV_BGR2GRAY, 1);
 			cv::Mat blurImage;
-			cv::GaussianBlur(grayImage, blurImage, cv::Size(5, 5), 0, 0);
+			cv::medianBlur(grayImage, blurImage, 5);
 			auto end = std::chrono::high_resolution_clock::now();
-			float time_pp = std::chrono::duration_cast<std::chrono::milliseconds>(end - start).count();
+			float time_pp = std::chrono::duration_cast<std::chrono::microseconds>(end - start).count()/1000.0;
 
 			start = std::chrono::high_resolution_clock::now();
 			IplImage* ipl_img = cvCloneImage(&(IplImage)blurImage);
-			//cv::imshow("Gray Blur", blurImage);
-
 			//cv::Mat testImage = cv::Mat::zeros(blurImage.size(), CV_32FC1);
 			//bgs.testAccess(testImage);
 			//cv::imshow("Test Access", testImage);
 			//cv::imwrite("test.png", testImage);
-			
-			
 			bgs.m_LucasKanade.RunTrack(ipl_img, 0);
 			bgs.m_LucasKanade.GetHomography(bgs.m_h);
-			bgs.blockInterpolation(bgs.m_h);
 			end = std::chrono::high_resolution_clock::now();
-			float time_mocomp = std::chrono::duration_cast<std::chrono::milliseconds>(end - start).count();
-
-			//bgs.model_means.copyTo(bgs.temp_means);
-			//bgs.model_vars.copyTo(bgs.temp_vars);
-			//bgs.model_age.copyTo(bgs.temp_age);
+			float time_klt = std::chrono::duration_cast<std::chrono::microseconds>(end - start).count() / 1000.0;
+			
+			start = std::chrono::high_resolution_clock::now();
+			//bgs.blockInterpolation(bgs.m_h);
+			bgs.model_means.copyTo(bgs.temp_means);
+			bgs.model_vars.copyTo(bgs.temp_vars);
+			bgs.model_age.copyTo(bgs.temp_age);
+			end = std::chrono::high_resolution_clock::now();
+			float time_parallelBlock = std::chrono::duration_cast<std::chrono::microseconds>(end - start).count() / 1000.0;
 
 			start = std::chrono::high_resolution_clock::now();
 			bgs.updateModels(blurImage);
 			end = std::chrono::high_resolution_clock::now();
-			float time_update = std::chrono::duration_cast<std::chrono::milliseconds>(end - start).count();
-			std::printf("PP: %f BI: %f UPT: %f \n", time_pp, time_mocomp, time_update);
+			float time_update = std::chrono::duration_cast<std::chrono::microseconds>(end - start).count() / 1000.0;
+			std::printf("PP: %f KLT: %f ||Block %f UPT: %f \n", time_pp, time_klt, time_parallelBlock, time_update);
+			timeFile << time_pp << "," << time_klt << "," << time_parallelBlock << "," << time_update << std::endl;
+
 #if VIDEO_OUT
 			klt_output << bgs.displayKLT(frame);
 #endif		
+
 		}
-		bgs.displayKLT(frame);
+		//bgs.displayKLT(frame);
 		bgs.displayMeans(frame);
 		bgs.displayVars(frame);
 		bgs.displayAge(frame);
 		bgs.displayMask();
+		bgs.displayUpdates(frame);
+		bgs.model_updates = cv::Mat::zeros(bgs.model_dims, CV_32FC2);
 
+		cv::imwrite("CurrentMask.png", bgs.output_mask);
+		printf("Processed frame [%d] \n", i);
 		cv::waitKey(1);
+		if (i >= 134)
+			cv::waitKey(0);
 	}
 	// the camera will be deinitialized automatically in VideoCapture destructor
-	
+	timeFile.close();
 	return 0;
 }

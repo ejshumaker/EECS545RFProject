@@ -13,7 +13,7 @@ bool FastMCD::init(cv::Mat firstImg) {
 	model_means = cv::Mat::zeros(model_dims, CV_32FC2);
 	model_age = cv::Mat::zeros(model_dims, CV_32FC2);
 	model_vars = cv::Mat::zeros(model_dims, CV_32FC2);
-
+	model_updates = cv::Mat::zeros(model_dims, CV_32FC2);
 	//second, we initialize the Interpolation ParallelLoopBody
 	m_h[0] = 1.0;
 	m_h[1] = 0.0;
@@ -41,7 +41,7 @@ bool FastMCD::init(cv::Mat firstImg) {
 	output_mask = cv::Mat::zeros(blurImage.size(), CV_8UC1);
 	parallelUpdate = ParallelUpdate(model_dims, m_cfg.block_size, &model_means, &model_vars, &model_age,
 		&temp_means, &temp_vars, &temp_age,
-		m_cfg.min_vars, m_cfg.max_age, m_cfg.theta_s, m_cfg.theta_d, m_cfg.init_vars, &output_mask);
+		m_cfg.min_vars, m_cfg.max_age, m_cfg.theta_s, m_cfg.theta_d, m_cfg.init_vars, &output_mask, &model_updates);
 	updateModels(blurImage);
 	
 
@@ -103,27 +103,53 @@ cv::Mat FastMCD::displayKLT(cv::Mat& image) {
 cv::Mat FastMCD::displayMeans(cv::Mat& image) {
 	cv::Mat means[2];
 	cv::split(model_means, means);
+	cv::Mat image_means[2];
+	cv::Mat image_model_means = cv::Mat::zeros(image.size(), CV_8UC1);
+	cv::Mat image_cand_means = cv::Mat::zeros(image.size(), CV_8UC1);
+	image_means[0] = image_model_means;
+	image_means[1] = image_cand_means;
 
-	cv::resize(means[0], means[0], image.size());
-	cv::resize(means[1], means[1], image.size());
+	int block_size = m_cfg.block_size;
+	int val = 0;
+	for (int y = 0; y < model_dims.height; y++)
+		for (int x = 0; x < model_dims.width; x++)
+			for (int c = 0; c < 2; c++) {
+				val = uchar(means[c].at<float>(y, x));
+
+				for (int jj = 0; jj < block_size; jj++) {
+					int idx_j = y*block_size + jj;
+					for (int ii = 0; ii < block_size; ii++) {
+						int idx_i = x*block_size + ii;
+						if (idx_i < 0 || idx_i >= image.cols || idx_j < 0 || idx_j >= image.rows)
+							continue;
+						image_means[c].at<uchar>(idx_j, idx_i) = val;
+					}
+				}
+
+			}
 	
-	cv::imshow("Model Mean", means[0]/255.0);
-	cv::imshow("Cand Mean", means[1]/255.0);
+	cv::imshow("Model Mean", image_means[0]);
+	cv::imshow("Cand Mean", image_means[1]);
 	cv::waitKey(1);
-	return means[0];
+	return image_means[0];
 }
 
 cv::Mat FastMCD::displayVars(cv::Mat& image) {
 	cv::Mat vars[2];
 	cv::split(model_vars, vars);
-
-	cv::resize(vars[0], vars[0], image.size());
-	cv::resize(vars[1], vars[1], image.size());
 	
-	for (int i = 0; i < vars[0].rows; i++) {
-		for (int j = 0; j < vars[0].cols; j++) {
+	cv::Mat image_vars[2];
+	cv::Mat image_model_vars = cv::Mat::zeros(image.size(), CV_8UC1);
+	cv::Mat image_cand_vars = cv::Mat::zeros(image.size(), CV_8UC1);
+	image_vars[0] = image_model_vars;
+	image_vars[1] = image_cand_vars;
+
+	int block_size = m_cfg.block_size;
+	int val = 0;
+	for(int y = 0; y < model_dims.height; y++)
+		for( int x = 0; x < model_dims.width; x++)
 			for (int c = 0; c < 2; c++) {
-				int val = vars[c].at<float>(i, j);
+				val = vars[c].at<float>(y, x);
 				float out = 0;
 				if (val < 100)
 					out = 0;
@@ -137,32 +163,92 @@ cv::Mat FastMCD::displayVars(cv::Mat& image) {
 					out = 200;
 				else
 					out = 255;
-				
-				vars[c].at<float>(i, j) = out;
+
+				for (int jj = 0; jj < block_size; jj++) {
+					int idx_j = y*block_size + jj;
+					for (int ii = 0; ii < block_size; ii++) {
+						int idx_i = x*block_size + ii;
+						if (idx_i < 0 || idx_i >= image.cols || idx_j < 0 || idx_j >= image.rows)
+							continue;
+						image_vars[c].at<uchar>(idx_j, idx_i) = out;
+					}
+				}
+
 			}
-		}
-	}
 
-
-	cv::imshow("Model Vars", vars[0] / 255.0);
-	cv::imshow("Cand Vars", vars[1] / 255.0);
+	cv::imshow("Model Vars", image_vars[0]);
+	cv::imshow("Cand Vars", image_vars[1]);
 	cv::waitKey(1);
-	return vars[0];
+	return image_vars[0];
 }
 
 cv::Mat FastMCD::displayAge(cv::Mat& image) {
 	cv::Mat age[2];
 	cv::split(model_age, age);
+	cv::Mat image_age[2];
+	cv::Mat image_model_age = cv::Mat::zeros(image.size(), CV_8UC1);
+	cv::Mat image_cand_age = cv::Mat::zeros(image.size(), CV_8UC1);
+	image_age[0] = image_model_age;
+	image_age[1] = image_cand_age;
 
-	cv::resize(age[0], age[0], image.size());
-	cv::resize(age[1], age[1], image.size());
+	int block_size = m_cfg.block_size;
+	int val = 0;
+	for (int y = 0; y < model_dims.height; y++)
+		for (int x = 0; x < model_dims.width; x++)
+			for (int c = 0; c < 2; c++) {
+				val = uchar(age[c].at<float>(y, x));
 
-	cv::imshow("Model Age", (age[0]*(255/30.0)) / 255.0);
-	cv::imshow("Cand Age", (age[1]*(255/30.0)) / 255.0);
+				for (int jj = 0; jj < block_size; jj++) {
+					int idx_j = y*block_size + jj;
+					for (int ii = 0; ii < block_size; ii++) {
+						int idx_i = x*block_size + ii;
+						if (idx_i < 0 || idx_i >= image.cols || idx_j < 0 || idx_j >= image.rows)
+							continue;
+						image_age[c].at<uchar>(idx_j, idx_i) = int(val * (255/30.0));
+					}
+				}
+
+			}
+	cv::imshow("Model Age", image_age[0]);
+	cv::imshow("Cand Age", image_age[1]);
 	cv::waitKey(1);
-	return age[0];
+	return image_age[0];
 
 }
+
+void FastMCD::displayUpdates(cv::Mat& image) {
+	cv::Mat updates[2];
+	cv::split(model_updates, updates);
+	cv::Mat image_updates[2];
+	cv::Mat image_model_updates = cv::Mat::zeros(image.size(), CV_8UC1);
+	cv::Mat image_cand_updates = cv::Mat::zeros(image.size(), CV_8UC1);
+	image_updates[0] = image_model_updates;
+	image_updates[1] = image_cand_updates;
+
+	int block_size = m_cfg.block_size;
+	float val = 0;
+	for (int y = 0; y < model_dims.height; y++)
+		for (int x = 0; x < model_dims.width; x++)
+			for (int c = 0; c < 2; c++) {
+				val = updates[c].at<float>(y, x);
+
+				for (int jj = 0; jj < block_size; jj++) {
+					int idx_j = y*block_size + jj;
+					for (int ii = 0; ii < block_size; ii++) {
+						int idx_i = x*block_size + ii;
+						if (idx_i < 0 || idx_i >= image.cols || idx_j < 0 || idx_j >= image.rows)
+							continue;
+						image_updates[c].at<uchar>(idx_j, idx_i) = int(val);
+					}
+				}
+
+			}
+	cv::imshow("Updates", image_updates[0]);
+	cv::waitKey(1);
+
+}
+
+
 cv::Mat FastMCD::displayMask() {
 	cv::imshow("Mask", output_mask);
 	cv::waitKey(1);

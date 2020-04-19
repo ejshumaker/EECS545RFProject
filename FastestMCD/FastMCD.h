@@ -181,11 +181,10 @@ public:
 					float* neigh_age_row_ptr = model_age->ptr<float>(neigh_Y);
 
 					//Record the weighted mean and age for this neighbor
-					neigh_means[0][0] = neigh_weights[0] * neigh_mean_row_ptr[2 * neigh_X];
-					neigh_means[0][1] = neigh_weights[0] * neigh_mean_row_ptr[2 * neigh_X + 1];
-
-					neigh_ages[0][0] = neigh_weights[0] * neigh_age_row_ptr[2 * neigh_X];
-					neigh_ages[0][1] = neigh_weights[0] * neigh_age_row_ptr[2 * neigh_X + 1];
+					for (int c = 0; c < model_means->channels(); c++) {
+						neigh_means[0][c] = neigh_weights[0] * neigh_mean_row_ptr[2 * neigh_X + c];
+						neigh_ages[0][c] = neigh_weights[0] * neigh_age_row_ptr[2 * neigh_X + c];
+					}
 				}
 			}
 			//Height Neighbor (idx = 1)
@@ -201,11 +200,10 @@ public:
 					float* neigh_age_row_ptr = model_age->ptr<float>(neigh_Y);
 
 					//Record the weighted mean and age for this neighbor
-					neigh_means[1][0] = neigh_weights[1] * neigh_mean_row_ptr[2 * neigh_X];
-					neigh_means[1][1] = neigh_weights[1] * neigh_mean_row_ptr[2 * neigh_X + 1];
-
-					neigh_ages[1][0] = neigh_weights[1] * neigh_age_row_ptr[2 * neigh_X];
-					neigh_ages[1][1] = neigh_weights[1] * neigh_age_row_ptr[2 * neigh_X + 1];
+					for (int c = 0; c < model_means->channels(); c++) {
+						neigh_means[1][c] = neigh_weights[1] * neigh_mean_row_ptr[2 * neigh_X + c];
+						neigh_ages[1][c] = neigh_weights[1] * neigh_age_row_ptr[2 * neigh_X + c];
+					}
 				}
 			}
 			//Diag Neighbor (idx = 2)
@@ -222,11 +220,10 @@ public:
 					float* neigh_age_row_ptr = model_age->ptr<float>(neigh_Y);
 
 					//Record the weighted mean and age for this neighbor
-					neigh_means[2][0] = neigh_weights[2] * neigh_mean_row_ptr[2 * neigh_X];
-					neigh_means[2][1] = neigh_weights[2] * neigh_mean_row_ptr[2 * neigh_X + 1];
-
-					neigh_ages[2][0] = neigh_weights[2] * neigh_age_row_ptr[2 * neigh_X];
-					neigh_ages[2][1] = neigh_weights[2] * neigh_age_row_ptr[2 * neigh_X + 1];
+					for (int c = 0; c < model_means->channels(); c++) {
+						neigh_means[2][c] = neigh_weights[2] * neigh_mean_row_ptr[2 * neigh_X + c];
+						neigh_ages[2][c] = neigh_weights[2] * neigh_age_row_ptr[2 * neigh_X + c];
+					}
 				}
 			}
 			//Self (idx = 3)
@@ -241,11 +238,10 @@ public:
 					float* neigh_age_row_ptr = model_age->ptr<float>(neigh_Y);
 
 					//Record the weighted mean and age for this neighbor
-					neigh_means[3][0] = neigh_weights[3] * neigh_mean_row_ptr[2 * neigh_X];
-					neigh_means[3][1] = neigh_weights[3] * neigh_mean_row_ptr[2 * neigh_X + 1];
-
-					neigh_ages[3][0] = neigh_weights[3] * neigh_age_row_ptr[2 * neigh_X];
-					neigh_ages[3][1] = neigh_weights[3] * neigh_age_row_ptr[2 * neigh_X + 1];
+					for (int c = 0; c < model_means->channels(); c++) {
+						neigh_means[3][c] = neigh_weights[3] * neigh_mean_row_ptr[2 * neigh_X + c];
+						neigh_ages[3][c] = neigh_weights[3] * neigh_age_row_ptr[2 * neigh_X + c];
+					}
 				}
 			}
 
@@ -395,7 +391,7 @@ public:
 
 	ParallelUpdate(cv::Size _model_dims, int _block_size, cv::Mat* _model_means, cv::Mat* _model_vars, cv::Mat* _model_age,
 		cv::Mat* _temp_means, cv::Mat* _temp_vars, cv::Mat* _temp_age,
-		float _min_vars, float _max_age, float _theta_s, float _theta_d, float _init_vars, cv::Mat* _output) {
+		float _min_vars, float _max_age, float _theta_s, float _theta_d, float _init_vars, cv::Mat* _output, cv::Mat* _model_updates) {
 		model_dims = _model_dims;
 		block_size = _block_size;
 		model_means = _model_means;
@@ -411,6 +407,7 @@ public:
 		output = _output;
 		theta_d = _theta_d;
 		init_vars = _init_vars;
+		model_updates = _model_updates;
 	}
 
 	void setCurrentFrame(cv::Mat* _frame) {
@@ -427,6 +424,9 @@ public:
 			//Get Block XY from Index
 			int b_Y = r / (model_width); //Rows
 			int b_X = r % (model_width); //Columns
+
+			//if (b_Y == 34 && b_X == 28)
+		//		std::cout << "hit debug block" << std::endl;
 
 			float* model_mean_row_ptr = model_means->ptr<float>(b_Y);
 			float* model_age_row_ptr = model_age->ptr<float>(b_Y);
@@ -457,10 +457,10 @@ public:
 			//Is there a world where after model mixing we have a candidate with higher age?
 			//Mayyyyyybe 
 			
-			//if (r == 5){
-				//printf("Temp Model Mean: [%f] Model Vars: [%f] Model Age [%f] \n", temp_mean_row_ptr[2 * b_X], temp_vars_row_ptr[2 * b_X], temp_age_row_ptr[2 * b_X]);
- 				//printf("Temp Cand Mean: [%f] Cand Vars: [%f] Cand Age [%f] \n", temp_mean_row_ptr[2 * b_X + 1], temp_vars_row_ptr[2 * b_X + 1], temp_age_row_ptr[2 * b_X + 1]);
-			//}
+		if (r == 2748){
+				printf("Temp Model Mean: [%f] Model Vars: [%f] Model Age [%f] \n", temp_mean_row_ptr[2 * b_X], temp_vars_row_ptr[2 * b_X], temp_age_row_ptr[2 * b_X]);
+ 				printf("Temp Cand Mean: [%f] Cand Vars: [%f] Cand Age [%f] \n", temp_mean_row_ptr[2 * b_X + 1], temp_vars_row_ptr[2 * b_X + 1], temp_age_row_ptr[2 * b_X + 1]);
+		}
 
 			if (temp_age_row_ptr[2 * b_X] < temp_age_row_ptr[2 * b_X + 1]) {
 				temp_mean_row_ptr[2 * b_X] = temp_mean_row_ptr[2 * b_X + 1];
@@ -471,10 +471,10 @@ public:
 				temp_mean_row_ptr[2 * b_X + 1] = init_vars;
 				temp_mean_row_ptr[2 * b_X + 1] = 0;
 			
-				//if (r == 5) {
-					//printf("Switch Model Mean: [%f] Model Vars: [%f] Model Age [%f] \n", temp_mean_row_ptr[2 * b_X], temp_vars_row_ptr[2 * b_X], temp_age_row_ptr[2 * b_X]);
-					//printf("Switch Cand Mean: [%f] Cand Vars: [%f] Cand Age [%f] \n", temp_mean_row_ptr[2 * b_X + 1], temp_vars_row_ptr[2 * b_X + 1], temp_age_row_ptr[2 * b_X + 1]);
-				//}
+				if (r == 2748) {
+					printf("Switch Model Mean: [%f] Model Vars: [%f] Model Age [%f] \n", temp_mean_row_ptr[2 * b_X], temp_vars_row_ptr[2 * b_X], temp_age_row_ptr[2 * b_X]);
+					printf("Switch Cand Mean: [%f] Cand Vars: [%f] Cand Age [%f] \n", temp_mean_row_ptr[2 * b_X + 1], temp_vars_row_ptr[2 * b_X + 1], temp_age_row_ptr[2 * b_X + 1]);
+				}
 			}
 
 
@@ -484,6 +484,18 @@ public:
 			bool cand_match = std::pow(M - temp_mean_row_ptr[2 * b_X + 1], 2) < theta_s * temp_vars_row_ptr[b_X + 1] ? true : false;
 
 			if (model_match) {
+				float* model_updates_ptr = model_updates->ptr<float>(b_Y);
+				model_updates_ptr[2*b_X] = 255;
+				//Calculate Model Mean
+				float age = temp_age_row_ptr[2 * b_X];
+				float age_weight = age / (age + 1.0);
+				if (age < 1.0) {
+					model_mean_row_ptr[2 * b_X] = M;
+				}
+				else {
+					model_mean_row_ptr[2 * b_X] = temp_mean_row_ptr[2 * b_X] * age_weight + M*(1.0 - age_weight);
+				}
+
 				//Calculate Current Block Variance -----------------------------------------------
 				float S = 0;
 				for (int jj = 0; jj < block_size; jj++) {
@@ -493,25 +505,19 @@ public:
 						if (idx_i < 0 || idx_i >= frame->cols || idx_j < 0 || idx_j >= frame->rows)
 							continue;
 						uchar* frame_row_ptr = frame->ptr<uchar>(idx_j);
-						S = std::max(float(std::pow(frame_row_ptr[idx_i] - temp_mean_row_ptr[2 * b_X], 2.0)), S);
+						if (r == 2748) {
+							printf("Frame Value: %d \n", frame_row_ptr[idx_i]);
+						}
+						S = std::max(float(std::pow(frame_row_ptr[idx_i] - model_mean_row_ptr[2 * b_X], 2.0)), S);
 					}
 				}
-
-				float age_weight = temp_age_row_ptr[2*b_X] / (temp_age_row_ptr[2*b_X] + 1);
-				//If age < 1, treat as age 0
-				//Might want to do this in the model mixing
 				
-				//Update Model with Image Interpolated Temps AND Current Block 
-				if (age_weight < 0.5) {
-					model_mean_row_ptr[2*b_X] = M;
-					if (age_weight == 0)
-						model_vars_row_ptr[2 * b_X] = init_vars;
-					else
-						model_vars_row_ptr[2*b_X] = std::max(S, min_vars);
+				//Update Model Variance
+				if (age == 0) {
+					model_vars_row_ptr[2 * b_X] = std::max(init_vars,S);
 				}
 				else {
-					model_mean_row_ptr[2*b_X] = temp_mean_row_ptr[2*b_X] * age_weight + M*(1 - age_weight);
-					model_vars_row_ptr[2*b_X] = std::max(temp_vars_row_ptr[2*b_X] * age_weight + S*(1 - age_weight), min_vars);
+					model_vars_row_ptr[2*b_X] = std::max(float(temp_vars_row_ptr[2*b_X] * age_weight + S*(1.0 - age_weight)), min_vars);
 				}
 
 				model_age_row_ptr[2 * b_X] = std::min(temp_age_row_ptr[2 * b_X] + 1, max_age);
@@ -522,6 +528,16 @@ public:
 				model_age_row_ptr[2 * b_X + 1] = temp_age_row_ptr[2 * b_X + 1];
 			}
 			else if (!model_match && cand_match) {
+				//Calculate Candidate Mean
+				float age = temp_age_row_ptr[2 * b_X + 1];
+				float age_weight = age / (age + 1.0);
+				if (age < 1.0) {
+					model_mean_row_ptr[2 * b_X + 1] = M;
+				}
+				else {
+					model_mean_row_ptr[2 * b_X + 1] = temp_mean_row_ptr[2 * b_X + 1] * age_weight + M*(1.0 - age_weight);
+				}
+
 				//Calculate Current Block Variance -----------------------------------------------
 				float S = 0;
 				for (int jj = 0; jj < block_size; jj++) {
@@ -531,25 +547,16 @@ public:
 						if (idx_i < 0 || idx_i >= frame->cols || idx_j < 0 || idx_j >= frame->rows)
 							continue;
 						uchar* frame_row_ptr = frame->ptr<uchar>(idx_j);
-						S = std::max(float(std::pow(frame_row_ptr[idx_i] - temp_mean_row_ptr[2 * b_X + 1], 2.0)), S);
+						S = std::max(float(std::pow(frame_row_ptr[idx_i] - model_mean_row_ptr[2 * b_X + 1], 2.0)), S);
 					}
 				}
 
-				float age_weight = temp_age_row_ptr[2 * b_X + 1] / (temp_age_row_ptr[2 * b_X + 1] + 1);
-				//If age < 1, treat as age 0
-				//Might want to do this in the model mixing
-
-				//Update Candidate Model with Interpolated Temps AND Current Block
-				if (age_weight < 0.5) {
-					model_mean_row_ptr[2 * b_X + 1] = M;
-					if(age_weight == 0)
-						model_vars_row_ptr[2 * b_X + 1] = init_vars;
-					else
-						model_vars_row_ptr[2 * b_X + 1] = std::max(S, min_vars);
+				//Update Candidate Variance
+				if (age == 0) {
+					model_vars_row_ptr[2 * b_X + 1] = std::max(init_vars, S);
 				}
 				else {
-					model_mean_row_ptr[2 * b_X + 1] = temp_mean_row_ptr[2 * b_X + 1] * age_weight + M*(1 - age_weight);
-					model_vars_row_ptr[2 * b_X + 1] = std::max(temp_vars_row_ptr[2 * b_X + 1] * age_weight + S*(1 - age_weight), min_vars);
+					model_vars_row_ptr[2 * b_X + 1] = std::max(float(temp_vars_row_ptr[2 * b_X + 1] * age_weight + S*(1.0 - age_weight)), min_vars);
 				}
 
 				model_age_row_ptr[2 * b_X + 1] = std::min(temp_age_row_ptr[2 * b_X + 1] + 1, max_age);
@@ -561,8 +568,22 @@ public:
 			}
 			else {
 				//Reset Candidate Model
-				model_mean_row_ptr[2*b_X + 1] = M;
-				model_vars_row_ptr[2*b_X + 1] = init_vars;
+				model_mean_row_ptr[2 * b_X + 1] = M;
+
+				//Calculate Current Block Variance -----------------------------------------------
+				float S = 0;
+				for (int jj = 0; jj < block_size; jj++) {
+					int idx_j = b_Y*block_size + jj;
+					for (int ii = 0; ii < block_size; ii++) {
+						int idx_i = b_X* block_size + ii;
+						if (idx_i < 0 || idx_i >= frame->cols || idx_j < 0 || idx_j >= frame->rows)
+							continue;
+						uchar* frame_row_ptr = frame->ptr<uchar>(idx_j);
+						S = std::max(float(std::pow(frame_row_ptr[idx_i] - model_mean_row_ptr[2 * b_X + 1], 2.0)), S);
+					}
+				}
+
+				model_vars_row_ptr[2*b_X + 1] = std::max(init_vars, S);
 				model_age_row_ptr[2*b_X + 1] = 1;
 
 				//Update Model with Image Interpolated Temps
@@ -572,14 +593,15 @@ public:
 			}
 		
 
-			//if (r == 5) {
-				//printf("Model Mean: [%f] Model Vars: [%f] Model Age [%f] \n", model_mean_row_ptr[2 * b_X], model_vars_row_ptr[2 * b_X], model_age_row_ptr[2 * b_X]);
-				//printf("Cand Mean: [%f] Cand Vars: [%f] Cand Age [%f] \n", model_mean_row_ptr[2 * b_X + 1], model_vars_row_ptr[2 * b_X + 1], model_age_row_ptr[2 * b_X + 1]);
-			//}
+		if (r == 2748) {
+				printf("Model Mean: [%f] Model Vars: [%f] Model Age [%f] \n", model_mean_row_ptr[2 * b_X], model_vars_row_ptr[2 * b_X], model_age_row_ptr[2 * b_X]);
+				printf("Cand Mean: [%f] Cand Vars: [%f] Cand Age [%f] \n", model_vars_row_ptr[2 * b_X + 1], model_vars_row_ptr[2 * b_X + 1], model_age_row_ptr[2 * b_X + 1]);
+		}
 
 			//Perform Detection ----------------------------------------------------------------
 			//I am choosing to do detection here instead of another loop because I already have every variable
 			//I need here
+			//int total = 0;
 			for (int jj = 0; jj < block_size; jj++) {
 				int idx_j = b_Y*block_size + jj;
 				for (int ii = 0; ii < block_size; ii++) {
@@ -589,8 +611,17 @@ public:
 					uchar* frame_row_ptr = frame->ptr<uchar>(idx_j);
 					uchar* output_row_ptr = output->ptr<uchar>(idx_j);
 				
-					if (model_age_row_ptr[2 * b_X] > 1)
-						output_row_ptr[idx_i] = 255 * int(std::pow(frame_row_ptr[idx_i] - model_mean_row_ptr[2 * b_X], 2) > theta_d * model_vars_row_ptr[2 * b_X]);
+					if (model_age_row_ptr[2 * b_X] > 1){
+					//	int frame_intensity = int(frame_row_ptr[idx_i]);
+					//	float mean_intensity = model_mean_row_ptr[2 * b_X];
+					//	float vars_intensity = model_vars_row_ptr[2 * b_X];
+					//	bool foreground = std::pow(frame_row_ptr[idx_i] - model_mean_row_ptr[2 * b_X], 2) > theta_d * model_vars_row_ptr[2 * b_X];
+				////		int int_fore = int(foreground);
+				//		total += int_fore;
+						output_row_ptr[idx_i] = 255 * int(std::pow(float(frame_row_ptr[idx_i]) - model_mean_row_ptr[2 * b_X], 2) > theta_d * model_vars_row_ptr[2 * b_X]);
+					//	if(r == 2748)
+						//	output_row_ptr[idx_i] = 255;
+					}
 					else
 						output_row_ptr[idx_i] = 0;
 				}
@@ -616,6 +647,7 @@ public:
 		max_age = new_model.max_age;
 		output = new_model.output;
 		init_vars = new_model.init_vars;
+		model_updates = new_model.model_updates;
 
 		return *this;
 	}
@@ -635,6 +667,7 @@ private:
 	float init_vars;
 	cv::Mat* frame;
 	cv::Mat* output;
+	cv::Mat* model_updates;
 };
 
 
@@ -651,7 +684,7 @@ public:
 	cv::Mat model_means;
 	cv::Mat model_vars;
 	cv::Mat model_age;
-
+	cv::Mat model_updates;
 	cv::Mat temp_means;
 	cv::Mat temp_vars;
 	cv::Mat temp_age;
@@ -677,6 +710,7 @@ public:
 	cv::Mat displayMeans(cv::Mat& image);
 	cv::Mat displayVars(cv::Mat& image);
 	cv::Mat displayAge(cv::Mat& image);
+	void displayUpdates(cv::Mat& image);
 	bool init(cv::Mat firstImage);
 
 
