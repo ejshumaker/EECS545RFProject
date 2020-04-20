@@ -11,6 +11,7 @@ import util
 import torch.nn as nn
 import torch.optim as optim
 from torchvision import transforms
+import warnings
 
 from models import nin
 from torch.autograd import Variable
@@ -71,8 +72,10 @@ def test(loader):
         if args.cuda:
             data, target = data.cuda(), target.cuda()
         data, target = Variable(data), Variable(target)
-                                    
-        output = model(data)
+
+        with warnings.catch_warnings():
+            warnings.simplefilter("ignore")
+            output = model(data)
         test_loss += criterion(output, target).data.item()
         pred = output.data.max(1, keepdim=True)[1]
         if args.cuda:
@@ -82,14 +85,13 @@ def test(loader):
     bin_op.restore()
     acc = 100. * float(correct) / len(loader.dataset)
 
-    if acc > best_acc:
-        best_acc = acc
-        save_state(model, best_acc)
+    # if acc > best_acc:
+    #     best_acc = acc
+    #     save_state(model, best_acc)
     
     test_loss /= len(loader.dataset)
     print('\nTest set: Average loss: {:.4f}, Accuracy: {}/{} ({:.2f}%)'.format(
-        test_loss * 128., correct, len(loader.dataset),
-        100. * float(correct) / len(loader.dataset)))
+        test_loss * 128., correct, len(loader.dataset), acc))
     print('Best Accuracy: {:.2f}%\n'.format(best_acc))
     return
 
@@ -104,30 +106,33 @@ def test_multi(loader):
     num_evals = 0
     for data_label_list in loader:
         for data_label in data_label_list:
-            data, target = data_label
-            if args.cuda:
-                data, target = data.cuda(), target.cuda()
-            data, target = Variable(data), Variable(target)
-                                        
-            output = model(data)
-            test_loss += criterion(output, target).data.item()
-            num_evals += 1
-            pred = output.data.max(1, keepdim=True)[1]
-            if args.cuda:
-                correct += pred.eq(target.data.view_as(pred)).cpu().sum()
-            else:
-                correct += pred.eq(target.data.view_as(pred)).sum()
+            with torch.no_grad():
+                data, target = data_label
+                if args.cuda:
+                    data, target = data.cuda(), target.cuda()
+                # data, target = Variable(data), Variable(target)
+
+                # Autograd Issue is in model
+                with warnings.catch_warnings():
+                    warnings.simplefilter("ignore")
+                    output = model(data)
+                test_loss += criterion(output, target).data.item()
+                num_evals += 1
+                pred = output.data.max(1, keepdim=True)[1]
+                if args.cuda:
+                    correct += pred.eq(target.data.view_as(pred)).cpu().sum()
+                else:
+                    correct += pred.eq(target.data.view_as(pred)).sum()
     bin_op.restore()
     acc = 100. * float(correct) / num_evals
 
-    if acc > best_acc:
-        best_acc = acc
-        save_state(model, best_acc)
+    # if acc > best_acc:
+    #     best_acc = acc
+    #     save_state(model, best_acc)
 
     test_loss /= num_evals
     print('\nTest set: Average loss: {:.4f}, Accuracy: {}/{} ({:.2f}%)'.format(
-        test_loss * 128., correct, num_evals,
-        100. * float(correct) / num_evals))
+        test_loss * 128., correct, num_evals, acc))
     print('Best Accuracy: {:.2f}%\n'.format(best_acc))
     return
 
@@ -192,7 +197,7 @@ if __name__ == '__main__':
             ImageDataset_python(args.python_fastMCD, thresh=160, transform=tform), shuffle=True)
     if args.multi_fastMCD:
         proj_loader = torch.utils.data.DataLoader(
-            ImageDataset_multi(args.multi_fastMCD, transform=tform), shuffle=True) 
+            ImageDataset_multi(args.multi_fastMCD, lazylabel=3, transform=tform), shuffle=False)
 
     # define classes
     classes = ('plane', 'car', 'bird', 'cat', 'deer', 'dog', 'frog', 'horse', 'ship', 'truck')

@@ -170,16 +170,18 @@ class ImageDataset_multi(Dataset):
 
         rects = multiObjectFrame(mask)
 
+        # cv2.imshow('image', image)
+
         for rect in rects:
             x, y, w, h = cv2.boundingRect(mask)
 
-            roi = image[y:y + h, x:x + w, :]
+            roi = image[y:y + h, x:x + w, :].copy()
             if roi.size != 0:
                 roi = cv2.resize(roi, (32, 32))
             else:
-                roi = cv2.resize(roi, (32, 32))
-            cv2.imshow('roi', roi)
-            cv2.waitKey(10)
+                roi = cv2.resize(image, (32, 32))
+            # cv2.imshow('roi', roi)
+            # cv2.waitKey(10)
             roi = Image.fromarray(roi)
 
             if self.transform:
