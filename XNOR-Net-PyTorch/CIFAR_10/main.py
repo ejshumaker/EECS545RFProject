@@ -2,15 +2,17 @@ from __future__ import absolute_import
 from __future__ import division
 from __future__ import print_function
 
-import sys
-import os
-import torch
 import argparse
 import cifar_data
-import util
+import csv
+import os
+import sys
+from timer import Timer
+import torch
 import torch.nn as nn
 import torch.optim as optim
 from torchvision import transforms
+import util
 import warnings
 
 from models import nin
@@ -39,7 +41,7 @@ def train(epoch, loader):
 
         if args.cuda:
             data, target = data.cuda(), target.cuda()
-        
+
         # forwarding
         data, target = Variable(data), Variable(target)
         optimizer.zero_grad()
@@ -48,11 +50,11 @@ def train(epoch, loader):
         # backwarding
         loss = criterion(output, target)
         loss.backward()
-        
+
         # restore weights
         bin_op.restore()
         bin_op.updateBinaryGradWeight()
-        
+
         optimizer.step()
         if batch_idx % 100 == 0:
             print('Train Epoch: {} [{}/{} ({:.0f}%)]\tLoss: {:.6f}\tLR: {}'.format(
@@ -103,8 +105,12 @@ def test_multi(loader):
     correct = 0
     bin_op.binarization()
 
+    # Create timer for frames
+    frame_timer = Timer(desc='Frame', printflag=True)
+
     num_evals = 0
     for data_label_list in loader:
+        frame_timer.start_time()
         for data_label in data_label_list:
             with torch.no_grad():
                 data, target = data_label
@@ -123,6 +129,7 @@ def test_multi(loader):
                     correct += pred.eq(target.data.view_as(pred)).cpu().sum()
                 else:
                     correct += pred.eq(target.data.view_as(pred)).sum()
+        frame_timer.end_time()
     bin_op.restore()
     acc = 100. * float(correct) / num_evals
 
@@ -134,6 +141,13 @@ def test_multi(loader):
     print('\nTest set: Average loss: {:.4f}, Accuracy: {}/{} ({:.2f}%)'.format(
         test_loss * 128., correct, num_evals, acc))
     print('Best Accuracy: {:.2f}%\n'.format(best_acc))
+
+    frame_times = frame_timer.get_saved_times()
+    preprocess_times = loader.dataset.preprocess_timer.get_saved_times()
+    with open('frame_times.csv', 'w', newline='') as myfile:
+        wr = csv.writer(myfile)
+        wr.writerow(frame_times)
+        wr.writerow(preprocess_times)
     return
 
 

@@ -4,6 +4,7 @@ import numpy as np
 import os
 import sys
 from PIL import Image
+from timer import Timer
 import torch
 from torch.utils.data import Dataset
 
@@ -152,10 +153,13 @@ class ImageDataset_multi(Dataset):
         # If no ground truth for each frame, use lazy label
         self.lazylabel = lazylabel
 
+        self.preprocess_timer = Timer(desc='Preprocess', printflag=True)
+
     def __len__(self):
         return len(self.image_files) // 2
 
     def __getitem__(self, idx):
+        self.preprocess_timer.start_time()
         if torch.is_tensor(idx):
             idx = idx.tolist()
         data_label_list = []
@@ -193,6 +197,7 @@ class ImageDataset_multi(Dataset):
                 label = self.lazylabel
             data_label_list.append((roi, label))
 
+        self.preprocess_timer.end_time()
         return data_label_list
 
 
