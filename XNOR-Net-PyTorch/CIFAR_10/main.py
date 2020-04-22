@@ -18,6 +18,8 @@ import warnings
 from models import nin
 from torch.autograd import Variable
 
+import numpy as np
+import cv2
 from png2dataset import ImageDataset, ImageDataset_python, ImageDataset_multi
 
 
@@ -27,9 +29,9 @@ def save_state(model, best_acc):
         'best_acc': best_acc,
         'state_dict': model.state_dict(),
     }
-    for key in state['state_dict'].keys():
-        if 'module' in key:
-            state['state_dict'][key.replace('module.', '')] = state['state_dict'].pop(key)
+    # for key in state['state_dict'].keys():
+    #     if 'module' in key:
+    #         state['state_dict'][key.replace('module.', '')] = state['state_dict'].pop(key)
     torch.save(state, 'models/nin.pth.tar')
 
 
@@ -45,7 +47,11 @@ def train(epoch, loader):
         # forwarding
         data, target = Variable(data), Variable(target)
         optimizer.zero_grad()
-        output = model(data)
+
+        output = None
+        with warnings.catch_warnings():
+            warnings.simplefilter("ignore")
+            output = model(data)
         
         # backwarding
         loss = criterion(output, target)
@@ -78,7 +84,6 @@ def test(loader):
         with warnings.catch_warnings():
             warnings.simplefilter("ignore")
             output = model(data)
-        print(output)
         test_loss += criterion(output, target).data.item()
         pred = output.data.max(1, keepdim=True)[1]
         if args.cuda:
@@ -88,9 +93,9 @@ def test(loader):
     bin_op.restore()
     acc = 100. * float(correct) / len(loader.dataset)
 
-    # if acc > best_acc:
-    #     best_acc = acc
-    #     save_state(model, best_acc)
+    if acc > best_acc:
+        best_acc = acc
+        save_state(model, best_acc)
     
     test_loss /= len(loader.dataset)
     print('\nTest set: Average loss: {:.4f}, Accuracy: {}/{} ({:.2f}%)'.format(
@@ -125,9 +130,21 @@ def test_multi(loader):
                     output = model(data)
                 test_loss += criterion(output, target).data.item()
                 num_evals += 1
-                print(output)
+
                 pred = output.data.max(1, keepdim=True)[1]
-                print('Pred vs. Target:', pred, target.data)
+
+                # DEBUG: Display Input Image and print network output
+                # cv_data = data.data.numpy().squeeze().copy()
+                # cv_data = np.swapaxes(cv_data, 0, 2)
+                # # rescale data to 0-255
+                # cv_data -= np.min(cv_data)
+                # cv_data /= np.max(cv_data)
+                # cv_data = np.array(255 * cv_data, dtype='uint8')
+                # cv2.imshow('input data', cv_data)
+                # cv2.waitKey(20)
+                # print(output)
+                # print('Pred vs. Target:', pred, target.data)
+
                 if args.cuda:
                     correct += pred.eq(target.data.view_as(pred)).cpu().sum()
                 else:
@@ -199,8 +216,8 @@ if __name__ == '__main__':
         # check the data path
         raise Exception('Please assign the correct data path with --data <DATA_PATH>')
 
-    # trainset = cifar_data.dataset(root=args.data, train=True)
-    # trainloader = torch.utils.data.DataLoader(trainset, batch_size=128, shuffle=True, num_workers=2)
+    trainset = cifar_data.original_dataset(root=args.data, train=True)
+    trainloader = torch.utils.data.DataLoader(trainset, batch_size=128, shuffle=True) #, num_workers=2)
 
     testset = cifar_data.dataset(root=args.data, train=False)
     testloader = torch.utils.data.DataLoader(testset, batch_size=100, shuffle=False) #, num_workers=1)
@@ -248,7 +265,11 @@ if __name__ == '__main__':
         else:
             pretrained_model = torch.load(args.pretrained, map_location=torch.device('cpu'))
         best_acc = pretrained_model['best_acc']
-        model.load_state_dict(pretrained_model['state_dict'])
+        new_state_dict = {}
+        for key in pretrained_model['state_dict'].keys():
+            if 'module' in key:
+                new_state_dict[key.replace('module.', '')] = pretrained_model['state_dict'][key]
+        model.load_state_dict(new_state_dict)
 
     if args.cuda:
         model.cuda()
@@ -286,5 +307,5 @@ if __name__ == '__main__':
     # start training
     for epoch in range(1, 320):
         adjust_learning_rate(optimizer, epoch)
-        train(epoch, proj_loader)
-        test(proj_loader)
+        train(epoch, trainloader)
+        test(testloader)

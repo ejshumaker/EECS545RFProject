@@ -150,7 +150,13 @@ class ImageDataset_multi(Dataset):
         self.lazylabel = lazylabel
 
         self.preprocess_timer = Timer(desc='Preprocess', printflag=False)
-        self.transform = transforms.ToTensor()
+        # Standard normalization
+        normalize = transforms.Normalize(mean=[0.485, 0.456, 0.406],
+                                         std=[0.229, 0.224, 0.225])
+        self.transforms = transforms.Compose([
+            transforms.ToTensor(),
+            normalize,
+        ])
 
     def __len__(self):
         return len(self.image_files) // 2
@@ -164,6 +170,7 @@ class ImageDataset_multi(Dataset):
         # Load Image
         img_name = os.path.join(self.root_dir, self.image_files[2 * idx + 1])
         image = cv2.imread(img_name)
+        image = cv2.cvtColor(image, cv2.COLOR_BGR2RGB)
 
         # Load Mask
         mask_name = os.path.join(self.root_dir, self.image_files[2 * idx])
@@ -175,25 +182,14 @@ class ImageDataset_multi(Dataset):
             x, y, w, h = rect
 
             roi = image[y:y + h, x:x + w, :].copy()
-            cv2.rectangle(image, (x, y), (x + w, y + h), (0, 255, 0))
-            cv2.imshow('image w/ roi', image)
-            cv2.imshow('mask', mask)
-            if roi.size != 0:
-                roi = cv2.resize(roi, (32, 32))
-            else:
-                roi = cv2.resize(image, (32, 32))
-            cv2.imshow('roi', roi)
+            # cv2.rectangle(image, (x, y), (x + w, y + h), (0, 255, 0))
+            # cv2.imshow('image w/ roi', image)
+            # cv2.imshow('mask', mask)
 
-            # # CIFAR-10 Dataset does some preprocessing. This is hard to do as we must have ALL
-            # # image patches available in order to perform the zca whitening. May need to use a different datset
-            # # or network.
-            # roi = globalContrastNormalization(roi.astype('float32'))
-            # roi = roi.reshape(32 * 32 * 3)
-            # roi = zca_whiten(roi)
-            # roi = roi.reshape((32, 32, 3))
-
-            cv2.imshow('roi GCN ZCA', roi)
-            cv2.waitKey(20)
+            roi = cv2.resize(roi, (32, 32))
+            roi = roi.astype('float32')
+            roi = self.transforms(roi)
+            # cv2.waitKey(20)
             
             # label everything as a cat (3)
             label = 0
@@ -203,40 +199,3 @@ class ImageDataset_multi(Dataset):
 
         self.preprocess_timer.end_time()
         return data_label_list
-
-
-def globalContrastNormalization(img, s=1, lam=10, eps=1e-5):
-    '''Global contrast normalization on an image. Must be of type float32'''
-    img_avg = np.mean(img)
-    img -= img_avg
-
-    std_dev = np.sqrt(lam + np.mean(img**2))
-
-    img = s * img / max(std_dev, eps)
-    return img
-
-
-def zca_whiten(img):
-    '''
-    ZCA Whitening of a set of images. Must by float32.
-    '''
-    from sklearn.decomposition import PCA
-
-    pca = PCA(whiten=True)
-    transformed = pca.fit_transform(img)
-    pca.whiten = False
-    zca = pca.inverse_transform(transformed)
-    return zca
-
-
-# Run as standalone to get images of dataset
-if __name__ == '__main__':
-    if len(sys.argv <= 2):
-        print("Please supply a path to image dataset")
-        exit(1)
-    path = sys.argv[-1]
-    # create Dataset
-    dataset = ImageDataset(path)
-    image = cv2.cvtColor(np.array(dataset.__getitem__(0)[0].convert('RGB')), cv2.COLOR_RGB2BGR)
-    cv2.imshow('image', image)
-    cv2.waitKey(5000)
