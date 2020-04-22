@@ -1,5 +1,6 @@
 import cv2
 import imutils
+import numpy as np
 import os
 from PIL import Image
 import torch
@@ -89,6 +90,25 @@ class ImageDataset(Dataset):
         mask = imutils.rotate_bound(mask, 90)
 
         x, y, w, h = cv2.boundingRect(mask)
+        # grab a buffer region of 4 pixels to left, right, up, and down for each bounding box
+        # X direction
+        min_val = 0
+        max_val = image.shape[1]
+        x_new = np.clip(x - 4, min_val, max_val)
+        moved = x - x_new
+        w_new = np.clip(w + 4 + moved, min_val, max_val)
+
+        # Y direction
+        min_val = 0
+        max_val = image.shape[0]
+        y_new = np.clip(y - 4, min_val, max_val)
+        moved = y - y_new
+        h_new = np.clip(h + 4 + moved, min_val, max_val)
+
+        x = x_new
+        w = w_new
+        y = y_new
+        h = h_new
         crop_image = image[y:y + h, x:x + w]
         if crop_image.size != 0:
             image = cv2.resize(crop_image, (28, 28))

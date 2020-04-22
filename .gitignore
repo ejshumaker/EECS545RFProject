@@ -6,3 +6,8 @@ fastMCD
 data
 *.pyc
 *.tar
+*.pt
+*.avi
+*state_dicts.zip
+*log.baseline
+*log*

@@ -12,27 +12,31 @@ import torch
 import torch.nn as nn
 import torch.optim as optim
 from torchvision import transforms
-import util
+import util, vgg_util
 import warnings
 
-from models import nin
+from models import nin, vgg
 from torch.autograd import Variable
 
 import numpy as np
 import cv2
 from png2dataset import ImageDataset, ImageDataset_python, ImageDataset_multi
+# Global args
+args = None
+model = None
 
 
 def save_state(model, best_acc):
     print('==> Saving model ...')
+    new_state_dict = {}
+    for key in model.state_dict().keys():
+        new_state_dict[key.replace('module.', '')] = model.state_dict()[key]
+
     state = {
         'best_acc': best_acc,
-        'state_dict': model.state_dict(),
+        'state_dict': new_state_dict
     }
-    # for key in state['state_dict'].keys():
-    #     if 'module' in key:
-    #         state['state_dict'][key.replace('module.', '')] = state['state_dict'].pop(key)
-    torch.save(state, 'models/nin.pth.tar')
+    torch.save(state, 'models/' + args.arch + '_trained.pth.tar')
 
 
 def train(epoch, loader):
@@ -111,10 +115,13 @@ def test_multi(loader):
     correct = 0
     bin_op.binarization()
 
+    confusion = np.zeros(10)
+
     # Create timer for frames
     frame_timer = Timer(desc='Frame', printflag=False)
 
     num_evals = 0
+    acc = 0
     for data_label_list in loader:
         frame_timer.start_time()
         for data_label in data_label_list:
@@ -133,6 +140,8 @@ def test_multi(loader):
 
                 pred = output.data.max(1, keepdim=True)[1]
 
+                confusion[pred] += 1
+
                 # DEBUG: Display Input Image and print network output
                 # cv_data = data.data.numpy().squeeze().copy()
                 # cv_data = np.swapaxes(cv_data, 0, 2)
@@ -148,10 +157,17 @@ def test_multi(loader):
                 if args.cuda:
                     correct += pred.eq(target.data.view_as(pred)).cpu().sum()
                 else:
-                    correct += pred.eq(target.data.view_as(pred)).sum()
+                    # Treat cars and trucks the same
+                    if target == 1:
+                        correct += (pred == 1).numpy().sum()
+                        correct += (pred == 9).numpy().sum()
+                    else:
+                        correct += pred.eq(target.data.view_as(pred)).sum()
+
+                acc = 100. * float(correct) / num_evals
+                print('Running Accuracy', acc)
         frame_timer.end_time()
     bin_op.restore()
-    acc = 100. * float(correct) / num_evals
 
     # if acc > best_acc:
     #     best_acc = acc
@@ -168,7 +184,8 @@ def test_multi(loader):
         wr = csv.writer(myfile)
         wr.writerow(frame_times)
         wr.writerow(preprocess_times)
-    return
+
+    return confusion
 
 
 def adjust_learning_rate(optimizer, epoch):
@@ -187,7 +204,7 @@ if __name__ == '__main__':
     parser.add_argument('--data', action='store', default='./data/',
                         help='dataset path')
     parser.add_argument('--arch', action='store', default='nin',
-                        help='the architecture for the network: nin')
+                        help='the architecture for the network: nin or vgg')
     parser.add_argument('--lr', action='store', default='0.01',
                         help='the intial learning rate')
     parser.add_argument('--pretrained', action='store', default=None,
@@ -211,11 +228,6 @@ if __name__ == '__main__':
 
     args.cuda = not args.cpu and torch.cuda.is_available()
 
-    # prepare the data
-    if not os.path.isfile(args.data + '/train_data'):
-        # check the data path
-        raise Exception('Please assign the correct data path with --data <DATA_PATH>')
-
     trainset = cifar_data.original_dataset(root=args.data, train=True)
     trainloader = torch.utils.data.DataLoader(trainset, batch_size=128, shuffle=True) #, num_workers=2)
 
@@ -227,6 +239,7 @@ if __name__ == '__main__':
 
     # 545 Project Data
     proj_loader = None
+    label = None
     if args.fastMCD:
         proj_loader = torch.utils.data.DataLoader(
             ImageDataset(args.fastMCD, thresh=160), shuffle=True)
@@ -246,19 +259,14 @@ if __name__ == '__main__':
     # define the model
     print('==> building model', args.arch, '...')
     if args.arch == 'nin':
-        model = nin.Net()
+        model = nin.Net(init_weights=not args.pretrained)
+    elif args.arch == 'vgg':
+        model = vgg.VGG13(init_weights=not args.pretrained)
     else:
         raise Exception(args.arch + ' is currently not supported')
 
-    # initialize the model
-    if not args.pretrained:
-        print('==> Initializing model parameters ...')
-        best_acc = 0
-        for m in model.modules():
-            if isinstance(m, nn.Conv2d):
-                m.weight.data.normal_(0, 0.05)
-                m.bias.data.zero_()
-    else:
+    # initialize the model if pretrained
+    if args.pretrained:
         print('==> Load pretrained model from', args.pretrained, '...')
         if args.cuda:
             pretrained_model = torch.load(args.pretrained)
@@ -267,8 +275,7 @@ if __name__ == '__main__':
         best_acc = pretrained_model['best_acc']
         new_state_dict = {}
         for key in pretrained_model['state_dict'].keys():
-            if 'module' in key:
-                new_state_dict[key.replace('module.', '')] = pretrained_model['state_dict'][key]
+            new_state_dict[key.replace('module.', '')] = pretrained_model['state_dict'][key]
         model.load_state_dict(new_state_dict)
 
     if args.cuda:
@@ -292,7 +299,9 @@ if __name__ == '__main__':
 
     # do the evaluation if specified
     if args.multi_fastMCD:
-        test_multi(proj_loader)
+        confusion = test_multi(proj_loader)
+        print('Label:', label)
+        print('Confusion:', confusion)
         exit(0)
     if args.python_fastMCD:
         test(proj_loader)

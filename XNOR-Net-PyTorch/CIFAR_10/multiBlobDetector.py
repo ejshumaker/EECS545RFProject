@@ -98,7 +98,7 @@ def multiObjectVideo(dir_name='data/cheetah_results'):
 
     # open a videowrite
     codec = cv2.VideoWriter_fourcc(*'MJPG')
-    out = cv2.VideoWriter(os.path.join(dir_name, 'multi_objects.avi'), codec, 30.0, (test_img.shape[1], test_img.shape[0]))
+    out = cv2.VideoWriter('multi_objects.avi', codec, 30.0, (test_img.shape[1], test_img.shape[0]))
 
     for i in range(len(image_files) // 2):
         # Load Image
@@ -117,11 +117,11 @@ def multiObjectVideo(dir_name='data/cheetah_results'):
 
         cv2.imshow('image', image)
         cv2.imshow('mask', mask)
-        cv2.waitKey()
+        cv2.waitKey(10)
 
         out.write(image)
     out.release()
 
 
 if __name__ == '__main__':
-    multiObjectVideo()
+    multiObjectVideo('../../fastMCD/test/highway_results')

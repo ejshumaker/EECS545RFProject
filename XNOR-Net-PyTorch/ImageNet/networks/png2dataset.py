@@ -65,6 +65,26 @@ class FastMCD_MultiObject(Dataset):
         for rect in rects:
             x, y, w, h = rect
 
+            # grab a buffer region of 4 pixels to left, right, up, and down for each bounding box
+            # X direction
+            min_val = 0
+            max_val = image.shape[1]
+            x_new = np.clip(x - 4, min_val, max_val)
+            moved = x - x_new
+            w_new = np.clip(w + 4 + moved, min_val, max_val)
+
+            # Y direction
+            min_val = 0
+            max_val = image.shape[0]
+            y_new = np.clip(y - 4, min_val, max_val)
+            moved = y - y_new
+            h_new = np.clip(h + 4 + moved, min_val, max_val)
+
+            x = x_new
+            w = w_new
+            y = y_new
+            h = h_new
+
             roi = image[y:y + h, x:x + w, :].copy()
             cv2.rectangle(image, (x, y), (x + w, y + h), (0, 255, 0))
             cv2.imshow('image w/ roi', image)
@@ -73,6 +93,7 @@ class FastMCD_MultiObject(Dataset):
             cv2.waitKey(20)
 
             roi = self.transforms(Image.fromarray(roi))
+            print(roi.shape)
             
             # label everything as a cat (3)
             label = 0
