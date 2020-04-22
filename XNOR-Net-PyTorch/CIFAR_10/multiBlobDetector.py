@@ -25,7 +25,7 @@ def proofOfConcept():
     cv2.waitKey(0)
 
 
-def nonMaxSuppression(boundingBoxes, slack=10):
+def nonMaxSuppression(boundingBoxes, slackThresh=10):
     ''' Remove bounding boxes which are encapsulated by others, or within 10 pixels'''
     keepBoxes = []
 
@@ -51,8 +51,8 @@ def nonMaxSuppression(boundingBoxes, slack=10):
                 min_y = min(y_i, y_j)
                 max_y = max(y_i + h_i, y_j + h_j)
 
-                if (((x_j <= x_i and x_i < x_j + w_j + slack) or (x_i <= x_j and x_j < x_i + w_i + slack)) and
-                    ((y_j <= y_i and y_i < y_j + h_j + slack) or (y_i <= y_j and y_j < y_i + h_i + slack))):
+                if (((x_j <= x_i and x_i < x_j + w_j + slackThresh) or (x_i <= x_j and x_j < x_i + w_i + slackThresh)) and
+                    ((y_j <= y_i and y_i < y_j + h_j + slackThresh) or (y_i <= y_j and y_j < y_i + h_i + slackThresh))):
                     # OVERLAPPING RECTS
                     x_i, y_i, w_i, h_i = (min_x, min_y, max_x - min_x, max_y - min_y)
                     suppressBoxes.append(j)
@@ -65,9 +65,14 @@ def nonMaxSuppression(boundingBoxes, slack=10):
     return keepBoxes
 
 
-def multiObjectFrame(mask, blobSizeThresh=20):
+def multiObjectFrame(mask, blobSize=0.05, slack=0.01):
     # Find contours
     contours, hierarchy = cv2.findContours(mask, cv2.RETR_TREE, cv2.CHAIN_APPROX_SIMPLE)
+
+    min_len = min(mask.shape[0], mask.shape[1])
+
+    blobSizeThresh = int(min_len * blobSize)
+    slackThresh = int(min_len * slack)
 
     # remove small blobs
     rects = []
@@ -76,8 +81,8 @@ def multiObjectFrame(mask, blobSizeThresh=20):
         if w > blobSizeThresh and h > blobSizeThresh:
             rects.append((x, y, w, h))
 
-    # combine inetersection blobs
-    nonOverlappingRects = nonMaxSuppression(rects)
+    # combine intersection blobs
+    nonOverlappingRects = nonMaxSuppression(rects, slackThresh=slackThresh)
     return nonOverlappingRects
 
 

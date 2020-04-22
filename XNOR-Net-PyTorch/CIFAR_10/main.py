@@ -78,6 +78,7 @@ def test(loader):
         with warnings.catch_warnings():
             warnings.simplefilter("ignore")
             output = model(data)
+        print(output)
         test_loss += criterion(output, target).data.item()
         pred = output.data.max(1, keepdim=True)[1]
         if args.cuda:
@@ -106,7 +107,7 @@ def test_multi(loader):
     bin_op.binarization()
 
     # Create timer for frames
-    frame_timer = Timer(desc='Frame', printflag=True)
+    frame_timer = Timer(desc='Frame', printflag=False)
 
     num_evals = 0
     for data_label_list in loader:
@@ -117,14 +118,16 @@ def test_multi(loader):
                 if args.cuda:
                     data, target = data.cuda(), target.cuda()
                 # data, target = Variable(data), Variable(target)
-
+                output = None
                 # Autograd Issue is in model
                 with warnings.catch_warnings():
                     warnings.simplefilter("ignore")
                     output = model(data)
                 test_loss += criterion(output, target).data.item()
                 num_evals += 1
+                print(output)
                 pred = output.data.max(1, keepdim=True)[1]
+                print('Pred vs. Target:', pred, target.data)
                 if args.cuda:
                     correct += pred.eq(target.data.view_as(pred)).cpu().sum()
                 else:
@@ -174,12 +177,14 @@ if __name__ == '__main__':
                         help='the path to the pretrained model')
     parser.add_argument('--evaluate', action='store_true',
                         help='evaluate the model')
-    parser.add_argument('--fastMCD', action='store',
-                        default='data/cheetah_results', help='whether to run on fastMCD data')
+    parser.add_argument('--fastMCD', action='store', default=None,
+                        help='whether to run on fastMCD data')
     parser.add_argument('--python_fastMCD', action='store', default=None,
                         help='whether to use python fastMCD on data or not')
     parser.add_argument('--multi_fastMCD', action='store', default=None,
                         help='whether to use multi object fastMCD detection')
+    parser.add_argument('--label', action='store', default=None,
+                        help='label to use for all image frames')
     args = parser.parse_args()
     print('==> Options:', args)
 
@@ -189,32 +194,37 @@ if __name__ == '__main__':
 
     args.cuda = not args.cpu and torch.cuda.is_available()
 
-    # # prepare the data
-    # if not os.path.isfile(args.data + '/train_data'):
-    #     # check the data path
-    #     raise Exception('Please assign the correct data path with --data <DATA_PATH>')
+    # prepare the data
+    if not os.path.isfile(args.data + '/train_data'):
+        # check the data path
+        raise Exception('Please assign the correct data path with --data <DATA_PATH>')
 
     # trainset = cifar_data.dataset(root=args.data, train=True)
     # trainloader = torch.utils.data.DataLoader(trainset, batch_size=128, shuffle=True, num_workers=2)
 
-    # testset = cifar_data.dataset(root=args.data, train=False)
-    # testloader = torch.utils.data.DataLoader(testset, batch_size=100, shuffle=False, num_workers=2)
-
-    # 545 Project Data
-    tform = transforms.ToTensor()
-    proj_loader = None
-    if args.fastMCD:
-        proj_loader = torch.utils.data.DataLoader(
-            ImageDataset(args.fastMCD, thresh=160, transform=tform), shuffle=True)
-    if args.python_fastMCD:
-        proj_loader = torch.utils.data.DataLoader(
-            ImageDataset_python(args.python_fastMCD, thresh=160, transform=tform), shuffle=True)
-    if args.multi_fastMCD:
-        proj_loader = torch.utils.data.DataLoader(
-            ImageDataset_multi(args.multi_fastMCD, lazylabel=3, transform=tform), shuffle=False)
+    testset = cifar_data.dataset(root=args.data, train=False)
+    testloader = torch.utils.data.DataLoader(testset, batch_size=100, shuffle=False) #, num_workers=1)
 
     # define classes
     classes = ('plane', 'car', 'bird', 'cat', 'deer', 'dog', 'frog', 'horse', 'ship', 'truck')
+
+    # 545 Project Data
+    proj_loader = None
+    if args.fastMCD:
+        proj_loader = torch.utils.data.DataLoader(
+            ImageDataset(args.fastMCD, thresh=160), shuffle=True)
+    if args.python_fastMCD:
+        proj_loader = torch.utils.data.DataLoader(
+            ImageDataset_python(args.python_fastMCD, thresh=160), shuffle=True)
+    if args.multi_fastMCD:
+        label = 3  # cat
+        if args.label:
+            for i in range(10):
+                if classes[i] == args.label:
+                    label = i
+        print('Label:', label)
+        proj_loader = torch.utils.data.DataLoader(
+            ImageDataset_multi(args.multi_fastMCD, lazylabel=label), shuffle=False)
 
     # define the model
     print('==> building model', args.arch, '...')
@@ -270,7 +280,7 @@ if __name__ == '__main__':
         test(proj_loader)
         exit(0)
     if args.evaluate:
-        test(proj_loader)
+        test(testloader)
         exit(0)
 
     # start training

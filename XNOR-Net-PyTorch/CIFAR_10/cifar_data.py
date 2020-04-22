@@ -3,6 +3,8 @@ import torch
 import pickle
 import numpy
 import torchvision.transforms as transforms
+import cv2
+import numpy as np
 
 class dataset():
     def __init__(self, root=None, train=True):
@@ -12,15 +14,15 @@ class dataset():
         if self.train:
             train_data_path = os.path.join(root, 'train_data')
             train_labels_path = os.path.join(root, 'train_labels')
-            self.train_data = numpy.load(open(train_data_path, 'r'))
+            self.train_data = numpy.load(open(train_data_path, 'rb'))
             self.train_data = torch.from_numpy(self.train_data.astype('float32'))
-            self.train_labels = numpy.load(open(train_labels_path, 'r')).astype('int')
+            self.train_labels = numpy.load(open(train_labels_path, 'rb')).astype('int')
         else:
             test_data_path = os.path.join(root, 'test_data')
             test_labels_path = os.path.join(root, 'test_labels')
-            self.test_data = numpy.load(open(test_data_path, 'r'))
+            self.test_data = numpy.load(open(test_data_path, 'rb'))
             self.test_data = torch.from_numpy(self.test_data.astype('float32'))
-            self.test_labels = numpy.load(open(test_labels_path, 'r')).astype('int')
+            self.test_labels = numpy.load(open(test_labels_path, 'rb')).astype('int')
 
     def __len__(self):
         if self.train:
@@ -33,6 +35,12 @@ class dataset():
             img, target = self.train_data[index], self.train_labels[index]
         else:
             img, target = self.test_data[index], self.test_labels[index]
-
-
+        
+        # 2 notes: images are saved as float32 arrays, with min = ~-3 and max = ~3
+        # cv_img = img.data.numpy().copy()
+        # print(np.max(cv_img), np.min(cv_img))
+        # cv_img = np.swapaxes(cv_img, 0, 2)
+        # cv2.imshow('img', cv_img)
+        # cv2.imshow('rgb2bgr img', cv2.cvtColor(cv_img, cv2.COLOR_RGB2BGR))
+        # cv2.waitKey(1000)
         return img, target
