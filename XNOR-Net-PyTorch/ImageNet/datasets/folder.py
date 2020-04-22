@@ -123,6 +123,7 @@ class ImageFolder(data.Dataset):
         value = lmdb_cursor.get(key_index)
         datum.ParseFromString(value)
         data = caffe.io.datum_to_array(datum)
+        print(data.shape)
         if self.transform is not None:
             img = self.transform(data)
         target = datum.label

@@ -58,8 +58,8 @@ class BinConv2d(nn.Module): # change the name of BinConv2d
         x = self.relu(x)
         return x
 
-class AlexNet(nn.Module):
 
+class AlexNet(nn.Module):
     def __init__(self, num_classes=1000):
         super(AlexNet, self).__init__()
         self.num_classes = num_classes
@@ -100,6 +100,14 @@ def alexnet(pretrained=False, **kwargs):
     model = AlexNet(**kwargs)
     if pretrained:
         model_path = 'model_list/alexnet.pth.tar'
-        pretrained_model = torch.load(model_path)
+        pretrained_model = torch.load(model_path, map_location=torch.device('cpu'))
+        
+        # rename values in state_dict
+        new_state_dict = {}
+        for key in pretrained_model['state_dict']:
+            new_key = key.replace('.module', '')
+            new_state_dict[new_key] = pretrained_model['state_dict'][key]
+        pretrained_model['state_dict'] = new_state_dict
+
         model.load_state_dict(pretrained_model['state_dict'])
     return model
