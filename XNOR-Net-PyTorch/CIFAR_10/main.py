@@ -247,14 +247,8 @@ if __name__ == '__main__':
         proj_loader = torch.utils.data.DataLoader(
             ImageDataset_python(args.python_fastMCD, thresh=160), shuffle=True)
     if args.multi_fastMCD:
-        label = 3  # cat
-        if args.label:
-            for i in range(10):
-                if classes[i] == args.label:
-                    label = i
-        print('Label:', label)
         proj_loader = torch.utils.data.DataLoader(
-            ImageDataset_multi(args.multi_fastMCD, lazylabel=label), shuffle=False)
+            ImageDataset_multi(args.multi_fastMCD, lazylabel=int(args.label)), shuffle=False)
 
     # define the model
     print('==> building model', args.arch, '...')
