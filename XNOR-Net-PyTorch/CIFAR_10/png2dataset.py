@@ -147,7 +147,7 @@ class ImageDataset_multi(Dataset):
         normalize = transforms.Normalize(mean=[0.485, 0.456, 0.406],
                                          std=[0.229, 0.224, 0.225])
         self.transforms = transforms.Compose([
-            # transforms.ToPILImage(),
+            transforms.ToPILImage(),
             transforms.ToTensor(),
             normalize,
         ])
@@ -202,7 +202,7 @@ class ImageDataset_multi(Dataset):
             cv2.waitKey(20)
 
             roi = cv2.resize(roi, (32, 32))
-            roi = roi.astype('float32')
+            roi = roi#.astype('float32')
             roi = self.transforms(roi)
             
             # label everything as a cat (3)
