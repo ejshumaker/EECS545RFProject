@@ -8,3 +8,4 @@ lambda: 0.001
 max_age: 30.0
 min_vars: 25.0
 init_vars: 400.0
+debug: 0

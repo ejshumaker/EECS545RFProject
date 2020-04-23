@@ -32,7 +32,7 @@ int main(int argc, char **argv){
 	timeFile.open("timeFile.csv");
 	timeFile << "PreProcess, KLT, parallelBlock, parallelUpdate" << std::endl;
 	
-	
+
 	
 	// check if we succeeded
 	if (!cap.isOpened()) {
@@ -42,10 +42,10 @@ int main(int argc, char **argv){
 
 #if VIDEO_OUT
 	//Create Debug Writers --------------------------------------------------
-	cv::VideoWriter klt_output;
+	cv::VideoWriter mask_output;
 	cv::Size S = cv::Size((int)cap.get(cv::CAP_PROP_FRAME_WIDTH), cap.get(cv::CAP_PROP_FRAME_HEIGHT));
 	int ex = static_cast<int>(cap.get(cv::CAP_PROP_FOURCC));
-	klt_output.open("KLT_Output.avi", ex = -1, cap.get(cv::CAP_PROP_FPS), S, true);
+	mask_output.open("Mask_Output.avi", ex = -1, cap.get(cv::CAP_PROP_FPS), S, true);
 #endif
 
 
@@ -81,20 +81,13 @@ int main(int argc, char **argv){
 
 			start = std::chrono::high_resolution_clock::now();
 			IplImage* ipl_img = cvCloneImage(&(IplImage)blurImage);
-			//cv::Mat testImage = cv::Mat::zeros(blurImage.size(), CV_32FC1);
-			//bgs.testAccess(testImage);
-			//cv::imshow("Test Access", testImage);
-			//cv::imwrite("test.png", testImage);
 			bgs.m_LucasKanade.RunTrack(ipl_img, 0);
 			bgs.m_LucasKanade.GetHomography(bgs.m_h);
 			end = std::chrono::high_resolution_clock::now();
 			float time_klt = std::chrono::duration_cast<std::chrono::microseconds>(end - start).count() / 1000.0;
 			
 			start = std::chrono::high_resolution_clock::now();
-			//bgs.blockInterpolation(bgs.m_h);
-			bgs.model_means.copyTo(bgs.temp_means);
-			bgs.model_vars.copyTo(bgs.temp_vars);
-			bgs.model_age.copyTo(bgs.temp_age);
+			bgs.blockInterpolation(bgs.m_h);
 			end = std::chrono::high_resolution_clock::now();
 			float time_parallelBlock = std::chrono::duration_cast<std::chrono::microseconds>(end - start).count() / 1000.0;
 
@@ -102,27 +95,27 @@ int main(int argc, char **argv){
 			bgs.updateModels(blurImage);
 			end = std::chrono::high_resolution_clock::now();
 			float time_update = std::chrono::duration_cast<std::chrono::microseconds>(end - start).count() / 1000.0;
-			std::printf("PP: %f KLT: %f ||Block %f UPT: %f \n", time_pp, time_klt, time_parallelBlock, time_update);
+			std::printf("Frame: %d PP: %f KLT: %f ||Block %f ||UPT: %f \n", i, time_pp, time_klt, time_parallelBlock, time_update);
 			timeFile << time_pp << "," << time_klt << "," << time_parallelBlock << "," << time_update << std::endl;
 
-#if VIDEO_OUT
-			klt_output << bgs.displayKLT(frame);
-#endif		
+	
 
 		}
-		//bgs.displayKLT(frame);
-		bgs.displayMeans(frame);
-		bgs.displayVars(frame);
-		bgs.displayAge(frame);
-		bgs.displayMask();
-		bgs.displayUpdates(frame);
-		bgs.model_updates = cv::Mat::zeros(bgs.model_dims, CV_32FC2);
-
-		cv::imwrite("CurrentMask.png", bgs.output_mask);
-		printf("Processed frame [%d] \n", i);
+		
+#if VIDEO_OUT
+		mask_output << bgs.displayMask();
+#endif			
+		
+		if(bgs.m_cfg.debug == 1){
+			bgs.displayKLT(frame);
+			bgs.displayMeans(frame);
+			bgs.displayVars(frame);
+			bgs.displayAge(frame);
+			bgs.displayMask();
+			bgs.displayUpdates(frame);
+			bgs.model_updates = cv::Mat::zeros(bgs.model_dims, CV_32FC2);
+		}
 		cv::waitKey(1);
-		if (i >= 134)
-			cv::waitKey(0);
 	}
 	// the camera will be deinitialized automatically in VideoCapture destructor
 	timeFile.close();

@@ -4,6 +4,8 @@
 #include <opencv2/highgui.hpp>
 #include <iostream>
 #include <stdio.h>
+#include <fstream>
+
 struct fastMCD_Config {
 	std::string video_path;
 	int block_size = 4;
@@ -14,6 +16,7 @@ struct fastMCD_Config {
 	float max_age = 30;
 	float min_vars = 5.0;
 	float init_vars = 20 * 20;
+	int debug = 0;
 	fastMCD_Config() {}
 	bool importYAML(std::string yaml_path) {
 		cv::FileStorage fs(yaml_path, cv::FileStorage::READ);
@@ -25,6 +28,7 @@ struct fastMCD_Config {
 		lambda = fs["lambda"];
 		max_age = fs["max_age"];
 		min_vars = fs["min_vars"];
+		debug = fs["debug"];
 		return true;
 	}
 };
@@ -135,6 +139,7 @@ public:
 			float* temp_mean_row_ptr = temp_means->ptr<float>(b_Y);
 			float* temp_age_row_ptr = temp_age->ptr<float>(b_Y);
 			float* temp_vars_row_ptr = temp_vars->ptr<float>(b_Y);
+
 			//Getting Xfrm Blocks -------------------------------------------------------
 			
 
@@ -278,6 +283,7 @@ public:
 					float* neigh_means_row_ptr = model_means->ptr<float>(neigh_Y);
 
 					//Record the weighted mean and age for this neighbor
+					//neighbor variance + pow( block_mean - neigh_mean                         )2
 					neigh_vars[0][0] = neigh_weights[0] * (neigh_vars_row_ptr[2 * neigh_X] + std::pow(temp_mean_row_ptr[2 * b_X] - neigh_means_row_ptr[2 * neigh_X], 2));
 					neigh_vars[0][1] = neigh_weights[0] * (neigh_vars_row_ptr[2 * neigh_X + 1] + std::pow(temp_mean_row_ptr[2 * b_X + 1] - neigh_means_row_ptr[2 * neigh_X + 1], 2));
 				}
@@ -387,7 +393,8 @@ private:
 
 class ParallelUpdate : public cv::ParallelLoopBody {
 public:
-	ParallelUpdate() {}
+	ParallelUpdate() {
+	}
 
 	ParallelUpdate(cv::Size _model_dims, int _block_size, cv::Mat* _model_means, cv::Mat* _model_vars, cv::Mat* _model_age,
 		cv::Mat* _temp_means, cv::Mat* _temp_vars, cv::Mat* _temp_age,
@@ -425,9 +432,6 @@ public:
 			int b_Y = r / (model_width); //Rows
 			int b_X = r % (model_width); //Columns
 
-			//if (b_Y == 34 && b_X == 28)
-		//		std::cout << "hit debug block" << std::endl;
-
 			float* model_mean_row_ptr = model_means->ptr<float>(b_Y);
 			float* model_age_row_ptr = model_age->ptr<float>(b_Y);
 			float* model_vars_row_ptr = model_vars->ptr<float>(b_Y);
@@ -456,36 +460,26 @@ public:
 			//I am not sure if this is the best place to perform a model swap
 			//Is there a world where after model mixing we have a candidate with higher age?
 			//Mayyyyyybe 
-			
-		if (r == 2748){
-				printf("Temp Model Mean: [%f] Model Vars: [%f] Model Age [%f] \n", temp_mean_row_ptr[2 * b_X], temp_vars_row_ptr[2 * b_X], temp_age_row_ptr[2 * b_X]);
- 				printf("Temp Cand Mean: [%f] Cand Vars: [%f] Cand Age [%f] \n", temp_mean_row_ptr[2 * b_X + 1], temp_vars_row_ptr[2 * b_X + 1], temp_age_row_ptr[2 * b_X + 1]);
-		}
-
-			if (temp_age_row_ptr[2 * b_X] < temp_age_row_ptr[2 * b_X + 1]) {
+			if (temp_age_row_ptr[2 * b_X] <= temp_age_row_ptr[2 * b_X + 1]) {
 				temp_mean_row_ptr[2 * b_X] = temp_mean_row_ptr[2 * b_X + 1];
 				temp_vars_row_ptr[2 * b_X] = temp_vars_row_ptr[2 * b_X + 1];
 				temp_age_row_ptr[2 * b_X] = temp_age_row_ptr[2 * b_X + 1];
 
 				temp_mean_row_ptr[2 * b_X + 1] = M;
-				temp_mean_row_ptr[2 * b_X + 1] = init_vars;
-				temp_mean_row_ptr[2 * b_X + 1] = 0;
-			
-				if (r == 2748) {
-					printf("Switch Model Mean: [%f] Model Vars: [%f] Model Age [%f] \n", temp_mean_row_ptr[2 * b_X], temp_vars_row_ptr[2 * b_X], temp_age_row_ptr[2 * b_X]);
-					printf("Switch Cand Mean: [%f] Cand Vars: [%f] Cand Age [%f] \n", temp_mean_row_ptr[2 * b_X + 1], temp_vars_row_ptr[2 * b_X + 1], temp_age_row_ptr[2 * b_X + 1]);
-				}
+				temp_vars_row_ptr[2 * b_X + 1] = init_vars;
+				temp_age_row_ptr[2 * b_X + 1] = 0;
 			}
 
 
 
 			//Check for a Match to the Model ---------------------------------------------------
-			bool model_match = std::pow(M - temp_mean_row_ptr[2 * b_X], 2) < theta_s * temp_vars_row_ptr[b_X] ? true : false;
-			bool cand_match = std::pow(M - temp_mean_row_ptr[2 * b_X + 1], 2) < theta_s * temp_vars_row_ptr[b_X + 1] ? true : false;
+			bool model_match = std::pow(M - temp_mean_row_ptr[2 * b_X], 2) < theta_s * temp_vars_row_ptr[2*b_X] ? true : false;
+			bool cand_match = std::pow(M - temp_mean_row_ptr[2 * b_X + 1], 2) < theta_s * temp_vars_row_ptr[2*b_X + 1] ? true : false;
 
 			if (model_match) {
-				float* model_updates_ptr = model_updates->ptr<float>(b_Y);
-				model_updates_ptr[2*b_X] = 255;
+			    //float* model_updates_ptr = model_updates->ptr<float>(b_Y);
+				//model_updates_ptr[2*b_X] = 255;
+
 				//Calculate Model Mean
 				float age = temp_age_row_ptr[2 * b_X];
 				float age_weight = age / (age + 1.0);
@@ -505,9 +499,6 @@ public:
 						if (idx_i < 0 || idx_i >= frame->cols || idx_j < 0 || idx_j >= frame->rows)
 							continue;
 						uchar* frame_row_ptr = frame->ptr<uchar>(idx_j);
-						if (r == 2748) {
-							printf("Frame Value: %d \n", frame_row_ptr[idx_i]);
-						}
 						S = std::max(float(std::pow(frame_row_ptr[idx_i] - model_mean_row_ptr[2 * b_X], 2.0)), S);
 					}
 				}
@@ -592,16 +583,9 @@ public:
 				model_age_row_ptr[2 * b_X] = temp_age_row_ptr[2 * b_X];
 			}
 		
-
-		if (r == 2748) {
-				printf("Model Mean: [%f] Model Vars: [%f] Model Age [%f] \n", model_mean_row_ptr[2 * b_X], model_vars_row_ptr[2 * b_X], model_age_row_ptr[2 * b_X]);
-				printf("Cand Mean: [%f] Cand Vars: [%f] Cand Age [%f] \n", model_vars_row_ptr[2 * b_X + 1], model_vars_row_ptr[2 * b_X + 1], model_age_row_ptr[2 * b_X + 1]);
-		}
-
 			//Perform Detection ----------------------------------------------------------------
 			//I am choosing to do detection here instead of another loop because I already have every variable
 			//I need here
-			//int total = 0;
 			for (int jj = 0; jj < block_size; jj++) {
 				int idx_j = b_Y*block_size + jj;
 				for (int ii = 0; ii < block_size; ii++) {
@@ -612,22 +596,12 @@ public:
 					uchar* output_row_ptr = output->ptr<uchar>(idx_j);
 				
 					if (model_age_row_ptr[2 * b_X] > 1){
-					//	int frame_intensity = int(frame_row_ptr[idx_i]);
-					//	float mean_intensity = model_mean_row_ptr[2 * b_X];
-					//	float vars_intensity = model_vars_row_ptr[2 * b_X];
-					//	bool foreground = std::pow(frame_row_ptr[idx_i] - model_mean_row_ptr[2 * b_X], 2) > theta_d * model_vars_row_ptr[2 * b_X];
-				////		int int_fore = int(foreground);
-				//		total += int_fore;
 						output_row_ptr[idx_i] = 255 * int(std::pow(float(frame_row_ptr[idx_i]) - model_mean_row_ptr[2 * b_X], 2) > theta_d * model_vars_row_ptr[2 * b_X]);
-					//	if(r == 2748)
-						//	output_row_ptr[idx_i] = 255;
 					}
 					else
 						output_row_ptr[idx_i] = 0;
 				}
 			}
-
-			//std::printf("Block (%d, %d) Complete. \n", b_X, b_Y);
 		}
 	}
 
@@ -648,7 +622,6 @@ public:
 		output = new_model.output;
 		init_vars = new_model.init_vars;
 		model_updates = new_model.model_updates;
-
 		return *this;
 	}
 private:

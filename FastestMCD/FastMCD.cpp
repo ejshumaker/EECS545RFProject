@@ -1,6 +1,5 @@
 #include "FastMCD.h"
 
-
 bool FastMCD::init(cv::Mat firstImg) {
 	//First we set all the variables that rely on config
 	model_dims.width = firstImg.cols / float(m_cfg.block_size);
@@ -14,6 +13,7 @@ bool FastMCD::init(cv::Mat firstImg) {
 	model_age = cv::Mat::zeros(model_dims, CV_32FC2);
 	model_vars = cv::Mat::zeros(model_dims, CV_32FC2);
 	model_updates = cv::Mat::zeros(model_dims, CV_32FC2);
+	
 	//second, we initialize the Interpolation ParallelLoopBody
 	m_h[0] = 1.0;
 	m_h[1] = 0.0;
@@ -25,7 +25,6 @@ bool FastMCD::init(cv::Mat firstImg) {
 	m_h[7] = 0.0;
 	m_h[8] = 1.0;
 
-	
 	parallelInterpolation = ParallelInterpolation(model_dims, m_cfg.block_size, &model_means, &model_vars, &model_age,
 		&temp_means, &temp_vars, &temp_age,
 		m_cfg.min_vars, m_cfg.theta_v, m_cfg.max_age, m_cfg.lambda, m_cfg.init_vars);
@@ -39,6 +38,8 @@ bool FastMCD::init(cv::Mat firstImg) {
 	cv::GaussianBlur(grayImage, blurImage, cv::Size(9, 9), 0, 0);
 
 	output_mask = cv::Mat::zeros(blurImage.size(), CV_8UC1);
+
+
 	parallelUpdate = ParallelUpdate(model_dims, m_cfg.block_size, &model_means, &model_vars, &model_age,
 		&temp_means, &temp_vars, &temp_age,
 		m_cfg.min_vars, m_cfg.max_age, m_cfg.theta_s, m_cfg.theta_d, m_cfg.init_vars, &output_mask, &model_updates);
@@ -68,7 +69,7 @@ void FastMCD::blockInterpolation(double h[9]) {
 
 void FastMCD::updateModels(cv::Mat& image) {
 	parallelUpdate.setCurrentFrame(&image);
-	cv::parallel_for_(cv::Range(0, model_means.rows*model_means.cols), parallelUpdate,1);
+	cv::parallel_for_(cv::Range(0, model_means.rows*model_means.cols), parallelUpdate);
 }
 
 cv::Mat FastMCD::displayKLT(cv::Mat& image) {
@@ -247,7 +248,6 @@ void FastMCD::displayUpdates(cv::Mat& image) {
 	cv::waitKey(1);
 
 }
-
 
 cv::Mat FastMCD::displayMask() {
 	cv::imshow("Mask", output_mask);
