@@ -2,8 +2,8 @@ import argparse
 import csv
 import os
 import shutil
+import sys
 import time
-from timer import Timer
 import torch
 import torch.nn as nn
 import torch.nn.parallel
@@ -22,7 +22,12 @@ import warnings
 
 import numpy as np
 import cv2
-from png2dataset import FastMCD_MultiObject
+
+dir_path = os.path.dirname(os.path.realpath(__file__))
+parent_dir_path = os.path.abspath(os.path.join(dir_path, os.pardir, '..'))
+sys.path.insert(0, parent_dir_path)
+from util545 import png2dataset
+from util545.timer import Timer
 
 # set the seed
 torch.manual_seed(1)
@@ -384,7 +389,7 @@ if __name__ == '__main__':
     elif args.label == 'cheetah':
         label = 293
     proj_loader = torch.utils.data.DataLoader(
-        FastMCD_MultiObject(args.fastMCD, lazylabel=label)
+        png2dataset.ImageDataset_multi(args.fastMCD, lazylabel=label)
     )
 
     print(model)

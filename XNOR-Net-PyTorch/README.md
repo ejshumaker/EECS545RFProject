@@ -33,7 +33,7 @@ $ python3 main.py --cpu --pretrained models/nin.best.pth.tar --fastMCD <path-to-
 UPDATE: To pipe the fastMCD proposed regions with multiple objects run this on the pretrained model on VGG network or Network in Network. The same label is used for every image frame. Note, specifying label 1 includes label 9 as correct, since the two classes are 'car' and 'truck'.
 ```bash
 $ cd <Repository Root>/XNOR-Net-PyTorch/CIFAR_10/
-$ python3 main.py --cpu --arch ['vgg' | 'nin'] --pretrained nin_121_epoch.pth.tar --multi_fastMCD <path-to-results> --label [0 - 9]
+$ python3 main.py --cpu --arch ['vgg' | 'nin'] --pretrained nin_best.pth.tar --multi_fastMCD <path-to-results> --label [0 - 9]
 ```
 
 UPDATE: To pipe proposed the fastMCD proposed regions with multiple objects into non-binarized networks (Note, specifying label 1 includes label 9 as correct, since the two classes are 'car' and 'truck'), run:

@@ -1,7 +1,7 @@
 import numpy as np
 import cv2
-import KLTWrapper
-import ProbModel
+from .KLTWrapper import *
+from .ProbModel import *
 
 
 class MCDWrapper:
@@ -10,8 +10,8 @@ class MCDWrapper:
         self.imgGray = None
         self.imgGrayPrev = None
         self.frm_cnt = 0
-        self.lucasKanade = KLTWrapper.KLTWrapper()
-        self.model = ProbModel.ProbModel()
+        self.lucasKanade = KLTWrapper()
+        self.model = ProbModel()
 
     def init(self, image):
         self.imgGray = image

@@ -1,11 +1,16 @@
 import os, shutil
+import sys
 import torch
 from argparse import ArgumentParser
 from pytorch_lightning import Trainer
 
 import torch
 import cv2
-from png2dataset import ImageDataset, ImageDataset_multi
+dir_path = os.path.dirname(os.path.realpath(__file__))
+parent_dir_path = os.path.abspath(os.path.join(dir_path, os.pardir))
+sys.path.insert(0, parent_dir_path)
+from util545 import png2dataset
+from util545.timer import Timer
 from cifar10_module import CIFAR10_Module
 
 
@@ -58,7 +63,7 @@ def test_multi(model, loader):
 def fastMCDtest(hparams):
     model = CIFAR10_Module(hparams)
 
-    loader = torch.utils.data.DataLoader(ImageDataset_multi(args.data, lazylabel=int(args.label)))
+    loader = torch.utils.data.DataLoader(png2dataset.ImageDataset_multi(args.data, lazylabel=int(args.label)))
 
     print('Test Accuracy:', test_multi(model, loader))
 

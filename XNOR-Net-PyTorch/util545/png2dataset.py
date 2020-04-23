@@ -4,13 +4,13 @@ import numpy as np
 import os
 import sys
 from PIL import Image
-from timer import Timer
+from .timer import Timer
 import torch
 from torch.utils.data import Dataset
 from torchvision import transforms
 
-import MCDWrapper
-from multiBlobDetector import multiObjectFrame
+from .MCDWrapper import *
+from .multiBlobDetector import multiObjectFrame
 
 
 class ImageDataset(Dataset):
@@ -70,7 +70,7 @@ class ImageDataset_python(Dataset):
                 on a sample.
         """
         self.cap = cv2.VideoCapture(fname)
-        self.mcd = MCDWrapper.MCDWrapper()
+        self.mcd = MCDWrapper()
         self.len = 0
         gray = None
         isFirst = True
@@ -198,11 +198,10 @@ class ImageDataset_multi(Dataset):
             roi = image[y:y + h, x:x + w, :].copy()
             # cv2.rectangle(image, (x, y), (x + w, y + h), (0, 255, 0))
             # cv2.imshow('image w/ roi', image)
-            cv2.imshow('roi', roi)
-            cv2.waitKey(20)
+            # cv2.imshow('roi', roi)
+            # cv2.waitKey(20)
 
             roi = cv2.resize(roi, (32, 32))
-            roi = roi#.astype('float32')
             roi = self.transforms(roi)
             
             # label everything as a cat (3)

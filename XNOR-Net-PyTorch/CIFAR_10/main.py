@@ -7,7 +7,6 @@ import cifar_data
 import csv
 import os
 import sys
-from timer import Timer
 import torch
 import torch.nn as nn
 import torch.optim as optim
@@ -20,7 +19,11 @@ from torch.autograd import Variable
 
 import numpy as np
 import cv2
-from png2dataset import ImageDataset, ImageDataset_python, ImageDataset_multi
+dir_path = os.path.dirname(os.path.realpath(__file__))
+parent_dir_path = os.path.abspath(os.path.join(dir_path, os.pardir))
+sys.path.insert(0, parent_dir_path)
+from util545 import png2dataset
+from util545.timer import Timer
 # Global args
 args = None
 model = None
@@ -242,13 +245,13 @@ if __name__ == '__main__':
     label = None
     if args.fastMCD:
         proj_loader = torch.utils.data.DataLoader(
-            ImageDataset(args.fastMCD, thresh=160), shuffle=True)
+            png2dataset.ImageDataset(args.fastMCD, thresh=160), shuffle=True)
     if args.python_fastMCD:
         proj_loader = torch.utils.data.DataLoader(
-            ImageDataset_python(args.python_fastMCD, thresh=160), shuffle=True)
+            png2dataset.ImageDataset_python(args.python_fastMCD, thresh=160), shuffle=True)
     if args.multi_fastMCD:
         proj_loader = torch.utils.data.DataLoader(
-            ImageDataset_multi(args.multi_fastMCD, lazylabel=int(args.label)), shuffle=False)
+            png2dataset.ImageDataset_multi(args.multi_fastMCD, lazylabel=int(args.label)), shuffle=False)
 
     # define the model
     print('==> building model', args.arch, '...')
