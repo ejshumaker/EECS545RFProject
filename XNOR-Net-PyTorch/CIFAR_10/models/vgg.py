@@ -90,6 +90,7 @@ class VGG13(nn.Module):
         self.classifier = nn.Sequential(
             BinConv2d(512 * 7 * 7, 4096, Linear=True),
             BinConv2d(4096, 4096, dropout=0.5, Linear=True),
+            nn.BatchNorm1d(4096, eps=1e-3, momentum=0.1, affine=True),
             nn.Dropout(),
             nn.Linear(4096, num_classes),
         )

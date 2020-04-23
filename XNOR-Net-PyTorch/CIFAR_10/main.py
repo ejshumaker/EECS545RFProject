@@ -231,7 +231,7 @@ if __name__ == '__main__':
     trainset = cifar_data.original_dataset(root=args.data, train=True)
     trainloader = torch.utils.data.DataLoader(trainset, batch_size=128, shuffle=True) #, num_workers=2)
 
-    testset = cifar_data.dataset(root=args.data, train=False)
+    testset = cifar_data.original_dataset(root=args.data, train=False)
     testloader = torch.utils.data.DataLoader(testset, batch_size=100, shuffle=False) #, num_workers=1)
 
     # define classes
@@ -288,8 +288,11 @@ if __name__ == '__main__':
     optimizer = optim.Adam(params, lr=0.10, weight_decay=0.00001)
     criterion = nn.CrossEntropyLoss()
 
-    # define the binarization operator
-    bin_op = util.BinOp(model)
+    if args.arch == 'nin':
+        # define the binarization operator
+        bin_op = util.BinOp(model)
+    elif args.arch == 'vgg':
+        bin_op = vgg_util.VGGBinOp(model)
 
     # do the evaluation if specified
     if args.multi_fastMCD:
