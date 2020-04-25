@@ -159,7 +159,8 @@ class ImageDataset_multi(Dataset):
         self.preprocess_timer.start_time()
         if torch.is_tensor(idx):
             idx = idx.tolist()
-        data_label_list = []
+        # Create a list of tuples (image, label, and bounding box) for each bounding box in each frame
+        data_list = []
 
         # Load Image
         img_name = os.path.join(self.root_dir, self.image_files[2 * idx + 1])
@@ -208,7 +209,7 @@ class ImageDataset_multi(Dataset):
             label = 0
             if self.lazylabel:
                 label = self.lazylabel
-            data_label_list.append((roi, label))
+            data_list.append((roi, label, (x, y, x + w, y + h)))
 
         self.preprocess_timer.end_time()
-        return data_label_list
+        return data_list

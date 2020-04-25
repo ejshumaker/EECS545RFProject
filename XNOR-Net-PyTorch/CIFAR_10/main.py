@@ -24,10 +24,16 @@ parent_dir_path = os.path.abspath(os.path.join(dir_path, os.pardir))
 sys.path.insert(0, parent_dir_path)
 from util545 import png2dataset
 from util545.timer import Timer
-# Global args
+
+
+# Global Variables
 args = None
 model = None
 best_acc = None
+model_type = None
+# CIFAR-10 Classes
+classes = ['plane', 'car', 'bird', 'cat', 'deer', 'dog', 'frog', 'horse', 'ship', 'truck']
+
 
 def save_state(model, best_acc):
     print('==> Saving model ...')
@@ -39,10 +45,6 @@ def save_state(model, best_acc):
         'best_acc': best_acc,
         'state_dict': new_state_dict
     }
-
-    model_type = 'XNOR'
-    if args.bwn:
-        model_type = 'BWN'
     torch.save(state, 'models/' + args.arch + '_' + model_type + '.pth.tar')
 
 
@@ -127,13 +129,20 @@ def test_multi(loader):
     # Create timer for frames
     frame_timer = Timer(desc='Frame', printflag=False)
 
+    # Create a file to write frame results to:
+    file_name = args.multi_fastMCD.split("/")[-1]
+    if file_name == '':
+        file_name = args.multi_fastMCD.split("/")[-2]
+    resultsFile = open(file_name + '_BOUNDING_BOX_' + args.arch + '_' + model_type + '.txt', 'w')
+
     num_evals = 0
     acc = 0
-    for data_label_list in loader:
+    for frame, data_list in enumerate(loader):
         frame_timer.start_time()
-        for data_label in data_label_list:
+        resultsFile.write("frame " + str(frame) + ':\n' + 'Objects:\n\n')
+        for data_label in data_list:
             with torch.no_grad():
-                data, target = data_label
+                data, target, bounding_box = data_label
                 if args.cuda:
                     data, target = data.cuda(), target.cuda()
                 # data, target = Variable(data), Variable(target)
@@ -146,6 +155,13 @@ def test_multi(loader):
                 num_evals += 1
 
                 pred = output.data.max(1, keepdim=True)[1]
+
+                x1, y1, x2, y2 = bounding_box
+                t2s = lambda x: str(x.numpy()[0])
+                
+                # Write bounding box and prediction to file
+                resultsFile.write(classes[pred] + ':\n')
+                resultsFile.write('Bounding Box:' + t2s(x1) + ',' + t2s(y1) + ',' + t2s(x2) + ',' + t2s(y2) + '\n')
 
                 confusion[pred] += 1
 
@@ -245,7 +261,6 @@ if __name__ == '__main__':
     testloader = torch.utils.data.DataLoader(testset, batch_size=100, shuffle=False) #, num_workers=1)
 
     # define classes
-    classes = ('plane', 'car', 'bird', 'cat', 'deer', 'dog', 'frog', 'horse', 'ship', 'truck')
 
     # 545 Project Data
     proj_loader = None
@@ -261,6 +276,9 @@ if __name__ == '__main__':
             png2dataset.ImageDataset_multi(args.multi_fastMCD, lazylabel=int(args.label)), shuffle=False)
 
     # define the model
+    model_type = 'XNOR'
+    if args.bwn:
+        model_type = 'BWN'
     print('==> building model', args.arch, '...')
     if args.arch == 'nin':
         model = nin.Net(init_weights=not args.pretrained, bwn=args.bwn)

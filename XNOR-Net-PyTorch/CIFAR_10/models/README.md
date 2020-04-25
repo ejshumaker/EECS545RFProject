@@ -3,9 +3,9 @@ This folder contains various networks trained on the CIFAR-10 dataset. These inc
 
 ## Description of Models
 - `nin_best_BWN.pth.tar`:       BWN Network-in-Network Model. ??% Testing Accuracy.
-- `vgg_best_BWN.pth.tar`:       BWN VGG13 Model. ??% Testing Accuracy.
-- `resnet34_best_BWN.pth.tar`:  BWN ResNet34 Model. ??% Testing Accuracy.
-- `resnet20_best_BWN.pth.tar`:  BWN ResNet20 Model. ??% Testing Accuracy.
+- `vgg_best_BWN.pth.tar`:       BWN VGG13 Model. 75.81% Testing Accuracy.
+- `resnet34_best_BWN.pth.tar`:  BWN ResNet34 Model. 83.92% Testing Accuracy.
+- `resnet20_best_BWN.pth.tar`:  BWN ResNet20 Model. 84.86% Testing Accuracy.
 
 - `nin_best_XNOR.pth.tar`:      XNOR Network-in-Network Model. 85.96% Testing Accuracy.
 - `vgg_best_XNOR.pth.tar`:      XNOR VGG13 Model. 77.15% Testing Accuracy.
