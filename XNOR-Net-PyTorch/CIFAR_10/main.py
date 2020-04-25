@@ -11,10 +11,10 @@ import torch
 import torch.nn as nn
 import torch.optim as optim
 from torchvision import transforms
-import util, vgg_util
+import util
 import warnings
 
-from models import nin, vgg
+from models import nin, vgg, mobilenetv2, resnet_20, resnet_34
 from torch.autograd import Variable
 
 import numpy as np
@@ -27,7 +27,7 @@ from util545.timer import Timer
 # Global args
 args = None
 model = None
-
+best_acc = None
 
 def save_state(model, best_acc):
     print('==> Saving model ...')
@@ -39,7 +39,11 @@ def save_state(model, best_acc):
         'best_acc': best_acc,
         'state_dict': new_state_dict
     }
-    torch.save(state, 'models/' + args.arch + '_trained.pth.tar')
+
+    model_type = 'XNOR'
+    if args.bwn:
+        model_type = 'BWN'
+    torch.save(state, 'models/' + args.arch + '_' + model_type + '.pth.tar')
 
 
 def train(epoch, loader):
@@ -154,7 +158,7 @@ def test_multi(loader):
                 # cv_data = np.array(255 * cv_data, dtype='uint8')
                 # cv2.imshow('input data', cv_data)
                 # cv2.waitKey(20)
-                # print(output)
+                print(output)
                 # print('Pred vs. Target:', pred, target.data)
 
                 if args.cuda:
@@ -207,13 +211,14 @@ if __name__ == '__main__':
     parser.add_argument('--data', action='store', default='./data/',
                         help='dataset path')
     parser.add_argument('--arch', action='store', default='nin',
-                        help='the architecture for the network: nin or vgg')
+                        help='the architecture for the network: [nin, vgg, resnet20, or resnet34]')
     parser.add_argument('--lr', action='store', default='0.01',
                         help='the intial learning rate')
     parser.add_argument('--pretrained', action='store', default=None,
                         help='the path to the pretrained model')
     parser.add_argument('--evaluate', action='store_true',
                         help='evaluate the model')
+
     parser.add_argument('--fastMCD', action='store', default=None,
                         help='whether to run on fastMCD data')
     parser.add_argument('--python_fastMCD', action='store', default=None,
@@ -222,6 +227,8 @@ if __name__ == '__main__':
                         help='whether to use multi object fastMCD detection')
     parser.add_argument('--label', action='store', default=None,
                         help='label to use for all image frames')
+    parser.add_argument('--bwn', action='store_true', default=False,
+                        help='Use binary weight network only (do not binarize inputs)')
     args = parser.parse_args()
     print('==> Options:', args)
 
@@ -256,9 +263,13 @@ if __name__ == '__main__':
     # define the model
     print('==> building model', args.arch, '...')
     if args.arch == 'nin':
-        model = nin.Net(init_weights=not args.pretrained)
+        model = nin.Net(init_weights=not args.pretrained, bwn=args.bwn)
     elif args.arch == 'vgg':
-        model = vgg.VGG13(init_weights=not args.pretrained)
+        model = vgg.VGG13(init_weights=not args.pretrained, bwn=args.bwn)
+    elif args.arch == 'resnet20':
+        model = resnet_20.ResNet20(resnet_20.BasicBlock, [3, 3, 3], bwn=args.bwn)
+    elif args.arch == 'resnet34':
+        model = resnet_34.ResNet34(resnet_34.BasicBlock, [3, 4, 6, 3], bwn=args.bwn)
     else:
         raise Exception(args.arch + ' is currently not supported')
 
@@ -291,11 +302,7 @@ if __name__ == '__main__':
     optimizer = optim.Adam(params, lr=0.10, weight_decay=0.00001)
     criterion = nn.CrossEntropyLoss()
 
-    if args.arch == 'nin':
-        # define the binarization operator
-        bin_op = util.BinOp(model)
-    elif args.arch == 'vgg':
-        bin_op = vgg_util.VGGBinOp(model)
+    bin_op = util.BinOp(model)
 
     # do the evaluation if specified
     if args.multi_fastMCD:

@@ -23,15 +23,15 @@ class BinActive(torch.autograd.Function):
 
 
 class BinConv2d(nn.Module):
-    def __init__(self, input_channels, output_channels,
-                 kernel_size=-1, stride=-1, padding=-1,
-                 groups=1, dropout=0, Linear=False):
+    def __init__(self, input_channels, output_channels, kernel_size=-1, stride=-1,
+                 padding=-1, groups=1, dropout=0, Linear=False, bwn=False):
         super(BinConv2d, self).__init__()
         self.layer_type = 'BinConv2d'
         self.kernel_size = kernel_size
         self.stride = stride
         self.padding = padding
         self.dropout_ratio = dropout
+        self.bwn = bwn
 
         if dropout != 0:
             self.dropout = nn.Dropout(dropout)
@@ -48,7 +48,8 @@ class BinConv2d(nn.Module):
     
     def forward(self, x):
         x = self.bn(x)
-        x, mean = BinActive()(x)
+        if not self.bwn:
+            x, mean = BinActive()(x)
         if self.dropout_ratio != 0:
             x = self.dropout(x)
         if not self.Linear:
@@ -61,36 +62,36 @@ class BinConv2d(nn.Module):
 
 # [64, 64, 'M', 128, 128, 'M', 256, 256, 'M', 512, 512, 'M', 512, 512, 'M'],
 class VGG13(nn.Module):
-    def __init__(self, num_classes=10, init_weights=True):
+    def __init__(self, num_classes=10, init_weights=True, bwn=False):
         super(VGG13, self).__init__()
         self.features = nn.Sequential(
             nn.Conv2d(3, 64, kernel_size=3, stride=1, padding=1),
             nn.BatchNorm2d(64, eps=1e-4, momentum=0.1, affine=False),
             nn.ReLU(inplace=True),
-            BinConv2d(64, 64, kernel_size=3, stride=1, padding=1),  # Does Batch Norm and ReLU
+            BinConv2d(64, 64, kernel_size=3, stride=1, padding=1, bwn=bwn),  # Does Batch Norm and ReLU
             nn.MaxPool2d(kernel_size=2, stride=2, return_indices=False),
 
-            BinConv2d(64, 128, kernel_size=3, stride=1, padding=1),
-            BinConv2d(128, 128, kernel_size=3, stride=1, padding=1),
+            BinConv2d(64, 128, kernel_size=3, stride=1, padding=1, bwn=bwn),
+            BinConv2d(128, 128, kernel_size=3, stride=1, padding=1, bwn=bwn),
             nn.MaxPool2d(kernel_size=2, stride=2),
 
-            BinConv2d(128, 256, kernel_size=3, stride=1, padding=1),
-            BinConv2d(256, 256, kernel_size=3, stride=1, padding=1),
+            BinConv2d(128, 256, kernel_size=3, stride=1, padding=1, bwn=bwn),
+            BinConv2d(256, 256, kernel_size=3, stride=1, padding=1, bwn=bwn),
             nn.MaxPool2d(kernel_size=2, stride=2),
 
-            BinConv2d(256, 512, kernel_size=3, stride=1, padding=1),
-            BinConv2d(512, 512, kernel_size=3, stride=1, padding=1),
+            BinConv2d(256, 512, kernel_size=3, stride=1, padding=1, bwn=bwn),
+            BinConv2d(512, 512, kernel_size=3, stride=1, padding=1, bwn=bwn),
             nn.MaxPool2d(kernel_size=2, stride=2),
 
-            BinConv2d(512, 512, kernel_size=3, stride=1, padding=1),
-            BinConv2d(512, 512, kernel_size=3, stride=1, padding=1),
+            BinConv2d(512, 512, kernel_size=3, stride=1, padding=1, bwn=bwn),
+            BinConv2d(512, 512, kernel_size=3, stride=1, padding=1, bwn=bwn),
             nn.MaxPool2d(kernel_size=2, stride=2),
         )
         self.avgpool = nn.AdaptiveAvgPool2d((7, 7))
         self.classifier = nn.Sequential(
-            BinConv2d(512 * 7 * 7, 4096, Linear=True),
-            BinConv2d(4096, 4096, dropout=0.5, Linear=True),
-            nn.BatchNorm1d(4096, eps=1e-3, momentum=0.1, affine=True),
+            BinConv2d(512 * 7 * 7, 4096, Linear=True, bwn=bwn),
+            BinConv2d(4096, 4096, dropout=0.5, Linear=True, bwn=bwn),
+            # nn.BatchNorm1d(4096, eps=1e-3, momentum=0.1, affine=True),
             nn.Dropout(),
             nn.Linear(4096, num_classes),
         )
