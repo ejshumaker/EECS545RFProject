@@ -38,11 +38,14 @@ def test_multi(model, loader):
         file_name = args.data.split("/")[-2]
     resultsFile = open(file_name + '_BOUNDING_BOX_' + args.classifier + '_normal.txt', 'w')
 
+    timed = True
+
     num_evals = 0
     acc = 0
     for frame, data_list in enumerate(loader):
         frame_timer.start_time()
-        resultsFile.write("frame " + str(frame) + ':\n' + 'Objects:\n\n')
+        if not timed:
+            resultsFile.write("frame " + str(frame) + ':\n' + 'Objects:\n\n')
         for data in data_list:
             with torch.no_grad():
                 data, target, bounding_box = data
@@ -56,12 +59,13 @@ def test_multi(model, loader):
 
                 pred = output.data.max(1, keepdim=True)[1]
 
-                x1, y1, x2, y2 = bounding_box
-                t2s = lambda x: str(x.numpy()[0])
+                if not timed:
+                    x1, y1, x2, y2 = bounding_box
+                    t2s = lambda x: str(x.numpy()[0])
                 
-                # Write bounding box and prediction to file
-                resultsFile.write(classes[pred] + ':\n')
-                resultsFile.write('Bounding Box:' + t2s(x1) + ',' + t2s(y1) + ',' + t2s(x2) + ',' + t2s(y2) + '\n')
+                    # Write bounding box and prediction to file
+                    resultsFile.write(classes[pred] + ':\n')
+                    resultsFile.write('Bounding Box:' + t2s(x1) + ',' + t2s(y1) + ',' + t2s(x2) + ',' + t2s(y2) + '\n')
 
                 if target == 1:
                     correct += (pred == 1).numpy().sum()
@@ -75,10 +79,11 @@ def test_multi(model, loader):
     
     frame_times = frame_timer.get_saved_times()
     preprocess_times = loader.dataset.preprocess_timer.get_saved_times()
-    # with open(file_name + '_frame_times_' + args.classifier + '_normal.csv', 'w', newline='') as myfile:
-    #     wr = csv.writer(myfile)
-    #     for i in range(len(frame_times)):
-    #         wr.writerow([frame_times[i], preprocess_times[i]])
+    if timed:
+        with open('frame_times.csv', 'w') as myfile:
+            wr = csv.writer(myfile)
+            for i in range(len(frame_times)):
+                wr.writerow([frame_times[i], preprocess_times[i]])
 
     return acc
 
