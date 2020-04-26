@@ -139,7 +139,7 @@ def test_multi(loader):
     acc = 0
     for frame, data_list in enumerate(loader):
         frame_timer.start_time()
-        # resultsFile.write("frame " + str(frame) + ':\n' + 'Objects:\n\n')
+        resultsFile.write("frame " + str(frame) + ':\n' + 'Objects:\n\n')
         for data_label in data_list:
             with torch.no_grad():
                 data, target, bounding_box = data_label
@@ -156,12 +156,12 @@ def test_multi(loader):
 
                 pred = output.data.max(1, keepdim=True)[1]
 
-                # x1, y1, x2, y2 = bounding_box
-                # t2s = lambda x: str(x.numpy()[0])
+                x1, y1, x2, y2 = bounding_box
+                t2s = lambda x: str(x.numpy()[0])
                 
                 # Write bounding box and prediction to file
-                # resultsFile.write(classes[pred] + ':\n')
-                # resultsFile.write('Bounding Box:' + t2s(x1) + ',' + t2s(y1) + ',' + t2s(x2) + ',' + t2s(y2) + '\n')
+                resultsFile.write(classes[pred] + ':\n')
+                resultsFile.write('Bounding Box:' + t2s(x1) + ',' + t2s(y1) + ',' + t2s(x2) + ',' + t2s(y2) + '\n')
 
                 confusion[pred] += 1
 

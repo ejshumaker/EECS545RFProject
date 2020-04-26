@@ -40,9 +40,9 @@ def test_multi(model, loader):
 
     num_evals = 0
     acc = 0
-    for data_list in loader:
+    for frame, data_list in enumerate(loader):
         frame_timer.start_time()
-        # resultsFile.write("frame " + str(frame) + ':\n' + 'Objects:\n\n')
+        resultsFile.write("frame " + str(frame) + ':\n' + 'Objects:\n\n')
         for data in data_list:
             with torch.no_grad():
                 data, target, bounding_box = data
