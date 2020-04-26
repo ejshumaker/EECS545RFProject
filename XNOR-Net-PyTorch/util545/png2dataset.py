@@ -125,7 +125,7 @@ class ImageDataset_python(Dataset):
 
 
 class ImageDataset_multi(Dataset):
-    def __init__(self, root_dir, lazylabel=3):
+    def __init__(self, root_dir, lazylabel=3, rotate=True):
         """
         Args:
             root_dir (string): Directory with all the images.
@@ -141,6 +141,7 @@ class ImageDataset_multi(Dataset):
 
         # If no ground truth for each frame, use lazy label
         self.lazylabel = lazylabel
+        self.rotate = rotate
 
         self.preprocess_timer = Timer(desc='Preprocess', printflag=False)
         # Standard normalization
@@ -205,7 +206,8 @@ class ImageDataset_multi(Dataset):
             # cv2.waitKey(20)
 
             roi = cv2.resize(roi, (32, 32))
-            roi = cv2.rotate(roi, cv2.ROTATE_90_COUNTERCLOCKWISE)
+            if self.rotate:
+                roi = cv2.rotate(roi, cv2.ROTATE_90_COUNTERCLOCKWISE)
             roi = self.transforms(roi)
             
             # label everything as a cat (3)
