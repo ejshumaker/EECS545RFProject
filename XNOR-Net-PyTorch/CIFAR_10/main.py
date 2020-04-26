@@ -36,7 +36,7 @@ classes = ['plane', 'car', 'bird', 'cat', 'deer', 'dog', 'frog', 'horse', 'ship'
 
 
 def save_state(model, best_acc):
-    print('==> Saving model ...')
+    print('Saving model')
     new_state_dict = {}
     for key in model.state_dict().keys():
         new_state_dict[key.replace('module.', '')] = model.state_dict()[key]
@@ -57,7 +57,7 @@ def train(epoch, loader):
         if args.cuda:
             data, target = data.cuda(), target.cuda()
 
-        # forwarding
+        # forward pass
         data, target = Variable(data), Variable(target)
         optimizer.zero_grad()
 
@@ -66,7 +66,7 @@ def train(epoch, loader):
             warnings.simplefilter("ignore")
             output = model(data)
         
-        # backwarding
+        # backward pass
         loss = criterion(output, target)
         loss.backward()
 
@@ -139,7 +139,7 @@ def test_multi(loader):
     acc = 0
     for frame, data_list in enumerate(loader):
         frame_timer.start_time()
-        resultsFile.write("frame " + str(frame) + ':\n' + 'Objects:\n\n')
+        # resultsFile.write("frame " + str(frame) + ':\n' + 'Objects:\n\n')
         for data_label in data_list:
             with torch.no_grad():
                 data, target, bounding_box = data_label
@@ -156,16 +156,16 @@ def test_multi(loader):
 
                 pred = output.data.max(1, keepdim=True)[1]
 
-                x1, y1, x2, y2 = bounding_box
-                t2s = lambda x: str(x.numpy()[0])
+                # x1, y1, x2, y2 = bounding_box
+                # t2s = lambda x: str(x.numpy()[0])
                 
                 # Write bounding box and prediction to file
-                resultsFile.write(classes[pred] + ':\n')
-                resultsFile.write('Bounding Box:' + t2s(x1) + ',' + t2s(y1) + ',' + t2s(x2) + ',' + t2s(y2) + '\n')
+                # resultsFile.write(classes[pred] + ':\n')
+                # resultsFile.write('Bounding Box:' + t2s(x1) + ',' + t2s(y1) + ',' + t2s(x2) + ',' + t2s(y2) + '\n')
 
                 confusion[pred] += 1
 
-                # DEBUG: Display Input Image and print network output
+                # # DEBUG: Display Input Image and print network output
                 # cv_data = data.data.numpy().squeeze().copy()
                 # cv_data = np.swapaxes(cv_data, 0, 2)
                 # # rescale data to 0-255
@@ -173,8 +173,8 @@ def test_multi(loader):
                 # cv_data /= np.max(cv_data)
                 # cv_data = np.array(255 * cv_data, dtype='uint8')
                 # cv2.imshow('input data', cv_data)
-                # cv2.waitKey(20)
-                print(output)
+                # cv2.waitKey(50)
+                # print(output)
                 # print('Pred vs. Target:', pred, target.data)
 
                 if args.cuda:
@@ -188,9 +188,10 @@ def test_multi(loader):
                         correct += pred.eq(target.data.view_as(pred)).sum()
 
                 acc = 100. * float(correct) / num_evals
-                print('Running Accuracy', acc)
+                # print('Running Accuracy', acc)
         frame_timer.end_time()
     bin_op.restore()
+    resultsFile.close()
 
     # if acc > best_acc:
     #     best_acc = acc
@@ -205,8 +206,8 @@ def test_multi(loader):
     preprocess_times = loader.dataset.preprocess_timer.get_saved_times()
     with open('frame_times.csv', 'w', newline='') as myfile:
         wr = csv.writer(myfile)
-        wr.writerow(frame_times)
-        wr.writerow(preprocess_times)
+        for i in range(len(frame_times)):
+            wr.writerow([frame_times[i], preprocess_times[i]])
 
     return confusion
 
@@ -264,7 +265,6 @@ if __name__ == '__main__':
 
     # 545 Project Data
     proj_loader = None
-    label = None
     if args.fastMCD:
         proj_loader = torch.utils.data.DataLoader(
             png2dataset.ImageDataset(args.fastMCD, thresh=160), shuffle=True)
@@ -325,7 +325,7 @@ if __name__ == '__main__':
     # do the evaluation if specified
     if args.multi_fastMCD:
         confusion = test_multi(proj_loader)
-        print('Label:', label)
+        print('Label:', args.label)
         print('Confusion:', confusion)
         exit(0)
     if args.python_fastMCD:

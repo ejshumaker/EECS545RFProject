@@ -171,25 +171,26 @@ class ImageDataset_multi(Dataset):
         mask_name = os.path.join(self.root_dir, self.image_files[2 * idx])
         mask = cv2.imread(mask_name, cv2.IMREAD_GRAYSCALE)
 
-        rects = multiObjectFrame(mask, blobSize=0.07, slack=0.02)
+        rects = multiObjectFrame(mask, blobSize=0.07, slack=0.01)
 
         for rect in rects:
             x, y, w, h = rect
 
-            # grab a buffer region of 4 pixels to left, right, up, and down for each bounding box
+            # grab a buffer region around each bounding box
             # X direction
+            buffer = 12
             min_val = 0
             max_val = image.shape[1]
-            x_new = np.clip(x - 4, min_val, max_val)
+            x_new = np.clip(x - buffer, min_val, max_val)
             moved = x - x_new
-            w_new = np.clip(w + 4 + moved, min_val, max_val)
+            w_new = np.clip(w + buffer + moved, min_val, max_val)
 
             # Y direction
             min_val = 0
             max_val = image.shape[0]
-            y_new = np.clip(y - 4, min_val, max_val)
+            y_new = np.clip(y - buffer, min_val, max_val)
             moved = y - y_new
-            h_new = np.clip(h + 4 + moved, min_val, max_val)
+            h_new = np.clip(h + buffer + moved, min_val, max_val)
 
             x = x_new
             w = w_new
@@ -197,10 +198,11 @@ class ImageDataset_multi(Dataset):
             h = h_new
 
             roi = image[y:y + h, x:x + w, :].copy()
+            # cv2.imshow('mask', mask)
             # cv2.rectangle(image, (x, y), (x + w, y + h), (0, 255, 0))
             # cv2.imshow('image w/ roi', image)
             # cv2.imshow('roi', roi)
-            # cv2.waitKey(20)
+            # cv2.waitKey()
 
             roi = cv2.resize(roi, (32, 32))
             roi = self.transforms(roi)

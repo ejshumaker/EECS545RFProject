@@ -65,7 +65,7 @@ def nonMaxSuppression(boundingBoxes, slackThresh=10):
     return keepBoxes
 
 
-def multiObjectFrame(mask, blobSize=0.05, slack=0.01):
+def multiObjectFrame(mask, blobSize=0.05, slack=0.005):
     # Find contours
     contours, hierarchy = cv2.findContours(mask, cv2.RETR_TREE, cv2.CHAIN_APPROX_SIMPLE)
 

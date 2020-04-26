@@ -6,6 +6,7 @@ from pytorch_lightning import Trainer
 
 import torch
 import cv2
+import csv
 dir_path = os.path.dirname(os.path.realpath(__file__))
 parent_dir_path = os.path.abspath(os.path.join(dir_path, os.pardir))
 sys.path.insert(0, parent_dir_path)
@@ -13,6 +14,8 @@ from util545 import png2dataset
 from util545.timer import Timer
 from cifar10_module import CIFAR10_Module
 
+args = None
+classes = ['plane', 'car', 'bird', 'cat', 'deer', 'dog', 'frog', 'horse', 'ship', 'truck']
 
 def main(hparams):
     # torch.cuda.set_device(hparams.gpu)
@@ -28,15 +31,21 @@ def test_multi(model, loader):
     correct = 0
 
     # Create timer for frames
-    # frame_timer = Timer(desc='Frame', printflag=False)
+    frame_timer = Timer(desc='Frame', printflag=False)
+
+    file_name = args.data.split("/")[-1]
+    if file_name == '':
+        file_name = args.data.split("/")[-2]
+    resultsFile = open(file_name + '_BOUNDING_BOX_' + args.classifier + '_normal.txt', 'w')
 
     num_evals = 0
     acc = 0
-    for data_label_list in loader:
-        # frame_timer.start_time()
-        for data_label in data_label_list:
+    for data_list in loader:
+        frame_timer.start_time()
+        # resultsFile.write("frame " + str(frame) + ':\n' + 'Objects:\n\n')
+        for data in data_list:
             with torch.no_grad():
-                data, target = data_label
+                data, target, bounding_box = data
                 
                 # data, target = Variable(data), Variable(target)
                 output = None
@@ -47,15 +56,29 @@ def test_multi(model, loader):
 
                 pred = output.data.max(1, keepdim=True)[1]
 
+                x1, y1, x2, y2 = bounding_box
+                t2s = lambda x: str(x.numpy()[0])
+                
+                # Write bounding box and prediction to file
+                resultsFile.write(classes[pred] + ':\n')
+                resultsFile.write('Bounding Box:' + t2s(x1) + ',' + t2s(y1) + ',' + t2s(x2) + ',' + t2s(y2) + '\n')
+
                 if target == 1:
                     correct += (pred == 1).numpy().sum()
                     correct += (pred == 9).numpy().sum()
                 else:
                     correct += pred.eq(target.data.view_as(pred)).sum()
                 acc = 100. * float(correct) / num_evals
-                print(output)
-                print('Running Acc:', acc)
-        # frame_timer.end_time()
+                # print(output)
+                # print('Running Acc:', acc)
+        frame_timer.end_time()
+    
+    frame_times = frame_timer.get_saved_times()
+    preprocess_times = loader.dataset.preprocess_timer.get_saved_times()
+    # with open(file_name + '_frame_times_' + args.classifier + '_normal.csv', 'w', newline='') as myfile:
+    #     wr = csv.writer(myfile)
+    #     for i in range(len(frame_times)):
+    #         wr.writerow([frame_times[i], preprocess_times[i]])
 
     return acc
 
