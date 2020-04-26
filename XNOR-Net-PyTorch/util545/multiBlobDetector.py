@@ -86,7 +86,7 @@ def multiObjectFrame(mask, blobSize=0.05, slack=0.005):
     return nonOverlappingRects
 
 
-def multiObjectVideo(dir_name='data/cheetah_results'):
+def multiObjectVideo(dir_name='data/cheetah_results', saveImg=False):
     image_files = []
     for filename in os.listdir(dir_name):
         if filename.endswith(".png"):
@@ -119,9 +119,12 @@ def multiObjectVideo(dir_name='data/cheetah_results'):
         cv2.imshow('mask', mask)
         cv2.waitKey(10)
 
+        if saveImg and ('258' in image_files[2 * i] or '186' in image_files[2 * i]):
+            cv2.imwrite(image_files[2 * i], image)
+
         out.write(image)
     out.release()
 
 
 if __name__ == '__main__':
-    multiObjectVideo('../../fastMCD/test/streetlight1_results/')
+    multiObjectVideo('../../fastMCD/test/Streetlight_mask_Morph_Output', saveImg=True)

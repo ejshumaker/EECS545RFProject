@@ -205,6 +205,7 @@ class ImageDataset_multi(Dataset):
             # cv2.waitKey(20)
 
             roi = cv2.resize(roi, (32, 32))
+            roi = cv2.rotate(roi, cv2.ROTATE_90_COUNTERCLOCKWISE)
             roi = self.transforms(roi)
             
             # label everything as a cat (3)
