@@ -123,37 +123,5 @@ def multiObjectVideo(dir_name='data/cheetah_results'):
     out.release()
 
 
-def video2images(path='../../Data/All_Videos/Morph_Output_theta_d2.avi'):
-    cap = cv2.VideoCapture(path)
-
-    file_name = path.split('/')[-1].split('.')[0]
-    try:
-        os.mkdir('../../fastMCD/test/highway_shortened_' + file_name)
-        # os.mkdir('highway_results_' + file_name)
-    except:
-        print('Whoops')
-    
-    i = 1
-    while(cap.isOpened()):
-        ret, frame = cap.read()
-        if not ret:
-            break
-
-        gray = cv2.cvtColor(frame, cv2.COLOR_BGR2GRAY)
-        if i < 482:
-            cv2.imwrite('../../fastMCD/test/highway_shortened_' + file_name + '/highway_short_frm' + str(i).zfill(5) + '.png', gray)
-        else:
-            break
-        # cv2.imwrite('highway_results_' + file_name + '/highway_short_frm' + str(i).zfill(5) + '.png', gray)
-
-        cv2.imshow('frame', gray)
-        if cv2.waitKey(1) & 0xFF == ord('q'):
-            break
-        i += 1
-
-    cap.release()
-    cv2.destroyAllWindows()
-
-
 if __name__ == '__main__':
-    multiObjectVideo('../../fastMCD/test/highway_results')
+    multiObjectVideo('../../fastMCD/test/streetlight1_results/')

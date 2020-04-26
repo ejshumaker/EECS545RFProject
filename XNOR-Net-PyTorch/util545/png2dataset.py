@@ -171,7 +171,7 @@ class ImageDataset_multi(Dataset):
         mask_name = os.path.join(self.root_dir, self.image_files[2 * idx])
         mask = cv2.imread(mask_name, cv2.IMREAD_GRAYSCALE)
 
-        rects = multiObjectFrame(mask, blobSize=0.1, slack=0.01)
+        rects = multiObjectFrame(mask, blobSize=0.05, slack=0.01)
 
         for rect in rects:
             x, y, w, h = rect
@@ -198,11 +198,11 @@ class ImageDataset_multi(Dataset):
             h = h_new
 
             roi = image[y:y + h, x:x + w, :].copy()
-            # cv2.imshow('mask', mask)
-            # cv2.rectangle(image, (x, y), (x + w, y + h), (0, 255, 0))
-            # cv2.imshow('image w/ roi', image)
-            # cv2.imshow('roi', roi)
-            # cv2.waitKey(20)
+            cv2.imshow('mask', mask)
+            cv2.rectangle(image, (x, y), (x + w, y + h), (0, 255, 0))
+            cv2.imshow('image w/ roi', image)
+            cv2.imshow('roi', roi)
+            cv2.waitKey(20)
 
             roi = cv2.resize(roi, (32, 32))
             roi = self.transforms(roi)
