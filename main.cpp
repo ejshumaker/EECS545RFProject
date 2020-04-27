@@ -128,7 +128,7 @@ int main(int argc, char **argv){
 			float time_post = std::chrono::duration_cast<std::chrono::microseconds>(end - start).count() / 1000.0;
 			float total = time_pp + time_klt + time_parallelBlock + time_update + time_post;
 			std::printf("Frame: %d PP: %f KLT: %f ||Block %f ||UPT: %f POST: %f Total: %f\n", i, time_pp, time_klt, time_parallelBlock, time_update, time_post,total);
-			timeFile << time_pp << "," << time_klt << "," << time_parallelBlock << "," << time_update << "," << time_post <<total << std::endl;
+			timeFile << time_pp << "," << time_klt << "," << time_parallelBlock << "," << time_update << "," << time_post << "," << total << std::endl;
 			cv::imshow("Closed_Mask", closed_mask);
 			cv::imshow("Open_Mask", open_mask);
 #endif
