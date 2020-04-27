@@ -148,12 +148,14 @@ int main(int argc, char **argv){
 
 		char buf[1000];
 		sprintf(buf, "./results/frm%05d_orig.png", i);
-
+		cv::imwrite(buf, frame);
+		sprintf(buf, "./results/frm%05d.png", i);
 #if MEDIAN
 		cv::imwrite(buf, median_mask);
 #else
 		cv::imwrite(buf, open_mask);
 #endif
+		
 
 #if VIDEO_OUT
 		mask_output_morph << open_mask;
