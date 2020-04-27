@@ -3,7 +3,7 @@
 ## Usage:
 Compile FastestMCD using Visual Studio, and run it on a dataset to produce images and masks OR use the supplied ones we already ran it on.
 ```bash
-cd <REPO ROOT>/XNOR-Net-PyTorch/CIFAR10
+cd <REPO ROOT>/fastMCD_output
 $ ./fastMCD ../Data/streetlight.mp4 1
 ```
 
