@@ -30,7 +30,7 @@ int main(int argc, char **argv){
 	//--- INITIALIZE CSV
 	std::ofstream timeFile;
 	timeFile.open("timeFile.csv");
-	timeFile << "PreProcess, KLT, parallelBlock, parallelUpdate" << std::endl;
+	timeFile << "PreProcess, KLT, parallelBlock, parallelUpdate,PostProcess,Total" << std::endl;
 	
 
 	
@@ -126,8 +126,9 @@ int main(int argc, char **argv){
 			cv::morphologyEx(closed_mask, open_mask, cv::MORPH_OPEN, element, cv::Point(-1, -1), bgs.m_cfg.block_size);
 			end = std::chrono::high_resolution_clock::now();
 			float time_post = std::chrono::duration_cast<std::chrono::microseconds>(end - start).count() / 1000.0;
-			std::printf("Frame: %d PP: %f KLT: %f ||Block %f ||UPT: %f POST: %f\n", i, time_pp, time_klt, time_parallelBlock, time_update, time_post);
-			timeFile << time_pp << "," << time_klt << "," << time_parallelBlock << "," << time_update << "," << time_post << std::endl;
+			float total = time_pp + time_klt + time_parallelBlock + time_update + time_post;
+			std::printf("Frame: %d PP: %f KLT: %f ||Block %f ||UPT: %f POST: %f Total: %f\n", i, time_pp, time_klt, time_parallelBlock, time_update, time_post,total);
+			timeFile << time_pp << "," << time_klt << "," << time_parallelBlock << "," << time_update << "," << time_post <<total << std::endl;
 			cv::imshow("Closed_Mask", closed_mask);
 			cv::imshow("Open_Mask", open_mask);
 #endif
