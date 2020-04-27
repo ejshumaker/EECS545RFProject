@@ -1,0 +1,26 @@
+<annotation>
+	<folder>frames_streelight</folder>
+	<filename>streelight_290.png</filename>
+	<path>/Users/eshumaker/Documents/EECS545/MCDProject/Data/frames_streelight/streelight_290.png</path>
+	<source>
+		<database>Unknown</database>
+	</source>
+	<size>
+		<width>268</width>
+		<height>133</height>
+		<depth>3</depth>
+	</size>
+	<segmented>0</segmented>
+	<object>
+		<name>None</name>
+		<pose>Unspecified</pose>
+		<truncated>0</truncated>
+		<difficult>0</difficult>
+		<bndbox>
+			<xmin>133</xmin>
+			<ymin>33</ymin>
+			<xmax>174</xmax>
+			<ymax>46</ymax>
+		</bndbox>
+	</object>
+</annotation>

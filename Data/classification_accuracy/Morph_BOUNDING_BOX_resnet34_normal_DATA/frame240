@@ -1,0 +1,10 @@
+Objects:
+
+truck:
+Bounding Box:0,82,48,121
+ship:
+Bounding Box:199,102,264,133
+car:
+Bounding Box:21,42,67,69
+cat:
+Bounding Box:236,70,272,95

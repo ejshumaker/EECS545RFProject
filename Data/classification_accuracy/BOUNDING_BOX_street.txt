@@ -1,0 +1,1994 @@
+Demo
+video file: ../streelight1.mp4
+[2J[1;1H
+FPS:13662.2
+Objects:
+
+[2J[1;1H
+FPS:0.0
+Objects:
+
+[2J[1;1H
+FPS:0.0
+Objects:
+
+[2J[1;1H
+FPS:0.0
+Objects:
+
+[2J[1;1H
+FPS:0.0
+Objects:
+
+[2J[1;1H
+FPS:0.0
+Objects:
+
+[2J[1;1H
+FPS:0.0
+Objects:
+
+[2J[1;1H
+FPS:0.0
+Objects:
+
+[2J[1;1H
+FPS:0.0
+Objects:
+
+[2J[1;1H
+FPS:0.0
+Objects:
+
+[2J[1;1H
+FPS:0.0
+Objects:
+
+[2J[1;1H
+FPS:0.0
+Objects:
+
+[2J[1;1H
+FPS:0.0
+Objects:
+
+[2J[1;1H
+FPS:0.0
+Objects:
+
+[2J[1;1H
+FPS:0.0
+Objects:
+
+[2J[1;1H
+FPS:0.0
+Objects:
+
+[2J[1;1H
+FPS:0.0
+Objects:
+
+[2J[1;1H
+FPS:0.0
+Objects:
+
+[2J[1;1H
+FPS:0.0
+Objects:
+
+[2J[1;1H
+FPS:0.0
+Objects:
+
+[2J[1;1H
+FPS:0.0
+Objects:
+
+[2J[1;1H
+FPS:0.0
+Objects:
+
+[2J[1;1H
+FPS:0.0
+Objects:
+
+[2J[1;1H
+FPS:0.0
+Objects:
+
+[2J[1;1H
+FPS:0.0
+Objects:
+
+[2J[1;1H
+FPS:0.0
+Objects:
+
+[2J[1;1H
+FPS:0.0
+Objects:
+
+[2J[1;1H
+FPS:0.0
+Objects:
+
+[2J[1;1H
+FPS:0.0
+Objects:
+
+[2J[1;1H
+FPS:0.0
+Objects:
+
+[2J[1;1H
+FPS:0.0
+Objects:
+
+car: 66%
+Bounding Box:177,82,229,107
+[2J[1;1H
+FPS:0.0
+Objects:
+
+[2J[1;1H
+FPS:0.0
+Objects:
+
+[2J[1;1H
+FPS:0.0
+Objects:
+
+car: 55%
+Bounding Box:150,81,203,106
+car: 50%
+Bounding Box:25,95,65,115
+[2J[1;1H
+FPS:0.0
+Objects:
+
+[2J[1;1H
+FPS:0.0
+Objects:
+
+car: 61%
+Bounding Box:136,80,187,106
+[2J[1;1H
+FPS:0.0
+Objects:
+
+[2J[1;1H
+FPS:0.0
+Objects:
+
+car: 75%
+Bounding Box:0,89,35,111
+car: 54%
+Bounding Box:121,80,172,105
+[2J[1;1H
+FPS:0.0
+Objects:
+
+car: 56%
+Bounding Box:109,79,161,104
+[2J[1;1H
+FPS:0.0
+Objects:
+
+car: 56%
+Bounding Box:104,79,158,103
+[2J[1;1H
+FPS:0.0
+Objects:
+
+car: 77%
+Bounding Box:96,78,145,102
+[2J[1;1H
+FPS:0.0
+Objects:
+
+car: 54%
+Bounding Box:90,77,142,102
+[2J[1;1H
+FPS:0.0
+Objects:
+
+car: 75%
+Bounding Box:83,77,129,100
+[2J[1;1H
+FPS:0.0
+Objects:
+
+[2J[1;1H
+FPS:0.0
+Objects:
+
+car: 58%
+Bounding Box:67,74,115,98
+[2J[1;1H
+FPS:0.0
+Objects:
+
+[2J[1;1H
+FPS:0.0
+Objects:
+
+car: 83%
+Bounding Box:53,74,100,97
+[2J[1;1H
+FPS:0.0
+Objects:
+
+[2J[1;1H
+FPS:0.0
+Objects:
+
+[2J[1;1H
+FPS:0.0
+Objects:
+
+[2J[1;1H
+FPS:0.0
+Objects:
+
+[2J[1;1H
+FPS:0.0
+Objects:
+
+[2J[1;1H
+FPS:0.0
+Objects:
+
+[2J[1;1H
+FPS:0.0
+Objects:
+
+[2J[1;1H
+FPS:0.0
+Objects:
+
+[2J[1;1H
+FPS:0.0
+Objects:
+
+[2J[1;1H
+FPS:0.0
+Objects:
+
+[2J[1;1H
+FPS:0.0
+Objects:
+
+[2J[1;1H
+FPS:0.0
+Objects:
+
+[2J[1;1H
+FPS:0.0
+Objects:
+
+[2J[1;1H
+FPS:0.0
+Objects:
+
+[2J[1;1H
+FPS:0.0
+Objects:
+
+[2J[1;1H
+FPS:0.0
+Objects:
+
+[2J[1;1H
+FPS:0.0
+Objects:
+
+[2J[1;1H
+FPS:0.0
+Objects:
+
+[2J[1;1H
+FPS:0.0
+Objects:
+
+[2J[1;1H
+FPS:0.0
+Objects:
+
+[2J[1;1H
+FPS:0.0
+Objects:
+
+[2J[1;1H
+FPS:0.0
+Objects:
+
+[2J[1;1H
+FPS:0.0
+Objects:
+
+[2J[1;1H
+FPS:0.0
+Objects:
+
+[2J[1;1H
+FPS:0.0
+Objects:
+
+[2J[1;1H
+FPS:0.0
+Objects:
+
+[2J[1;1H
+FPS:0.0
+Objects:
+
+[2J[1;1H
+FPS:0.0
+Objects:
+
+[2J[1;1H
+FPS:0.0
+Objects:
+
+[2J[1;1H
+FPS:0.0
+Objects:
+
+[2J[1;1H
+FPS:0.0
+Objects:
+
+[2J[1;1H
+FPS:0.0
+Objects:
+
+[2J[1;1H
+FPS:0.0
+Objects:
+
+[2J[1;1H
+FPS:0.0
+Objects:
+
+[2J[1;1H
+FPS:0.0
+Objects:
+
+[2J[1;1H
+FPS:0.0
+Objects:
+
+[2J[1;1H
+FPS:0.0
+Objects:
+
+[2J[1;1H
+FPS:0.0
+Objects:
+
+[2J[1;1H
+FPS:0.0
+Objects:
+
+[2J[1;1H
+FPS:0.0
+Objects:
+
+[2J[1;1H
+FPS:0.0
+Objects:
+
+[2J[1;1H
+FPS:0.0
+Objects:
+
+[2J[1;1H
+FPS:0.0
+Objects:
+
+[2J[1;1H
+FPS:0.0
+Objects:
+
+[2J[1;1H
+FPS:0.0
+Objects:
+
+[2J[1;1H
+FPS:0.0
+Objects:
+
+[2J[1;1H
+FPS:0.0
+Objects:
+
+[2J[1;1H
+FPS:0.0
+Objects:
+
+[2J[1;1H
+FPS:0.0
+Objects:
+
+car: 51%
+Bounding Box:161,105,218,129
+[2J[1;1H
+FPS:0.0
+Objects:
+
+[2J[1;1H
+FPS:0.0
+Objects:
+
+[2J[1;1H
+FPS:0.0
+Objects:
+
+[2J[1;1H
+FPS:0.0
+Objects:
+
+[2J[1;1H
+FPS:0.0
+Objects:
+
+[2J[1;1H
+FPS:0.0
+Objects:
+
+[2J[1;1H
+FPS:0.0
+Objects:
+
+car: 58%
+Bounding Box:77,99,136,123
+[2J[1;1H
+FPS:0.0
+Objects:
+
+car: 53%
+Bounding Box:74,98,134,123
+[2J[1;1H
+FPS:0.0
+Objects:
+
+[2J[1;1H
+FPS:0.0
+Objects:
+
+[2J[1;1H
+FPS:0.0
+Objects:
+
+car: 55%
+Bounding Box:234,89,266,109
+[2J[1;1H
+FPS:0.0
+Objects:
+
+car: 54%
+Bounding Box:35,95,89,121
+[2J[1;1H
+FPS:0.0
+Objects:
+
+car: 59%
+Bounding Box:211,88,247,108
+[2J[1;1H
+FPS:0.0
+Objects:
+
+car: 62%
+Bounding Box:204,88,240,107
+[2J[1;1H
+FPS:0.0
+Objects:
+
+car: 60%
+Bounding Box:200,89,243,107
+[2J[1;1H
+FPS:0.0
+Objects:
+
+car: 58%
+Bounding Box:1,93,35,113
+[2J[1;1H
+FPS:0.0
+Objects:
+
+car: 56%
+Bounding Box:0,92,34,113
+car: 58%
+Bounding Box:175,86,214,106
+[2J[1;1H
+FPS:0.0
+Objects:
+
+car: 55%
+Bounding Box:173,87,213,105
+[2J[1;1H
+FPS:0.0
+Objects:
+
+[2J[1;1H
+FPS:0.0
+Objects:
+
+[2J[1;1H
+FPS:0.0
+Objects:
+
+[2J[1;1H
+FPS:0.0
+Objects:
+
+[2J[1;1H
+FPS:0.0
+Objects:
+
+car: 53%
+Bounding Box:118,82,157,101
+[2J[1;1H
+FPS:0.0
+Objects:
+
+car: 61%
+Bounding Box:112,81,149,101
+[2J[1;1H
+FPS:0.0
+Objects:
+
+car: 59%
+Bounding Box:110,81,149,101
+[2J[1;1H
+FPS:0.0
+Objects:
+
+car: 58%
+Bounding Box:92,78,144,102
+[2J[1;1H
+FPS:0.0
+Objects:
+
+car: 62%
+Bounding Box:83,79,121,99
+[2J[1;1H
+FPS:0.0
+Objects:
+
+car: 58%
+Bounding Box:81,79,121,99
+[2J[1;1H
+FPS:0.0
+Objects:
+
+car: 56%
+Bounding Box:74,79,114,98
+[2J[1;1H
+FPS:0.0
+Objects:
+
+[2J[1;1H
+FPS:0.0
+Objects:
+
+car: 53%
+Bounding Box:51,76,84,95
+[2J[1;1H
+FPS:0.0
+Objects:
+
+car: 63%
+Bounding Box:43,76,77,95
+[2J[1;1H
+FPS:0.0
+Objects:
+
+car: 64%
+Bounding Box:41,75,77,95
+[2J[1;1H
+FPS:0.0
+Objects:
+
+car: 64%
+Bounding Box:34,74,69,94
+[2J[1;1H
+FPS:0.0
+Objects:
+
+car: 64%
+Bounding Box:26,74,63,93
+[2J[1;1H
+FPS:0.0
+Objects:
+
+car: 63%
+Bounding Box:14,73,49,91
+[2J[1;1H
+FPS:0.0
+Objects:
+
+car: 65%
+Bounding Box:7,73,42,91
+[2J[1;1H
+FPS:0.0
+Objects:
+
+car: 67%
+Bounding Box:1,71,35,91
+[2J[1;1H
+FPS:0.0
+Objects:
+
+car: 59%
+Bounding Box:1,71,32,91
+[2J[1;1H
+FPS:0.0
+Objects:
+
+[2J[1;1H
+FPS:0.0
+Objects:
+
+[2J[1;1H
+FPS:0.0
+Objects:
+
+[2J[1;1H
+FPS:0.0
+Objects:
+
+[2J[1;1H
+FPS:0.0
+Objects:
+
+[2J[1;1H
+FPS:0.0
+Objects:
+
+[2J[1;1H
+FPS:0.0
+Objects:
+
+[2J[1;1H
+FPS:0.0
+Objects:
+
+[2J[1;1H
+FPS:0.0
+Objects:
+
+[2J[1;1H
+FPS:0.0
+Objects:
+
+[2J[1;1H
+FPS:0.0
+Objects:
+
+[2J[1;1H
+FPS:0.0
+Objects:
+
+[2J[1;1H
+FPS:0.0
+Objects:
+
+[2J[1;1H
+FPS:0.0
+Objects:
+
+[2J[1;1H
+FPS:0.0
+Objects:
+
+[2J[1;1H
+FPS:0.0
+Objects:
+
+[2J[1;1H
+FPS:0.0
+Objects:
+
+[2J[1;1H
+FPS:0.0
+Objects:
+
+[2J[1;1H
+FPS:0.0
+Objects:
+
+[2J[1;1H
+FPS:0.0
+Objects:
+
+[2J[1;1H
+FPS:0.0
+Objects:
+
+[2J[1;1H
+FPS:0.0
+Objects:
+
+[2J[1;1H
+FPS:0.0
+Objects:
+
+[2J[1;1H
+FPS:0.0
+Objects:
+
+[2J[1;1H
+FPS:0.0
+Objects:
+
+[2J[1;1H
+FPS:0.0
+Objects:
+
+[2J[1;1H
+FPS:0.0
+Objects:
+
+[2J[1;1H
+FPS:0.0
+Objects:
+
+[2J[1;1H
+FPS:0.0
+Objects:
+
+[2J[1;1H
+FPS:0.0
+Objects:
+
+truck: 62%
+Bounding Box:221,76,266,110
+[2J[1;1H
+FPS:0.0
+Objects:
+
+truck: 58%
+Bounding Box:211,75,263,110
+[2J[1;1H
+FPS:0.0
+Objects:
+
+truck: 91%
+Bounding Box:203,74,266,111
+[2J[1;1H
+FPS:0.0
+Objects:
+
+truck: 94%
+Bounding Box:194,72,266,111
+[2J[1;1H
+FPS:0.0
+Objects:
+
+truck: 65%
+Bounding Box:184,73,260,110
+[2J[1;1H
+FPS:0.0
+Objects:
+
+truck: 92%
+Bounding Box:176,72,261,110
+[2J[1;1H
+FPS:0.0
+Objects:
+
+truck: 64%
+Bounding Box:173,73,258,110
+[2J[1;1H
+FPS:0.0
+Objects:
+
+truck: 75%
+Bounding Box:162,73,245,110
+[2J[1;1H
+FPS:0.0
+Objects:
+
+truck: 66%
+Bounding Box:152,72,230,109
+[2J[1;1H
+FPS:0.0
+Objects:
+
+truck: 70%
+Bounding Box:146,72,231,109
+[2J[1;1H
+FPS:0.0
+Objects:
+
+truck: 82%
+Bounding Box:136,71,214,108
+[2J[1;1H
+FPS:0.0
+Objects:
+
+truck: 70%
+Bounding Box:124,71,202,108
+[2J[1;1H
+FPS:0.0
+Objects:
+
+truck: 64%
+Bounding Box:119,71,201,107
+[2J[1;1H
+FPS:0.0
+Objects:
+
+truck: 81%
+Bounding Box:107,69,188,108
+[2J[1;1H
+FPS:0.0
+Objects:
+
+truck: 52%
+Bounding Box:97,70,172,106
+[2J[1;1H
+FPS:0.0
+Objects:
+
+truck: 78%
+Bounding Box:91,67,171,105
+[2J[1;1H
+FPS:0.0
+Objects:
+
+truck: 87%
+Bounding Box:81,67,161,104
+[2J[1;1H
+FPS:0.0
+Objects:
+
+truck: 72%
+Bounding Box:80,66,155,103
+[2J[1;1H
+FPS:0.0
+Objects:
+
+truck: 90%
+Bounding Box:66,66,144,104
+[2J[1;1H
+FPS:0.0
+Objects:
+
+truck: 68%
+Bounding Box:64,65,140,103
+[2J[1;1H
+FPS:0.0
+Objects:
+
+truck: 94%
+Bounding Box:52,65,130,103
+[2J[1;1H
+FPS:0.0
+Objects:
+
+truck: 62%
+Bounding Box:43,64,115,101
+[2J[1;1H
+FPS:0.0
+Objects:
+
+truck: 59%
+Bounding Box:41,63,111,100
+[2J[1;1H
+FPS:0.0
+Objects:
+
+truck: 52%
+Bounding Box:30,63,98,99
+[2J[1;1H
+FPS:0.0
+Objects:
+
+truck: 62%
+Bounding Box:28,63,94,98
+car: 58%
+Bounding Box:114,63,147,81
+[2J[1;1H
+FPS:0.0
+Objects:
+
+truck: 76%
+Bounding Box:16,62,84,97
+car: 61%
+Bounding Box:105,63,140,81
+[2J[1;1H
+FPS:0.0
+Objects:
+
+truck: 66%
+Bounding Box:15,62,79,96
+car: 52%
+Bounding Box:102,62,142,81
+[2J[1;1H
+FPS:0.0
+Objects:
+
+truck: 68%
+Bounding Box:5,61,68,94
+car: 52%
+Bounding Box:94,62,136,80
+[2J[1;1H
+FPS:0.0
+Objects:
+
+truck: 81%
+Bounding Box:2,61,63,93
+[2J[1;1H
+FPS:0.0
+Objects:
+
+truck: 62%
+Bounding Box:0,61,52,92
+car: 59%
+Bounding Box:71,61,105,79
+[2J[1;1H
+FPS:0.0
+Objects:
+
+truck: 84%
+Bounding Box:0,61,47,92
+car: 59%
+Bounding Box:64,60,98,78
+[2J[1;1H
+FPS:0.0
+Objects:
+
+truck: 84%
+Bounding Box:0,61,41,92
+car: 56%
+Bounding Box:62,59,98,78
+[2J[1;1H
+FPS:0.0
+Objects:
+
+truck: 51%
+Bounding Box:0,61,37,92
+[2J[1;1H
+FPS:0.0
+Objects:
+
+[2J[1;1H
+FPS:0.0
+Objects:
+
+[2J[1;1H
+FPS:0.0
+Objects:
+
+[2J[1;1H
+FPS:0.0
+Objects:
+
+[2J[1;1H
+FPS:0.0
+Objects:
+
+[2J[1;1H
+FPS:0.0
+Objects:
+
+[2J[1;1H
+FPS:0.0
+Objects:
+
+car: 61%
+Bounding Box:222,90,263,110
+[2J[1;1H
+FPS:0.0
+Objects:
+
+car: 55%
+Bounding Box:215,89,257,109
+[2J[1;1H
+FPS:0.0
+Objects:
+
+car: 52%
+Bounding Box:203,89,242,108
+[2J[1;1H
+FPS:0.0
+Objects:
+
+car: 54%
+Bounding Box:192,86,246,109
+[2J[1;1H
+FPS:0.0
+Objects:
+
+car: 55%
+Bounding Box:193,88,235,108
+[2J[1;1H
+FPS:0.0
+Objects:
+
+car: 57%
+Bounding Box:177,84,230,108
+[2J[1;1H
+FPS:0.0
+Objects:
+
+[2J[1;1H
+FPS:0.0
+Objects:
+
+[2J[1;1H
+FPS:0.0
+Objects:
+
+[2J[1;1H
+FPS:0.0
+Objects:
+
+[2J[1;1H
+FPS:0.0
+Objects:
+
+car: 52%
+Bounding Box:245,59,267,77
+[2J[1;1H
+FPS:0.0
+Objects:
+
+[2J[1;1H
+FPS:0.0
+Objects:
+
+truck: 56%
+Bounding Box:221,104,267,132
+[2J[1;1H
+FPS:0.0
+Objects:
+
+car: 83%
+Bounding Box:106,81,161,104
+truck: 57%
+Bounding Box:210,104,263,132
+[2J[1;1H
+FPS:0.0
+Objects:
+
+truck: 91%
+Bounding Box:202,103,263,132
+car: 57%
+Bounding Box:106,82,153,102
+[2J[1;1H
+FPS:0.0
+Objects:
+
+car: 83%
+Bounding Box:92,80,146,103
+truck: 62%
+Bounding Box:188,103,253,132
+[2J[1;1H
+FPS:0.0
+Objects:
+
+truck: 75%
+Bounding Box:180,102,255,132
+car: 61%
+Bounding Box:87,80,131,101
+[2J[1;1H
+FPS:0.0
+Objects:
+
+truck: 73%
+Bounding Box:169,102,240,132
+car: 63%
+Bounding Box:78,79,130,103
+[2J[1;1H
+FPS:0.0
+Objects:
+
+truck: 57%
+Bounding Box:159,103,223,132
+car: 61%
+Bounding Box:69,78,118,102
+car: 52%
+Bounding Box:171,60,217,74
+[2J[1;1H
+FPS:0.0
+Objects:
+
+truck: 59%
+Bounding Box:151,102,224,132
+car: 53%
+Bounding Box:167,56,207,72
+car: 60%
+Bounding Box:67,79,108,99
+[2J[1;1H
+FPS:0.0
+Objects:
+
+car: 63%
+Bounding Box:54,76,102,102
+truck: 59%
+Bounding Box:140,102,210,132
+car: 56%
+Bounding Box:164,56,207,72
+[2J[1;1H
+FPS:0.0
+Objects:
+
+truck: 60%
+Bounding Box:129,102,193,132
+car: 65%
+Bounding Box:52,78,94,98
+car: 55%
+Bounding Box:149,55,183,70
+[2J[1;1H
+FPS:0.0
+Objects:
+
+truck: 74%
+Bounding Box:116,99,180,129
+car: 63%
+Bounding Box:140,55,178,70
+car: 64%
+Bounding Box:46,79,87,98
+[2J[1;1H
+FPS:0.0
+Objects:
+
+car: 64%
+Bounding Box:132,54,171,70
+truck: 52%
+Bounding Box:100,98,168,128
+car: 63%
+Bounding Box:38,76,79,95
+[2J[1;1H
+FPS:0.0
+Objects:
+
+truck: 52%
+Bounding Box:98,98,166,129
+car: 59%
+Bounding Box:130,54,172,70
+car: 63%
+Bounding Box:27,76,65,94
+[2J[1;1H
+FPS:0.0
+Objects:
+
+truck: 68%
+Bounding Box:89,97,150,128
+car: 65%
+Bounding Box:25,75,65,94
+[2J[1;1H
+FPS:0.0
+Objects:
+
+car: 63%
+Bounding Box:18,74,57,94
+car: 56%
+Bounding Box:106,53,141,69
+[2J[1;1H
+FPS:0.0
+Objects:
+
+car: 69%
+Bounding Box:12,73,50,93
+truck: 54%
+Bounding Box:72,94,135,127
+car: 57%
+Bounding Box:96,53,136,68
+[2J[1;1H
+FPS:0.0
+Objects:
+
+car: 61%
+truck: 61%
+Bounding Box:61,93,121,125
+car: 83%
+Bounding Box:5,73,43,92
+car: 59%
+Bounding Box:90,52,128,68
+[2J[1;1H
+FPS:0.0
+Objects:
+
+car: 91%
+Bounding Box:0,72,36,92
+car: 51%
+Bounding Box:48,93,109,123
+car: 58%
+Bounding Box:87,52,130,68
+[2J[1;1H
+FPS:0.0
+Objects:
+
+car: 80%
+Bounding Box:0,72,32,92
+car: 55%
+Bounding Box:81,52,121,68
+[2J[1;1H
+FPS:0.0
+Objects:
+
+car: 91%
+Bounding Box:0,72,24,91
+car: 65%
+Bounding Box:34,91,91,122
+[2J[1;1H
+FPS:0.0
+Objects:
+
+car: 61%
+Bounding Box:0,72,20,91
+[2J[1;1H
+FPS:0.0
+Objects:
+
+[2J[1;1H
+FPS:0.0
+Objects:
+
+car: 65%
+truck: 52%
+Bounding Box:9,89,62,118
+car: 51%
+Bounding Box:43,49,78,64
+[2J[1;1H
+FPS:0.0
+Objects:
+
+car: 59%
+Bounding Box:40,48,78,65
+[2J[1;1H
+FPS:0.0
+Objects:
+
+truck: 52%
+Bounding Box:0,88,46,117
+car: 57%
+Bounding Box:28,49,64,63
+[2J[1;1H
+FPS:0.0
+Objects:
+
+car: 58%
+Bounding Box:20,48,59,63
+car: 52%
+Bounding Box:201,105,261,128
+[2J[1;1H
+FPS:0.0
+Objects:
+
+car: 59%
+Bounding Box:232,76,267,90
+truck: 53%
+Bounding Box:191,101,248,127
+car: 61%
+Bounding Box:19,48,57,63
+[2J[1;1H
+FPS:0.0
+Objects:
+
+truck: 65%
+Bounding Box:183,100,251,127
+car: 54%
+Bounding Box:6,48,44,62
+car: 51%
+Bounding Box:225,75,261,89
+[2J[1;1H
+FPS:0.0
+Objects:
+
+car: 64%
+Bounding Box:6,47,42,62
+truck: 60%
+Bounding Box:173,100,237,127
+[2J[1;1H
+FPS:0.0
+Objects:
+
+car: 90%
+Bounding Box:1,47,34,62
+[2J[1;1H
+FPS:0.0
+Objects:
+
+car: 56%
+Bounding Box:0,47,25,62
+truck: 59%
+Bounding Box:146,100,208,126
+car: 57%
+Bounding Box:198,73,233,89
+[2J[1;1H
+FPS:0.0
+Objects:
+
+car: 52%
+Bounding Box:0,46,21,62
+truck: 54%
+Bounding Box:143,99,205,127
+car: 55%
+Bounding Box:195,74,234,89
+[2J[1;1H
+FPS:0.0
+Objects:
+
+[2J[1;1H
+FPS:0.0
+Objects:
+
+car: 51%
+Bounding Box:180,74,220,88
+[2J[1;1H
+FPS:0.0
+Objects:
+
+[2J[1;1H
+FPS:0.0
+Objects:
+
+car: 53%
+Bounding Box:156,68,190,86
+car: 57%
+Bounding Box:100,97,164,121
+[2J[1;1H
+FPS:0.0
+Objects:
+
+car: 62%
+Bounding Box:92,96,149,120
+car: 54%
+Bounding Box:148,68,183,86
+[2J[1;1H
+FPS:0.0
+Objects:
+
+car: 56%
+Bounding Box:141,67,177,85
+car: 54%
+Bounding Box:85,95,149,120
+[2J[1;1H
+FPS:0.0
+Objects:
+
+car: 53%
+Bounding Box:138,67,177,86
+car: 54%
+Bounding Box:77,95,133,119
+[2J[1;1H
+FPS:0.0
+Objects:
+
+car: 57%
+Bounding Box:131,67,170,85
+car: 55%
+Bounding Box:62,95,123,118
+[2J[1;1H
+FPS:0.0
+Objects:
+
+car: 51%
+Bounding Box:58,93,122,116
+car: 50%
+Bounding Box:113,66,149,83
+[2J[1;1H
+FPS:0.0
+Objects:
+
+car: 58%
+Bounding Box:107,66,140,83
+[2J[1;1H
+FPS:0.0
+Objects:
+
+car: 60%
+Bounding Box:101,66,132,83
+[2J[1;1H
+FPS:0.0
+Objects:
+
+car: 56%
+Bounding Box:97,66,135,83
+[2J[1;1H
+FPS:0.0
+Objects:
+
+car: 62%
+Bounding Box:23,87,75,113
+[2J[1;1H
+FPS:0.0
+Objects:
+
+car: 62%
+Bounding Box:22,87,70,113
+car: 51%
+Bounding Box:78,63,111,80
+[2J[1;1H
+FPS:0.0
+Objects:
+
+car: 77%
+Bounding Box:12,86,59,111
+[2J[1;1H
+FPS:0.0
+Objects:
+
+car: 55%
+Bounding Box:64,62,97,79
+[2J[1;1H
+FPS:0.0
+Objects:
+
+car: 54%
+Bounding Box:61,62,98,79
+[2J[1;1H
+FPS:0.0
+Objects:
+
+truck: 61%
+Bounding Box:0,85,35,106
+car: 51%
+Bounding Box:49,61,83,78
+[2J[1;1H
+FPS:0.0
+Objects:
+
+[2J[1;1H
+FPS:0.0
+Objects:
+
+[2J[1;1H
+FPS:0.0
+Objects:
+
+car: 54%
+Bounding Box:27,60,63,77
+[2J[1;1H
+FPS:0.0
+Objects:
+
+car: 57%
+Bounding Box:21,59,56,76
+[2J[1;1H
+FPS:0.0
+Objects:
+
+car: 61%
+Bounding Box:15,59,49,76
+[2J[1;1H
+FPS:0.0
+Objects:
+
+car: 59%
+Bounding Box:8,59,42,75
+[2J[1;1H
+FPS:0.0
+Objects:
+
+[2J[1;1H
+FPS:0.0
+Objects:
+
+[2J[1;1H
+FPS:0.0
+Objects:
+
+[2J[1;1H
+FPS:0.0
+Objects:
+
+[2J[1;1H
+FPS:0.0
+Objects:
+
+[2J[1;1H
+FPS:0.0
+Objects:
+
+[2J[1;1H
+FPS:0.0
+Objects:
+
+[2J[1;1H
+FPS:0.0
+Objects:
+
+[2J[1;1H
+FPS:0.0
+Objects:
+
+[2J[1;1H
+FPS:0.0
+Objects:
+
+[2J[1;1H
+FPS:0.0
+Objects:
+
+[2J[1;1H
+FPS:0.0
+Objects:
+
+[2J[1;1H
+FPS:0.0
+Objects:
+
+[2J[1;1H
+FPS:0.0
+Objects:
+
+[2J[1;1H
+FPS:0.0
+Objects:
+
+car: 54%
+Bounding Box:1,74,34,92
+[2J[1;1H
+FPS:0.0
+Objects:
+
+[2J[1;1H
+FPS:0.0
+Objects:
+
+[2J[1;1H
+FPS:0.0
+Objects:
+
+[2J[1;1H
+FPS:0.0
+Objects:
+
+[2J[1;1H
+FPS:0.0
+Objects:
+
+[2J[1;1H
+FPS:0.0
+Objects:
+
+[2J[1;1H
+FPS:0.0
+Objects:
+
+[2J[1;1H
+FPS:0.0
+Objects:
+
+[2J[1;1H
+FPS:0.0
+Objects:
+
+[2J[1;1H
+FPS:0.0
+Objects:
+
+[2J[1;1H
+FPS:0.0
+Objects:
+
+[2J[1;1H
+FPS:0.0
+Objects:
+
+[2J[1;1H
+FPS:0.0
+Objects:
+
+[2J[1;1H
+FPS:0.0
+Objects:
+
+[2J[1;1H
+FPS:0.0
+Objects:
+
+[2J[1;1H
+FPS:0.0
+Objects:
+
+[2J[1;1H
+FPS:0.0
+Objects:
+
+car: 56%
+Bounding Box:205,109,262,131
+[2J[1;1H
+FPS:0.0
+Objects:
+
+car: 52%
+Bounding Box:199,109,261,132
+[2J[1;1H
+FPS:0.0
+Objects:
+
+[2J[1;1H
+FPS:0.0
+Objects:
+
+car: 52%
+Bounding Box:189,71,227,87
+[2J[1;1H
+FPS:0.0
+Objects:
+
+[2J[1;1H
+FPS:0.0
+Objects:
+
+[2J[1;1H
+FPS:0.0
+Objects:
+
+car: 51%
+Bounding Box:142,107,209,130
+[2J[1;1H
+FPS:0.0
+Objects:
+
+car: 55%
+Bounding Box:130,106,193,130
+[2J[1;1H
+FPS:0.0
+Objects:
+
+car: 61%
+Bounding Box:147,68,185,84
+[2J[1;1H
+FPS:0.0
+Objects:
+
+car: 60%
+Bounding Box:145,68,185,84
+[2J[1;1H
+FPS:0.0
+Objects:
+
+car: 59%
+Bounding Box:137,67,178,84
+car: 56%
+Bounding Box:87,102,155,126
+[2J[1;1H
+FPS:0.0
+Objects:
+
+car: 59%
+Bounding Box:87,102,150,126
+[2J[1;1H
+FPS:0.0
+Objects:
+
+car: 59%
+Bounding Box:111,67,150,82
+[2J[1;1H
+FPS:0.0
+Objects:
+
+car: 62%
+Bounding Box:105,66,142,82
+car: 60%
+Bounding Box:56,101,128,124
+[2J[1;1H
+FPS:0.0
+Objects:
+
+car: 58%
+Bounding Box:102,66,143,82
+car: 54%
+Bounding Box:54,99,127,124
+[2J[1;1H
+FPS:0.0
+Objects:
+
+car: 55%
+Bounding Box:91,64,127,80
+car: 56%
+Bounding Box:45,99,108,123
+[2J[1;1H
+FPS:0.0
+Objects:
+
+car: 66%
+Bounding Box:33,98,93,122
+car: 54%
+Bounding Box:87,64,130,80
+[2J[1;1H
+FPS:0.0
+Objects:
+
+car: 62%
+Bounding Box:19,96,81,122
+[2J[1;1H
+FPS:0.0
+Objects:
+
+car: 63%
+Bounding Box:20,95,76,120
+[2J[1;1H
+FPS:0.0
+Objects:
+
+car: 62%
+Bounding Box:9,94,62,118
+[2J[1;1H
+FPS:0.0
+Objects:
+
+car: 60%
+Bounding Box:4,94,45,114
+[2J[1;1H
+FPS:0.0
+Objects:
+
+car: 65%
+Bounding Box:0,92,36,114
+[2J[1;1H
+FPS:0.0
+Objects:
+
+car: 62%
+Bounding Box:0,91,34,114
+[2J[1;1H
+FPS:0.0
+Objects:
+
+[2J[1;1H
+FPS:0.0
+Objects:
+
+[2J[1;1H
+FPS:0.0
+Objects:
+
+car: 56%
+Bounding Box:201,106,261,129
+[2J[1;1H
+FPS:0.0
+Objects:
+
+[2J[1;1H
+FPS:0.0
+Objects:
+
+[2J[1;1H
+FPS:0.0
+Objects:
+
+[2J[1;1H
+FPS:0.0
+Objects:
+
+[2J[1;1H
+FPS:0.0
+Objects:
+
+[2J[1;1H
+FPS:0.0
+Objects:
+
+[2J[1;1H
+FPS:0.0
+Objects:
+
+[2J[1;1H
+FPS:0.0
+Objects:
+
+[2J[1;1H
+FPS:0.0
+Objects:
+
+[2J[1;1H
+FPS:0.0
+Objects:
+
+[2J[1;1H
+FPS:0.0
+Objects:
+
+[2J[1;1H
+FPS:0.0
+Objects:
+
+[2J[1;1H
+FPS:0.0
+Objects:
+
+[2J[1;1H
+FPS:0.0
+Objects:
+
+[2J[1;1H
+FPS:0.0
+Objects:
+
+[2J[1;1H
+FPS:0.0
+Objects:
+
+[2J[1;1H
+FPS:0.0
+Objects:
+
+[2J[1;1H
+FPS:0.0
+Objects:
+
+[2J[1;1H
+FPS:0.0
+Objects:
+
+[2J[1;1H
+FPS:0.0
+Objects:
+
+[2J[1;1H
+FPS:0.0
+Objects:
+
+[2J[1;1H
+FPS:0.0
+Objects:
+
+[2J[1;1H
+FPS:0.0
+Objects:
+
+[2J[1;1H
+FPS:0.0
+Objects:
+
+[2J[1;1H
+FPS:0.0
+Objects:
+
+[2J[1;1H
+FPS:0.0
+Objects:
+
+car: 75%
+Bounding Box:176,82,232,106
+[2J[1;1H
+FPS:0.0
+Objects:
+
+car: 52%
+Bounding Box:161,82,222,105
+[2J[1;1H
+FPS:0.0
+Objects:
+
+car: 52%
+Bounding Box:156,82,220,106
+[2J[1;1H
+FPS:0.0
+Objects:
+
+car: 59%
+Bounding Box:146,82,204,105
+[2J[1;1H
+FPS:0.0
+Objects:
+
+car: 52%
+Bounding Box:135,81,191,104
+[2J[1;1H
+FPS:0.0
+Objects:
+
+[2J[1;1H
+FPS:0.0
+Objects:
+
+car: 72%
+Bounding Box:118,80,176,104
+[2J[1;1H
+FPS:0.0
+Objects:
+
+car: 75%
+Bounding Box:105,80,164,103
+[2J[1;1H
+FPS:0.0
+Objects:
+
+car: 61%
+Bounding Box:99,79,163,103
+[2J[1;1H
+FPS:0.0
+Objects:
+
+car: 62%
+Bounding Box:91,78,146,102
+[2J[1;1H
+FPS:0.0
+Objects:
+
+car: 66%
+Bounding Box:80,78,132,101
+[2J[1;1H
+FPS:0.0
+Objects:
+
+car: 53%
+Bounding Box:74,77,130,102
+[2J[1;1H
+FPS:0.0
+Objects:
+
+car: 77%
+Bounding Box:66,76,115,101
+[2J[1;1H
+FPS:0.0
+Objects:
+
+car: 53%
+Bounding Box:52,74,106,97
+[2J[1;1H
+FPS:0.0
+Objects:
+
+car: 52%
+Bounding Box:49,73,101,98
+[2J[1;1H
+FPS:0.0
+Objects:
+
+car: 57%
+Bounding Box:40,73,87,97
+[2J[1;1H
+FPS:0.0
+Objects:
+
+[2J[1;1H
+FPS:0.0
+Objects:
+
+[2J[1;1H
+FPS:0.0
+Objects:
+
+[2J[1;1H
+FPS:0.0
+Objects:
+
+[2J[1;1H
+FPS:0.0
+Objects:
+
+car: 55%
+Bounding Box:4,72,44,92
+[2J[1;1H
+FPS:0.0
+Objects:
+
+[2J[1;1H
+FPS:0.0
+Objects:
+
+[2J[1;1H
+FPS:0.0
+Objects:
+
+[2J[1;1H
+FPS:0.0
+Objects:
+
+[2J[1;1H
+FPS:0.0
+Objects:
+
+[2J[1;1H
+FPS:0.0
+Objects:
+
+[2J[1;1H
+FPS:0.0
+Objects:
+
+[2J[1;1H
+FPS:0.0
+Objects:
+

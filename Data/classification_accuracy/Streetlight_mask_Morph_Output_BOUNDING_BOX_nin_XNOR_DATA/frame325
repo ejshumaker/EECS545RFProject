@@ -1,0 +1,8 @@
+Objects:
+
+ship:
+Bounding Box:220,106,272,136
+car:
+Bounding Box:29,56,75,81
+plane:
+Bounding Box:0,88,30,117

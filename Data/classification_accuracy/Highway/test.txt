@@ -1,0 +1,15 @@
+frame 114:
+Objects:
+
+truck:
+Bounding Box:121,68,183,115
+frame 115:
+Objects:
+
+truck:
+Bounding Box:119,68,182,117
+frame 116:
+Objects:
+
+cat:
+Bounding Box:118,68,181,118

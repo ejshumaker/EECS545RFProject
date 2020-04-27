@@ -1,0 +1,26 @@
+<annotation>
+	<folder>frames</folder>
+	<filename>highway_0430.png</filename>
+	<path>/Users/eshumaker/Documents/EECS545/MCDProject/Data/frames/highway_0430.png</path>
+	<source>
+		<database>Unknown</database>
+	</source>
+	<size>
+		<width>320</width>
+		<height>240</height>
+		<depth>3</depth>
+	</size>
+	<segmented>0</segmented>
+	<object>
+		<name>car</name>
+		<pose>Unspecified</pose>
+		<truncated>0</truncated>
+		<difficult>0</difficult>
+		<bndbox>
+			<xmin>80</xmin>
+			<ymin>98</ymin>
+			<xmax>157</xmax>
+			<ymax>170</ymax>
+		</bndbox>
+	</object>
+</annotation>

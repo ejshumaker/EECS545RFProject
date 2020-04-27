@@ -1,0 +1,10 @@
+Objects:
+
+truck:
+Bounding Box:4,160,140,244
+ship:
+Bounding Box:220,124,260,244
+deer:
+Bounding Box:148,188,205,244
+cat:
+Bounding Box:148,60,203,94
