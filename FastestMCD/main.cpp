@@ -9,7 +9,7 @@
 
 
 #define VIDEO_OUT 0
-
+#define MEDIAN 0
 
 int main(int argc, char **argv){
 	//Handle Import of fastMCD Config Class ---------------------------------
@@ -42,13 +42,23 @@ int main(int argc, char **argv){
 
 #if VIDEO_OUT
 	//Create Debug Writers --------------------------------------------------
-	cv::VideoWriter mask_output;
 	cv::Size S = cv::Size((int)cap.get(cv::CAP_PROP_FRAME_WIDTH), cap.get(cv::CAP_PROP_FRAME_HEIGHT));
 	int ex = static_cast<int>(cap.get(cv::CAP_PROP_FOURCC));
-	mask_output.open("Mask_Output.avi", ex = -1, cap.get(cv::CAP_PROP_FPS), S, true);
+	int fcc = CV_FOURCC('X', 'V', 'I', 'D');
+	cv::VideoWriter mask_output_median;
+	mask_output_median.open("Median_Output.avi", ex=-1, cap.get(cv::CAP_PROP_FPS), S, true);
+
+
+	cv::VideoWriter mask_output_morph;
+	mask_output_morph.open("Morph_Output.avi", ex=-1, cap.get(cv::CAP_PROP_FPS), S, true);
+
 #endif
+	cv::Mat closed_mask;
+	cv::Mat open_mask;
+	cv::Mat median_mask;
 
-
+	cv::Mat element = cv::getStructuringElement(0,
+		cv::Size(3, 3));
 
 	//--- GRAB AND WRITE LOOP
 	std::cout << "Start grabbing" << std::endl
@@ -69,6 +79,9 @@ int main(int argc, char **argv){
 	
 		if(i == 0){
 			bgs.init(frame);
+			closed_mask = cv::Mat::zeros(frame.size(), CV_8UC1);
+			open_mask = cv::Mat::zeros(frame.size(), CV_8UC1);
+			median_mask = cv::Mat::zeros(frame.size(), CV_8UC1);
 		}
 		else{
 			auto start = std::chrono::high_resolution_clock::now();
@@ -95,16 +108,32 @@ int main(int argc, char **argv){
 			bgs.updateModels(blurImage);
 			end = std::chrono::high_resolution_clock::now();
 			float time_update = std::chrono::duration_cast<std::chrono::microseconds>(end - start).count() / 1000.0;
-			std::printf("Frame: %d PP: %f KLT: %f ||Block %f ||UPT: %f \n", i, time_pp, time_klt, time_parallelBlock, time_update);
-			timeFile << time_pp << "," << time_klt << "," << time_parallelBlock << "," << time_update << std::endl;
 
-	
+#if MEDIAN			
+			start = std::chrono::high_resolution_clock::now();
+			bgs.output_mask.copyTo(median_mask);
+			cv::medianBlur(bgs.output_mask, median_mask, 7);
+			end = std::chrono::high_resolution_clock::now();
+			float time_post = std::chrono::duration_cast<std::chrono::microseconds>(end - start).count() / 1000.0;
+			std::printf("Frame: %d PP: %f KLT: %f ||Block %f ||UPT: %f POST: %f\n", i, time_pp, time_klt, time_parallelBlock, time_update, time_post);
+			timeFile << time_pp << "," << time_klt << "," << time_parallelBlock << "," << time_update << "," << time_post << std::endl;
+			cv::imshow("Median_Blur", median_mask);
+
+#else
+			start = std::chrono::high_resolution_clock::now();
+			bgs.output_mask.copyTo(closed_mask);
+			cv::morphologyEx(bgs.output_mask, closed_mask, cv::MORPH_CLOSE, element, cv::Point(-1, -1), bgs.m_cfg.block_size);
+			cv::morphologyEx(closed_mask, open_mask, cv::MORPH_OPEN, element, cv::Point(-1, -1), bgs.m_cfg.block_size);
+			end = std::chrono::high_resolution_clock::now();
+			float time_post = std::chrono::duration_cast<std::chrono::microseconds>(end - start).count() / 1000.0;
+			std::printf("Frame: %d PP: %f KLT: %f ||Block %f ||UPT: %f POST: %f\n", i, time_pp, time_klt, time_parallelBlock, time_update, time_post);
+			timeFile << time_pp << "," << time_klt << "," << time_parallelBlock << "," << time_update << "," << time_post << std::endl;
+			cv::imshow("Closed_Mask", closed_mask);
+			cv::imshow("Open_Mask", open_mask);
+#endif
 
 		}
 		
-#if VIDEO_OUT
-		mask_output << bgs.displayMask();
-#endif			
 		
 		if(bgs.m_cfg.debug == 1){
 			bgs.displayKLT(frame);
@@ -115,6 +144,21 @@ int main(int argc, char **argv){
 			bgs.displayUpdates(frame);
 			bgs.model_updates = cv::Mat::zeros(bgs.model_dims, CV_32FC2);
 		}
+
+		char buf[1000];
+		sprintf(buf, "./results/frm%05d.png", i);
+
+#if MEDIAN
+		cv::imwrite(buf, median_mask);
+#else
+		cv::imwrite(buf, open_mask);
+#endif
+
+#if VIDEO_OUT
+		mask_output_morph << open_mask;
+		mask_output_median << median_mask;
+#endif			
+
 		cv::waitKey(1);
 	}
 	// the camera will be deinitialized automatically in VideoCapture destructor

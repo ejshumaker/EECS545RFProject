@@ -68,7 +68,22 @@ void FastMCD::blockInterpolation(double h[9]) {
 }
 
 void FastMCD::updateModels(cv::Mat& image) {
+	cv::Scalar ill_offsets;
+	cv::Scalar frame_mean = cv::mean(image);
+
+	// "channels" is a vector of 3 Mat arrays:
+	std::vector<cv::Mat> channels(2);
+	// split img:
+	split(model_means, channels);
+
+	cv::Scalar model_mean_offset = cv::mean(channels[0]);
+	cv::Scalar cand_mean_offset = cv::mean(channels[1]);
+	float model_offset = (frame_mean - cv::mean(channels[0]))[0];
+	float cand_offset = (frame_mean - cv::mean(channels[1]))[0];
+	cv::Scalar pass = cv::Scalar(model_offset, cand_offset, 0, 0);
+
 	parallelUpdate.setCurrentFrame(&image);
+	parallelUpdate.setCurrentIllumination(&pass);
 	cv::parallel_for_(cv::Range(0, model_means.rows*model_means.cols), parallelUpdate);
 }
 
@@ -205,7 +220,7 @@ cv::Mat FastMCD::displayAge(cv::Mat& image) {
 						int idx_i = x*block_size + ii;
 						if (idx_i < 0 || idx_i >= image.cols || idx_j < 0 || idx_j >= image.rows)
 							continue;
-						image_age[c].at<uchar>(idx_j, idx_i) = int(val * (255/30.0));
+						image_age[c].at<uchar>(idx_j, idx_i) = int(val * (255/float(m_cfg.max_age)));
 					}
 				}
 

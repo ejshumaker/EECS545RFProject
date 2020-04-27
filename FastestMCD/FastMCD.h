@@ -421,6 +421,10 @@ public:
 		frame = _frame;
 	}
 
+	void setCurrentIllumination(cv::Scalar* _ill) {
+		ill = _ill;
+	}
+
 	virtual void operator()(const cv::Range& range) const
 	{
 		for (int r = range.start; r < range.end; r++) {
@@ -487,7 +491,7 @@ public:
 					model_mean_row_ptr[2 * b_X] = M;
 				}
 				else {
-					model_mean_row_ptr[2 * b_X] = temp_mean_row_ptr[2 * b_X] * age_weight + M*(1.0 - age_weight);
+					model_mean_row_ptr[2 * b_X] = (temp_mean_row_ptr[2 * b_X] + ill->val[0])* age_weight + M*(1.0 - age_weight);
 				}
 
 				//Calculate Current Block Variance -----------------------------------------------
@@ -514,7 +518,7 @@ public:
 				model_age_row_ptr[2 * b_X] = std::min(temp_age_row_ptr[2 * b_X] + 1, max_age);
 
 				//Update Candidate Model with Image Interpolated Temps
-				model_mean_row_ptr[2 * b_X + 1] = temp_mean_row_ptr[2 * b_X + 1];
+				model_mean_row_ptr[2 * b_X + 1] = temp_mean_row_ptr[2 * b_X + 1] + ill->val[1];
 				model_vars_row_ptr[2 * b_X + 1] = temp_vars_row_ptr[2 * b_X + 1];
 				model_age_row_ptr[2 * b_X + 1] = temp_age_row_ptr[2 * b_X + 1];
 			}
@@ -526,7 +530,7 @@ public:
 					model_mean_row_ptr[2 * b_X + 1] = M;
 				}
 				else {
-					model_mean_row_ptr[2 * b_X + 1] = temp_mean_row_ptr[2 * b_X + 1] * age_weight + M*(1.0 - age_weight);
+					model_mean_row_ptr[2 * b_X + 1] = (temp_mean_row_ptr[2 * b_X + 1] + ill->val[1])* age_weight + M*(1.0 - age_weight);
 				}
 
 				//Calculate Current Block Variance -----------------------------------------------
@@ -553,7 +557,7 @@ public:
 				model_age_row_ptr[2 * b_X + 1] = std::min(temp_age_row_ptr[2 * b_X + 1] + 1, max_age);
 
 				//Update Model with Image Interpolated Temps
-				model_mean_row_ptr[2 * b_X] = temp_mean_row_ptr[2 * b_X];
+				model_mean_row_ptr[2 * b_X] = temp_mean_row_ptr[2 * b_X] + ill->val[0];
 				model_vars_row_ptr[2 * b_X] = temp_vars_row_ptr[2 * b_X];
 				model_age_row_ptr[2 * b_X] = temp_age_row_ptr[2 * b_X];
 			}
@@ -578,7 +582,7 @@ public:
 				model_age_row_ptr[2*b_X + 1] = 1;
 
 				//Update Model with Image Interpolated Temps
-				model_mean_row_ptr[2 * b_X] = temp_mean_row_ptr[2 * b_X];
+				model_mean_row_ptr[2 * b_X] = temp_mean_row_ptr[2 * b_X] + ill->val[0];
 				model_vars_row_ptr[2 * b_X] = temp_vars_row_ptr[2 * b_X];
 				model_age_row_ptr[2 * b_X] = temp_age_row_ptr[2 * b_X];
 			}
@@ -639,6 +643,7 @@ private:
 	float min_vars;
 	float init_vars;
 	cv::Mat* frame;
+	cv::Scalar* ill;
 	cv::Mat* output;
 	cv::Mat* model_updates;
 };
