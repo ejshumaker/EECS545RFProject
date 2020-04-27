@@ -110,16 +110,19 @@ def multiObjectVideo(dir_name='data/cheetah_results', saveImg=False):
         mask = cv2.imread(mask_name, cv2.IMREAD_GRAYSCALE)
         
         nonOverlappingRects = multiObjectFrame(mask)
+        color_mask = cv2.cvtColor(mask, cv2.COLOR_GRAY2BGR)
 
         for rect in nonOverlappingRects:
             x, y, w, h = rect
             cv2.rectangle(image, (x, y), (x + w, y + h), (0, 255, 0))
+            cv2.rectangle(color_mask, (x, y), (x + w, y + h), (0, 255, 0))
 
         cv2.imshow('image', image)
         cv2.imshow('mask', mask)
         cv2.waitKey(10)
 
-        if saveImg and ('258' in image_files[2 * i] or '186' in image_files[2 * i]):
+        if saveImg and ('258' in image_files[2 * i] or '186' in image_files[2 * i] or '220' in image_files[2 * i]):
+            cv2.imwrite('bw_' + str(i + 1) + '.png', color_mask)
             cv2.imwrite(image_files[2 * i], image)
 
         out.write(image)

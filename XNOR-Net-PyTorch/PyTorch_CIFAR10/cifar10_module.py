@@ -20,18 +20,6 @@ def get_classifier(classifier, pretrained):
         return resnet34(pretrained=pretrained)
     elif classifier == 'resnet50':
         return resnet50(pretrained=pretrained)
-    elif classifier == 'densenet121':
-        return densenet121(pretrained=pretrained)
-    elif classifier == 'densenet161':
-        return densenet161(pretrained=pretrained)
-    elif classifier == 'densenet169':
-        return densenet169(pretrained=pretrained)
-    elif classifier == 'mobilenet_v2':
-        return mobilenet_v2(pretrained=pretrained)
-    elif classifier == 'googlenet':
-        return googlenet(pretrained=pretrained)
-    elif classifier == 'inception_v3':
-        return inception_v3(pretrained=pretrained)
     else:
         raise NameError('Please enter a valid classifier')
         

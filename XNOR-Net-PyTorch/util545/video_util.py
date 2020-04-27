@@ -9,7 +9,7 @@ def video2images(path='../../Data/Streetlight_mask/Morph_Output.avi'):
     file_name = path.split('/')[-1].split('.')[0]
     folder_name = path.split('/')[-2]
     try:
-        os.mkdir(os.path.join('../../fastMCD/test', folder_name + '_' + file_name))
+        os.mkdir(os.path.join('../../fastMCD_output', folder_name + '_' + file_name))
     except:
         print("whoops")
 
@@ -20,7 +20,7 @@ def video2images(path='../../Data/Streetlight_mask/Morph_Output.avi'):
             break
 
         gray = cv2.cvtColor(frame, cv2.COLOR_BGR2GRAY)
-        cv2.imwrite(os.path.join('../../fastMCD/test', folder_name + '_' + file_name, 'streetlight_frm' + str(i).zfill(5) + '.png'), gray)
+        cv2.imwrite(os.path.join('../../fastMCD_output', folder_name + '_' + file_name, 'streetlight_frm' + str(i).zfill(5) + '.png'), gray)
 
         cv2.imshow('frame', gray)
         if cv2.waitKey(1) & 0xFF == ord('q'):
@@ -31,13 +31,13 @@ def video2images(path='../../Data/Streetlight_mask/Morph_Output.avi'):
     cv2.destroyAllWindows()
 
 
-def images2video(path='../../fastMCD/test/streetlight1'):
+def images2video(path='../../fastMCD_output/streetlight'):
     files = os.listdir(path)
     files = sorted(files)
 
     test_img = cv2.imread(os.path.join(path, files[0]))
     codec = cv2.VideoWriter_fourcc(*'MJPG')
-    cap = cv2.VideoWriter('../../fastMCD/test/streelight1.avi', codec, 30.0, (test_img.shape[1], test_img.shape[0]))
+    cap = cv2.VideoWriter('../../Data/streelight1.avi', codec, 30.0, (test_img.shape[1], test_img.shape[0]))
 
     for file in files:
         img = cv2.imread(os.path.join(path, file))

@@ -135,7 +135,6 @@ def test_multi(loader):
     if file_name == '':
         file_name = args.multi_fastMCD.split("/")[-2]
     resultsFile = open(file_name + '_BOUNDING_BOX_' + args.arch + '_' + model_type + '.txt', 'w')
-    print(file_name + '_BOUNDING_BOX_' + args.arch + '_' + model_type + '.txt')
 
     num_evals = 0
     acc = 0
@@ -169,17 +168,17 @@ def test_multi(loader):
 
                 confusion[pred] += 1
 
-                # # DEBUG: Display Input Image and print network output
-                cv_data = data.data.numpy().squeeze().copy()
-                cv_data = np.swapaxes(cv_data, 0, 2)
-                # rescale data to 0-255
-                cv_data -= np.min(cv_data)
-                cv_data /= np.max(cv_data)
-                cv_data = np.array(255 * cv_data, dtype='uint8')
-                cv2.imshow('input data', cv_data)
-                cv2.waitKey(50)
-                print(output)
-                print('Pred vs. Target:', pred, target.data)
+                # DEBUG: Display Input Image and print network output
+                # cv_data = data.data.numpy().squeeze().copy()
+                # cv_data = np.swapaxes(cv_data, 0, 2)
+                # # rescale data to 0-255
+                # cv_data -= np.min(cv_data)
+                # cv_data /= np.max(cv_data)
+                # cv_data = np.array(255 * cv_data, dtype='uint8')
+                # cv2.imshow('input data', cv_data)
+                # cv2.waitKey(50)
+                # print(output)
+                # print('Pred vs. Target:', pred, target.data)
 
                 if args.cuda:
                     correct += pred.eq(target.data.view_as(pred)).cpu().sum()

@@ -121,7 +121,7 @@ if __name__ == '__main__':
     parser.add_argument('--optimizer', type=str, default='SGD', choices=['SGD', 'AdamW'])
     parser.add_argument('--pretrained', type=bool, default=True)
     parser.add_argument('--fastMCD', action='store_true', default=False)
-    parser.add_argument('--data', action='store', default='../../fastMCD/test/car_results')
+    parser.add_argument('--data', action='store', default='../../fastMCD_output/streetlight_results')
     parser.add_argument('--label', action='store', default='1')
     args = parser.parse_args()
 

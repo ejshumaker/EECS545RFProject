@@ -119,7 +119,7 @@ class ImageDataset_python(Dataset):
         cv2.imshow('image', frame)
         cv2.waitKey(10)
 
-        frame = self.transform(frame.astype('float32'))
+        frame = self.transform(frame)
 
         return frame, 3
 
@@ -179,7 +179,7 @@ class ImageDataset_multi(Dataset):
 
             # grab a buffer region around each bounding box
             # X direction
-            buffer = 4
+            buffer = 8
             min_val = 0
             max_val = image.shape[1]
             x_new = np.clip(x - buffer, min_val, max_val)

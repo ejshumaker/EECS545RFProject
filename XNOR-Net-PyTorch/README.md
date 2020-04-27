@@ -35,8 +35,8 @@ UPDATE: To pipe the fastMCD proposed regions with multiple objects run this on t
 $ cd <Repository Root>/XNOR-Net-PyTorch/CIFAR_10/
 $ python3 main.py --cpu --arch ['vgg' | 'nin' | 'resnet20' | 'resnet34'] [--bwn] --pretrained <path_to_model> --multi_fastMCD <path-to-results> --label [0 - 9]
 
-(ex: to test on highway results with a resnet20 BWN run:)
-$ python3 main.py --cpu --arch resnet20 --bwn --pretrained models/resnet20_best_BWN.pth.tar --multi_fastMCD ../../fastMCD/test/highway_results --label 1
+(ex: to test on streetlight results with a resnet20 BWN run:)
+$ python3 main.py --cpu --arch resnet20 --bwn --pretrained models/resnet20_best_BWN.pth.tar --multi_fastMCD ../../fastMCD_output/streetlight_results --label 1
 ```
 
 UPDATE: To pipe proposed the fastMCD proposed regions with multiple objects into non-binarized networks (Note, specifying label 1 includes label 9 as correct, since the two classes are 'car' and 'truck'), run:

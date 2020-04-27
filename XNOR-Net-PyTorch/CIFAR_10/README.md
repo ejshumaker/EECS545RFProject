@@ -25,5 +25,5 @@ python3 main.py --cpu --arch ['nin' | 'vgg' | 'resnet20' | 'resnet34'] [--bwn] -
 Example of running evaluation on fastMCD data
 ```bash
 cd ..
-python3 main.py --cpu --arch ['nin' | 'vgg' | 'resnet20' | 'resnet34'] [--bwn] --pretrained <path_to_model> --multi_fastMCD ../../fastMCD/test/highway_results --label 1
+python3 main.py --cpu --arch ['nin' | 'vgg' | 'resnet20' | 'resnet34'] [--bwn] --pretrained <path_to_model> --multi_fastMCD ../../fastMCD_output/streetlight_results --label 1
 ```
