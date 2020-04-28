@@ -1,0 +1,11 @@
+%YAML 1.0
+video_path: "E:\\Projects\\FasterMCD\\Data\\streetlight.mp4"
+block_size: 2 
+theta_v: 2500.0
+theta_s: 4.0
+theta_d: 4.0
+lambda: 0.001
+max_age: 50.0
+min_vars: 25.0
+init_vars: 400.0
+debug: 0
