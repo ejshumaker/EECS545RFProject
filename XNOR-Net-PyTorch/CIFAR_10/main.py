@@ -128,7 +128,7 @@ def test_multi(loader):
 
     # Create timer for frames
     frame_timer = Timer(desc='Frame', printflag=False)
-    timed = False
+    timed = args.timed
 
     # Create a file to write frame results to:
     file_name = args.multi_fastMCD.split("/")[-1]
@@ -250,6 +250,8 @@ if __name__ == '__main__':
                         help='label to use for all image frames')
     parser.add_argument('--bwn', action='store_true', default=False,
                         help='Use binary weight network only (do not binarize inputs)')
+    parser.add_argument('--timed', action='store_true', default=False,
+                        help='whether or not to time this run')
     args = parser.parse_args()
     print('==> Options:', args)
 

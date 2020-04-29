@@ -179,7 +179,7 @@ class ImageDataset_multi(Dataset):
 
             # grab a buffer region around each bounding box
             # X direction
-            buffer = 8
+            buffer = 12
             min_val = 0
             max_val = image.shape[1]
             x_new = np.clip(x - buffer, min_val, max_val)

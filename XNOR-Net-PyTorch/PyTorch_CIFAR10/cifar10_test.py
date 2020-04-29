@@ -39,7 +39,7 @@ def test_multi(model, loader):
         file_name = args.data.split("/")[-2]
     resultsFile = open(file_name + '_BOUNDING_BOX_' + args.classifier + '_normal.txt', 'w')
 
-    timed = False
+    timed = args.timed
 
     num_evals = 0
     acc = 0
@@ -123,6 +123,8 @@ if __name__ == '__main__':
     parser.add_argument('--fastMCD', action='store_true', default=False)
     parser.add_argument('--data', action='store', default='../../fastMCD_output/streetlight_results')
     parser.add_argument('--label', action='store', default='1')
+    parser.add_argument('--timed', action='store_true', default=False,
+                        help='whether or not to time this run')
     args = parser.parse_args()
 
     if args.fastMCD:
