@@ -261,11 +261,12 @@ if __name__ == '__main__':
 
     args.cuda = not args.cpu and torch.cuda.is_available()
 
-    trainset = cifar_data.original_dataset(root=args.data, train=True)
-    trainloader = torch.utils.data.DataLoader(trainset, batch_size=128, shuffle=True) #, num_workers=2)
+    if not args.pretrained:
+        trainset = cifar_data.original_dataset(root=args.data, train=True)
+        trainloader = torch.utils.data.DataLoader(trainset, batch_size=128, shuffle=True) #, num_workers=2)
 
-    testset = cifar_data.original_dataset(root=args.data, train=False)
-    testloader = torch.utils.data.DataLoader(testset, batch_size=100, shuffle=False) #, num_workers=1)
+        testset = cifar_data.original_dataset(root=args.data, train=False)
+        testloader = torch.utils.data.DataLoader(testset, batch_size=100, shuffle=False) #, num_workers=1)
 
     # define classes
 
