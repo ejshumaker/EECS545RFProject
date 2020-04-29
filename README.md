@@ -45,6 +45,8 @@ Precision       0.997                         0.977                      0.999
 Recall          0.878                         0.952                      0.597
 ```
 
+### NOTE:
+If training networks from scratch, acquire data from [CIFAR10](https://www.cs.toronto.edu/~kriz/cifar.html), and place in `CIFAR_10/data/` folder.
 ### MNIST Proof Of Concept
 To use fastMCD with the xnor net, use the following basic procedure (use for MNIST case):
 
