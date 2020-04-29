@@ -20,6 +20,9 @@ $ python3 cifar10_download.py
 $ python3 cifar10_test.py --classifier resnet34 --fastMCD --data ../../fastMCD_output/streetlight_results --label 1
 ```
 
+These will create files called `*BOUNDING_BOX*.txt` based on the data set. Copy these to `/Data/classification_accuracy/` OR continue with our
+pre-evaluated results.
+
 ### Evaluation Scripts
 After handlabeling frames and saving .xml files to a labels folder, update the paths in Data/xml_parser/bb_xml_parser.py. Then run:
 ```bash
