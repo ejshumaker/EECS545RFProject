@@ -31,7 +31,8 @@ class CIFAR10_Module(pl.LightningModule):
         self.mean = [0.4914, 0.4822, 0.4465]
         self.std = [0.2023, 0.1994, 0.2010]
         self.model = get_classifier(hparams.classifier, hparams.pretrained)
-        self.val_size = len(self.val_dataloader().dataset)
+        if not hparams.pretrained:
+            self.val_size = len(self.val_dataloader().dataset)
         
     def forward(self, batch):
         images, labels = batch
