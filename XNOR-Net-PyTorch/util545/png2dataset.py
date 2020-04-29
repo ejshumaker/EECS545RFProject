@@ -184,14 +184,23 @@ class ImageDataset_multi(Dataset):
             max_val = image.shape[1]
             x_new = np.clip(x - buffer, min_val, max_val)
             moved = x - x_new
-            w_new = np.clip(w + buffer + moved, min_val, max_val)
+            w_new = np.clip(w + buffer + moved, min_val, max_val - x_new)
 
             # Y direction
             min_val = 0
             max_val = image.shape[0]
             y_new = np.clip(y - buffer, min_val, max_val)
             moved = y - y_new
-            h_new = np.clip(h + buffer + moved, min_val, max_val)
+            h_new = np.clip(h + buffer + moved, min_val, max_val - y_new)
+
+            # Save Image patch of idx 333 w/ and w/out buffer
+            # if idx == 333 and h_new == (h + 2*buffer) and w_new == (w + 2*buffer):
+            #     roi = image[y:y + h, x:x + w, :].copy()
+            #     cv2.imwrite(str(idx) + '.png', roi)
+            #     roi_accent = image[y_new:y_new + h_new, x_new:x_new + w_new, :].copy()
+            #     roi_accent = (roi_accent * 0.5).astype('uint8')
+            #     roi_accent[buffer:-buffer, buffer:-buffer] = roi
+            #     cv2.imwrite(os.path.join(str(idx) + '_buf' + str(buffer) + '.png'), roi_accent)
 
             x = x_new
             w = w_new
@@ -199,6 +208,7 @@ class ImageDataset_multi(Dataset):
             h = h_new
 
             roi = image[y:y + h, x:x + w, :].copy()
+            
             # cv2.imshow('mask', mask)
             # cv2.rectangle(image, (x, y), (x + w, y + h), (0, 255, 0))
             # cv2.imshow('image w/ roi', image)
@@ -210,11 +220,10 @@ class ImageDataset_multi(Dataset):
                 roi = cv2.rotate(roi, cv2.ROTATE_90_COUNTERCLOCKWISE)
             roi = self.transforms(roi)
             
-            # label everything as a cat (3)
             label = 0
             if self.lazylabel:
                 label = self.lazylabel
-            data_list.append((roi, label, (x_new, y_new, x_new + w_new, y_new + h_new)))
+            data_list.append((roi, label, (x, y, x + w, y + h)))
 
         self.preprocess_timer.end_time()
         return data_list
