@@ -1,0 +1,2348 @@
+frame 0:
+Objects:
+
+frame 1:
+Objects:
+
+frame 2:
+Objects:
+
+frame 3:
+Objects:
+
+frame 4:
+Objects:
+
+frame 5:
+Objects:
+
+frame 6:
+Objects:
+
+dog:
+Bounding Box:255,109,268,133
+frame 7:
+Objects:
+
+ship:
+Bounding Box:245,108,268,133
+frame 8:
+Objects:
+
+truck:
+Bounding Box:236,105,268,133
+frame 9:
+Objects:
+
+truck:
+Bounding Box:226,105,268,133
+frame 10:
+Objects:
+
+cat:
+Bounding Box:216,104,268,133
+frame 11:
+Objects:
+
+cat:
+Bounding Box:206,104,268,133
+frame 12:
+Objects:
+
+cat:
+Bounding Box:196,103,268,133
+frame 13:
+Objects:
+
+cat:
+Bounding Box:186,103,255,133
+frame 14:
+Objects:
+
+cat:
+Bounding Box:176,102,245,133
+frame 15:
+Objects:
+
+car:
+Bounding Box:166,101,236,133
+frame 16:
+Objects:
+
+car:
+Bounding Box:156,101,226,133
+frame 17:
+Objects:
+
+car:
+Bounding Box:146,100,216,133
+frame 18:
+Objects:
+
+car:
+Bounding Box:135,99,206,133
+frame 19:
+Objects:
+
+car:
+Bounding Box:126,99,196,133
+ship:
+Bounding Box:251,84,268,116
+frame 20:
+Objects:
+
+car:
+Bounding Box:115,98,186,133
+ship:
+Bounding Box:242,82,268,116
+frame 21:
+Objects:
+
+car:
+Bounding Box:107,97,176,133
+truck:
+Bounding Box:234,81,268,116
+frame 22:
+Objects:
+
+car:
+Bounding Box:97,96,166,133
+car:
+Bounding Box:226,81,268,116
+frame 23:
+Objects:
+
+car:
+Bounding Box:87,96,156,132
+car:
+Bounding Box:219,80,268,116
+frame 24:
+Objects:
+
+car:
+Bounding Box:79,95,147,131
+car:
+Bounding Box:211,80,268,116
+frame 25:
+Objects:
+
+car:
+Bounding Box:70,94,137,130
+car:
+Bounding Box:203,79,266,115
+frame 26:
+Objects:
+
+car:
+Bounding Box:61,93,128,129
+truck:
+Bounding Box:195,79,259,115
+frame 27:
+Objects:
+
+truck:
+Bounding Box:186,78,251,115
+car:
+Bounding Box:53,92,118,128
+frame 28:
+Objects:
+
+car:
+Bounding Box:44,91,109,127
+truck:
+Bounding Box:179,78,243,114
+frame 29:
+Objects:
+
+truck:
+Bounding Box:170,77,235,114
+car:
+Bounding Box:36,91,100,126
+frame 30:
+Objects:
+
+truck:
+Bounding Box:163,77,227,113
+car:
+Bounding Box:28,90,91,125
+frame 31:
+Objects:
+
+car:
+Bounding Box:154,76,219,113
+car:
+Bounding Box:21,89,82,124
+frame 32:
+Objects:
+
+car:
+Bounding Box:146,76,211,112
+car:
+Bounding Box:13,88,74,123
+frame 33:
+Objects:
+
+car:
+Bounding Box:137,75,204,112
+car:
+Bounding Box:6,87,65,122
+frame 34:
+Objects:
+
+car:
+Bounding Box:129,74,195,111
+car:
+Bounding Box:0,86,57,120
+frame 35:
+Objects:
+
+car:
+Bounding Box:122,74,187,110
+car:
+Bounding Box:0,85,50,119
+frame 36:
+Objects:
+
+car:
+Bounding Box:114,73,179,110
+car:
+Bounding Box:0,85,41,118
+frame 37:
+Objects:
+
+car:
+Bounding Box:105,73,171,109
+car:
+Bounding Box:0,83,34,117
+frame 38:
+Objects:
+
+car:
+Bounding Box:98,72,163,109
+car:
+Bounding Box:0,83,27,116
+frame 39:
+Objects:
+
+car:
+Bounding Box:91,72,155,108
+plane:
+Bounding Box:0,83,20,115
+frame 40:
+Objects:
+
+car:
+Bounding Box:83,71,147,108
+ship:
+Bounding Box:0,87,13,113
+frame 41:
+Objects:
+
+car:
+Bounding Box:76,71,139,107
+frame 42:
+Objects:
+
+car:
+Bounding Box:69,70,132,106
+frame 43:
+Objects:
+
+car:
+Bounding Box:62,69,124,106
+frame 44:
+Objects:
+
+car:
+Bounding Box:55,69,116,105
+frame 45:
+Objects:
+
+car:
+Bounding Box:47,68,109,104
+frame 46:
+Objects:
+
+car:
+Bounding Box:41,68,101,103
+frame 47:
+Objects:
+
+car:
+Bounding Box:34,67,94,103
+frame 48:
+Objects:
+
+car:
+Bounding Box:27,66,87,102
+frame 49:
+Objects:
+
+car:
+Bounding Box:21,66,80,101
+frame 50:
+Objects:
+
+car:
+Bounding Box:15,65,73,101
+frame 51:
+Objects:
+
+car:
+Bounding Box:9,65,66,100
+frame 52:
+Objects:
+
+car:
+Bounding Box:3,65,60,99
+frame 53:
+Objects:
+
+car:
+Bounding Box:0,64,53,98
+frame 54:
+Objects:
+
+car:
+Bounding Box:0,63,47,98
+frame 55:
+Objects:
+
+car:
+Bounding Box:0,63,40,97
+frame 56:
+Objects:
+
+car:
+Bounding Box:0,62,35,96
+frame 57:
+Objects:
+
+cat:
+Bounding Box:0,62,28,95
+frame 58:
+Objects:
+
+cat:
+Bounding Box:0,62,22,95
+frame 59:
+Objects:
+
+plane:
+Bounding Box:0,63,16,94
+frame 60:
+Objects:
+
+frame 61:
+Objects:
+
+frame 62:
+Objects:
+
+ship:
+Bounding Box:246,110,268,133
+frame 63:
+Objects:
+
+truck:
+Bounding Box:235,108,268,133
+frame 64:
+Objects:
+
+truck:
+Bounding Box:223,107,268,133
+frame 65:
+Objects:
+
+truck:
+Bounding Box:213,107,268,133
+frame 66:
+Objects:
+
+truck:
+Bounding Box:203,106,266,133
+frame 67:
+Objects:
+
+horse:
+Bounding Box:191,106,256,133
+frame 68:
+Objects:
+
+truck:
+Bounding Box:179,105,245,133
+frame 69:
+Objects:
+
+truck:
+Bounding Box:168,105,234,133
+frame 70:
+Objects:
+
+truck:
+Bounding Box:157,104,222,133
+frame 71:
+Objects:
+
+truck:
+Bounding Box:145,103,211,133
+frame 72:
+Objects:
+
+car:
+Bounding Box:135,102,200,133
+frame 73:
+Objects:
+
+truck:
+Bounding Box:123,101,189,133
+frame 74:
+Objects:
+
+truck:
+Bounding Box:112,101,178,133
+frame 75:
+Objects:
+
+truck:
+Bounding Box:102,100,167,133
+frame 76:
+Objects:
+
+car:
+Bounding Box:92,99,156,133
+frame 77:
+Objects:
+
+truck:
+Bounding Box:82,98,144,133
+frame 78:
+Objects:
+
+truck:
+Bounding Box:72,97,133,132
+frame 79:
+Objects:
+
+truck:
+Bounding Box:61,96,123,131
+frame 80:
+Objects:
+
+car:
+Bounding Box:52,95,112,129
+frame 81:
+Objects:
+
+ship:
+Bounding Box:43,94,102,128
+frame 82:
+Objects:
+
+ship:
+Bounding Box:34,93,92,127
+frame 83:
+Objects:
+
+ship:
+Bounding Box:24,92,82,126
+frame 84:
+Objects:
+
+ship:
+Bounding Box:16,91,72,125
+frame 85:
+Objects:
+
+car:
+Bounding Box:7,91,63,123
+frame 86:
+Objects:
+
+ship:
+Bounding Box:0,89,54,122
+ship:
+Bounding Box:248,106,268,133
+frame 87:
+Objects:
+
+car:
+Bounding Box:0,89,45,121
+ship:
+Bounding Box:237,105,268,133
+frame 88:
+Objects:
+
+truck:
+Bounding Box:226,104,268,133
+frog:
+Bounding Box:0,87,36,120
+frame 89:
+Objects:
+
+truck:
+Bounding Box:215,105,268,133
+ship:
+Bounding Box:0,86,28,118
+frame 90:
+Objects:
+
+car:
+Bounding Box:203,104,266,133
+plane:
+Bounding Box:0,88,20,117
+frame 91:
+Objects:
+
+car:
+Bounding Box:192,103,256,133
+frame 92:
+Objects:
+
+car:
+Bounding Box:181,103,245,133
+frame 93:
+Objects:
+
+car:
+Bounding Box:169,102,234,133
+frame 94:
+Objects:
+
+car:
+Bounding Box:157,102,222,133
+frame 95:
+Objects:
+
+car:
+Bounding Box:146,101,211,133
+frame 96:
+Objects:
+
+car:
+Bounding Box:134,100,200,133
+frame 97:
+Objects:
+
+car:
+Bounding Box:124,99,188,133
+frame 98:
+Objects:
+
+car:
+Bounding Box:112,99,177,133
+frame 99:
+Objects:
+
+car:
+Bounding Box:102,99,166,133
+frame 100:
+Objects:
+
+car:
+Bounding Box:91,98,155,132
+frame 101:
+Objects:
+
+car:
+Bounding Box:80,96,144,131
+frame 102:
+Objects:
+
+car:
+Bounding Box:70,95,133,130
+cat:
+Bounding Box:254,88,268,115
+frame 103:
+Objects:
+
+car:
+Bounding Box:60,95,122,129
+plane:
+Bounding Box:245,86,268,116
+frame 104:
+Objects:
+
+car:
+Bounding Box:50,94,111,128
+truck:
+Bounding Box:236,85,268,116
+frame 105:
+Objects:
+
+ship:
+Bounding Box:40,94,100,127
+car:
+Bounding Box:227,84,268,116
+frame 106:
+Objects:
+
+car:
+Bounding Box:31,93,91,126
+car:
+Bounding Box:218,84,268,116
+frame 107:
+Objects:
+
+car:
+Bounding Box:22,92,81,125
+car:
+Bounding Box:209,83,263,115
+frame 108:
+Objects:
+
+car:
+Bounding Box:13,91,70,124
+car:
+Bounding Box:199,83,254,115
+frame 109:
+Objects:
+
+car:
+Bounding Box:190,82,245,114
+car:
+Bounding Box:5,91,60,123
+frame 110:
+Objects:
+
+car:
+Bounding Box:181,82,236,114
+car:
+Bounding Box:0,90,51,121
+frame 111:
+Objects:
+
+car:
+Bounding Box:171,81,227,113
+car:
+Bounding Box:0,89,42,120
+frame 112:
+Objects:
+
+car:
+Bounding Box:162,81,218,113
+car:
+Bounding Box:0,88,34,119
+frame 113:
+Objects:
+
+car:
+Bounding Box:153,79,208,112
+ship:
+Bounding Box:0,87,25,118
+frame 114:
+Objects:
+
+car:
+Bounding Box:143,79,199,111
+ship:
+Bounding Box:0,86,17,117
+frame 115:
+Objects:
+
+car:
+Bounding Box:133,79,190,111
+frame 116:
+Objects:
+
+car:
+Bounding Box:124,78,180,110
+frame 117:
+Objects:
+
+car:
+Bounding Box:115,77,171,109
+frame 118:
+Objects:
+
+car:
+Bounding Box:106,76,162,109
+frame 119:
+Objects:
+
+car:
+Bounding Box:98,75,153,108
+frame 120:
+Objects:
+
+car:
+Bounding Box:89,75,143,107
+frame 121:
+Objects:
+
+car:
+Bounding Box:80,75,135,106
+frame 122:
+Objects:
+
+car:
+Bounding Box:72,74,126,106
+frame 123:
+Objects:
+
+car:
+Bounding Box:64,73,116,105
+frame 124:
+Objects:
+
+car:
+Bounding Box:56,72,108,104
+frame 125:
+Objects:
+
+car:
+Bounding Box:47,71,99,103
+frame 126:
+Objects:
+
+car:
+Bounding Box:39,71,91,102
+frame 127:
+Objects:
+
+car:
+Bounding Box:32,70,82,101
+frame 128:
+Objects:
+
+car:
+Bounding Box:25,69,74,101
+frame 129:
+Objects:
+
+car:
+Bounding Box:18,69,66,100
+frame 130:
+Objects:
+
+car:
+Bounding Box:11,68,58,99
+frame 131:
+Objects:
+
+car:
+Bounding Box:4,68,51,98
+frame 132:
+Objects:
+
+car:
+Bounding Box:0,67,43,97
+frame 133:
+Objects:
+
+car:
+Bounding Box:0,66,36,96
+frame 134:
+Objects:
+
+car:
+Bounding Box:0,66,29,95
+frame 135:
+Objects:
+
+car:
+Bounding Box:0,65,22,95
+frame 136:
+Objects:
+
+cat:
+Bounding Box:0,68,16,94
+frame 137:
+Objects:
+
+frame 138:
+Objects:
+
+frame 139:
+Objects:
+
+frame 140:
+Objects:
+
+frame 141:
+Objects:
+
+frame 142:
+Objects:
+
+frame 143:
+Objects:
+
+frame 144:
+Objects:
+
+frame 145:
+Objects:
+
+frame 146:
+Objects:
+
+frame 147:
+Objects:
+
+frame 148:
+Objects:
+
+frame 149:
+Objects:
+
+frame 150:
+Objects:
+
+frame 151:
+Objects:
+
+frame 152:
+Objects:
+
+frame 153:
+Objects:
+
+frame 154:
+Objects:
+
+frame 155:
+Objects:
+
+frame 156:
+Objects:
+
+frame 157:
+Objects:
+
+frame 158:
+Objects:
+
+frame 159:
+Objects:
+
+cat:
+Bounding Box:252,79,268,118
+frame 160:
+Objects:
+
+dog:
+Bounding Box:243,78,268,118
+frame 161:
+Objects:
+
+horse:
+Bounding Box:235,73,268,118
+frame 162:
+Objects:
+
+car:
+Bounding Box:226,70,268,119
+frame 163:
+Objects:
+
+car:
+Bounding Box:217,70,268,119
+frame 164:
+Objects:
+
+truck:
+Bounding Box:208,69,268,119
+frame 165:
+Objects:
+
+car:
+Bounding Box:200,69,268,119
+frame 166:
+Objects:
+
+truck:
+Bounding Box:191,68,268,119
+frame 167:
+Objects:
+
+truck:
+Bounding Box:181,67,268,121
+frame 168:
+Objects:
+
+truck:
+Bounding Box:172,67,268,119
+frame 169:
+Objects:
+
+truck:
+Bounding Box:163,66,264,119
+frame 170:
+Objects:
+
+truck:
+Bounding Box:154,66,255,119
+ship:
+Bounding Box:252,68,268,97
+frame 171:
+Objects:
+
+truck:
+Bounding Box:145,65,247,118
+truck:
+Bounding Box:244,65,268,97
+frame 172:
+Objects:
+
+truck:
+Bounding Box:137,65,238,117
+truck:
+Bounding Box:235,64,268,97
+frame 173:
+Objects:
+
+truck:
+Bounding Box:128,64,229,117
+truck:
+Bounding Box:227,64,268,97
+frame 174:
+Objects:
+
+truck:
+Bounding Box:119,64,221,116
+truck:
+Bounding Box:219,63,268,97
+frame 175:
+Objects:
+
+truck:
+Bounding Box:110,63,212,115
+truck:
+Bounding Box:210,63,268,97
+frame 176:
+Objects:
+
+truck:
+Bounding Box:101,63,204,115
+truck:
+Bounding Box:201,62,261,96
+frame 177:
+Objects:
+
+truck:
+Bounding Box:93,62,195,114
+truck:
+Bounding Box:193,62,252,101
+frame 178:
+Objects:
+
+truck:
+Bounding Box:84,62,186,114
+truck:
+Bounding Box:184,61,244,95
+frame 179:
+Objects:
+
+truck:
+Bounding Box:77,61,177,113
+truck:
+Bounding Box:175,61,235,95
+frame 180:
+Objects:
+
+truck:
+Bounding Box:69,60,168,112
+truck:
+Bounding Box:166,60,226,94
+frame 181:
+Objects:
+
+truck:
+Bounding Box:61,60,160,112
+truck:
+Bounding Box:158,60,218,94
+frame 182:
+Objects:
+
+truck:
+Bounding Box:53,59,151,111
+truck:
+Bounding Box:149,59,210,93
+frame 183:
+Objects:
+
+car:
+Bounding Box:46,59,142,110
+truck:
+Bounding Box:141,59,202,93
+frame 184:
+Objects:
+
+truck:
+Bounding Box:39,58,135,110
+truck:
+Bounding Box:132,58,192,92
+frame 185:
+Objects:
+
+truck:
+Bounding Box:31,58,126,109
+truck:
+Bounding Box:123,58,184,92
+frame 186:
+Objects:
+
+truck:
+Bounding Box:24,57,117,108
+truck:
+Bounding Box:115,57,175,91
+frame 187:
+Objects:
+
+truck:
+Bounding Box:17,57,109,108
+truck:
+Bounding Box:107,57,166,90
+frame 188:
+Objects:
+
+truck:
+Bounding Box:11,57,101,107
+truck:
+Bounding Box:99,56,158,90
+frame 189:
+Objects:
+
+truck:
+Bounding Box:5,56,93,106
+car:
+Bounding Box:91,55,149,89
+frame 190:
+Objects:
+
+truck:
+Bounding Box:0,55,85,105
+truck:
+Bounding Box:82,55,141,89
+frame 191:
+Objects:
+
+truck:
+Bounding Box:0,55,78,104
+car:
+Bounding Box:74,54,134,88
+frame 192:
+Objects:
+
+truck:
+Bounding Box:0,54,70,103
+car:
+Bounding Box:67,54,124,87
+frame 193:
+Objects:
+
+ship:
+Bounding Box:0,54,63,102
+car:
+Bounding Box:58,53,116,87
+frame 194:
+Objects:
+
+ship:
+Bounding Box:0,54,55,102
+car:
+Bounding Box:51,53,108,86
+frame 195:
+Objects:
+
+ship:
+Bounding Box:0,53,49,101
+car:
+Bounding Box:44,52,100,85
+frame 196:
+Objects:
+
+ship:
+Bounding Box:0,55,42,100
+car:
+Bounding Box:37,52,92,85
+frame 197:
+Objects:
+
+ship:
+Bounding Box:0,54,36,99
+car:
+Bounding Box:30,51,85,84
+cat:
+Bounding Box:255,90,268,115
+frame 198:
+Objects:
+
+car:
+Bounding Box:23,51,77,84
+ship:
+Bounding Box:0,55,29,99
+plane:
+Bounding Box:247,89,268,117
+frame 199:
+Objects:
+
+car:
+Bounding Box:16,51,70,83
+cat:
+Bounding Box:0,55,23,97
+plane:
+Bounding Box:239,87,268,117
+frame 200:
+Objects:
+
+car:
+Bounding Box:10,50,62,82
+ship:
+Bounding Box:231,85,268,117
+ship:
+Bounding Box:0,73,15,96
+frame 201:
+Objects:
+
+truck:
+Bounding Box:222,85,268,117
+car:
+Bounding Box:4,50,55,82
+frame 202:
+Objects:
+
+car:
+Bounding Box:215,84,268,117
+car:
+Bounding Box:0,49,49,81
+frame 203:
+Objects:
+
+truck:
+Bounding Box:206,84,267,117
+car:
+Bounding Box:0,49,41,80
+frame 204:
+Objects:
+
+car:
+Bounding Box:197,83,259,116
+car:
+Bounding Box:0,49,35,80
+frame 205:
+Objects:
+
+truck:
+Bounding Box:189,83,252,116
+cat:
+Bounding Box:0,48,28,79
+frame 206:
+Objects:
+
+truck:
+Bounding Box:180,82,243,115
+cat:
+Bounding Box:0,49,22,79
+frame 207:
+Objects:
+
+truck:
+Bounding Box:172,82,235,115
+cat:
+Bounding Box:0,49,16,78
+frame 208:
+Objects:
+
+truck:
+Bounding Box:163,81,226,115
+frame 209:
+Objects:
+
+car:
+Bounding Box:155,81,218,114
+frame 210:
+Objects:
+
+car:
+Bounding Box:146,80,210,113
+ship:
+Bounding Box:255,58,268,79
+frame 211:
+Objects:
+
+truck:
+Bounding Box:138,80,202,113
+plane:
+Bounding Box:250,108,268,133
+plane:
+Bounding Box:247,57,268,83
+frame 212:
+Objects:
+
+ship:
+Bounding Box:129,79,194,112
+plane:
+Bounding Box:240,101,268,133
+plane:
+Bounding Box:239,53,268,84
+frame 213:
+Objects:
+
+ship:
+Bounding Box:121,78,184,112
+plane:
+Bounding Box:230,101,268,133
+truck:
+Bounding Box:230,54,268,84
+frame 214:
+Objects:
+
+plane:
+Bounding Box:219,100,268,133
+car:
+Bounding Box:113,78,177,111
+truck:
+Bounding Box:222,53,268,84
+frame 215:
+Objects:
+
+truck:
+Bounding Box:209,100,268,133
+car:
+Bounding Box:105,77,168,111
+truck:
+Bounding Box:213,52,268,83
+frame 216:
+Objects:
+
+truck:
+Bounding Box:198,99,268,133
+car:
+Bounding Box:97,76,159,110
+car:
+Bounding Box:204,51,262,83
+frame 217:
+Objects:
+
+ship:
+Bounding Box:187,99,268,133
+car:
+Bounding Box:89,76,151,109
+truck:
+Bounding Box:196,51,254,82
+frame 218:
+Objects:
+
+truck:
+Bounding Box:177,98,260,133
+car:
+Bounding Box:82,75,143,109
+truck:
+Bounding Box:187,50,246,82
+frame 219:
+Objects:
+
+truck:
+Bounding Box:166,97,250,133
+car:
+Bounding Box:74,75,134,108
+truck:
+Bounding Box:178,50,237,81
+frame 220:
+Objects:
+
+truck:
+Bounding Box:155,97,239,133
+car:
+Bounding Box:66,74,126,107
+truck:
+Bounding Box:169,49,229,81
+frame 221:
+Objects:
+
+truck:
+Bounding Box:144,96,229,133
+car:
+Bounding Box:59,73,118,106
+truck:
+Bounding Box:161,49,220,80
+frame 222:
+Objects:
+
+truck:
+Bounding Box:134,95,218,133
+car:
+Bounding Box:52,73,110,106
+car:
+Bounding Box:152,48,211,80
+frame 223:
+Objects:
+
+truck:
+Bounding Box:123,94,208,133
+car:
+Bounding Box:45,72,103,105
+truck:
+Bounding Box:143,47,203,79
+frame 224:
+Objects:
+
+truck:
+Bounding Box:113,94,197,133
+truck:
+Bounding Box:134,46,194,79
+car:
+Bounding Box:38,71,94,104
+frame 225:
+Objects:
+
+truck:
+Bounding Box:103,93,187,133
+car:
+Bounding Box:126,47,186,78
+car:
+Bounding Box:31,71,87,103
+frame 226:
+Objects:
+
+truck:
+Bounding Box:93,92,177,133
+car:
+Bounding Box:117,45,177,78
+car:
+Bounding Box:24,70,80,103
+frame 227:
+Objects:
+
+truck:
+Bounding Box:83,91,166,133
+car:
+Bounding Box:109,46,168,77
+car:
+Bounding Box:18,69,72,102
+frame 228:
+Objects:
+
+ship:
+Bounding Box:73,90,156,133
+car:
+Bounding Box:101,44,160,77
+car:
+Bounding Box:12,69,65,101
+frame 229:
+Objects:
+
+truck:
+Bounding Box:64,89,145,133
+car:
+Bounding Box:92,44,151,76
+car:
+Bounding Box:6,68,58,100
+frame 230:
+Objects:
+
+ship:
+Bounding Box:55,89,135,133
+car:
+Bounding Box:85,44,143,76
+car:
+Bounding Box:0,68,51,99
+frame 231:
+Objects:
+
+ship:
+Bounding Box:46,88,125,133
+car:
+Bounding Box:76,44,134,75
+car:
+Bounding Box:0,67,44,99
+frame 232:
+Objects:
+
+ship:
+Bounding Box:37,87,115,132
+car:
+Bounding Box:69,44,126,75
+plane:
+Bounding Box:0,67,38,98
+frame 233:
+Objects:
+
+ship:
+Bounding Box:28,86,105,130
+car:
+Bounding Box:61,42,117,74
+plane:
+Bounding Box:0,66,31,97
+frame 234:
+Objects:
+
+plane:
+Bounding Box:20,85,95,129
+car:
+Bounding Box:54,42,109,74
+plane:
+Bounding Box:0,66,25,96
+ship:
+Bounding Box:246,105,268,133
+frame 235:
+Objects:
+
+ship:
+Bounding Box:12,84,86,128
+car:
+Bounding Box:47,43,101,73
+plane:
+Bounding Box:236,101,268,133
+plane:
+Bounding Box:0,69,19,95
+frame 236:
+Objects:
+
+plane:
+Bounding Box:4,83,76,127
+car:
+Bounding Box:39,42,93,72
+ship:
+Bounding Box:228,101,268,133
+frame 237:
+Objects:
+
+plane:
+Bounding Box:0,82,68,126
+ship:
+Bounding Box:218,101,268,133
+car:
+Bounding Box:33,42,86,72
+plane:
+Bounding Box:250,71,268,97
+frame 238:
+Objects:
+
+plane:
+Bounding Box:0,81,59,125
+ship:
+Bounding Box:208,100,268,133
+car:
+Bounding Box:26,41,77,71
+plane:
+Bounding Box:242,69,268,97
+frame 239:
+Objects:
+
+plane:
+Bounding Box:0,80,50,123
+ship:
+Bounding Box:197,100,266,133
+car:
+Bounding Box:19,40,69,71
+ship:
+Bounding Box:234,68,268,97
+frame 240:
+Objects:
+
+ship:
+Bounding Box:188,99,256,133
+ship:
+Bounding Box:0,80,42,122
+car:
+Bounding Box:12,41,62,71
+car:
+Bounding Box:226,67,268,97
+frame 241:
+Objects:
+
+ship:
+Bounding Box:178,99,247,133
+bird:
+Bounding Box:0,80,34,121
+car:
+Bounding Box:218,67,268,97
+car:
+Bounding Box:7,40,55,70
+frame 242:
+Objects:
+
+ship:
+Bounding Box:168,98,237,133
+truck:
+Bounding Box:210,66,264,97
+car:
+Bounding Box:1,40,48,69
+ship:
+Bounding Box:0,80,26,119
+frame 243:
+Objects:
+
+truck:
+Bounding Box:158,97,228,133
+truck:
+Bounding Box:201,66,256,96
+car:
+Bounding Box:0,40,41,69
+plane:
+Bounding Box:0,91,18,118
+frame 244:
+Objects:
+
+truck:
+Bounding Box:148,97,218,133
+truck:
+Bounding Box:193,65,248,96
+car:
+Bounding Box:0,40,34,69
+frame 245:
+Objects:
+
+truck:
+Bounding Box:138,96,208,132
+car:
+Bounding Box:185,65,240,95
+car:
+Bounding Box:0,45,28,68
+frame 246:
+Objects:
+
+ship:
+Bounding Box:128,95,198,131
+truck:
+Bounding Box:176,64,232,95
+ship:
+Bounding Box:0,40,21,68
+frame 247:
+Objects:
+
+ship:
+Bounding Box:119,95,189,130
+car:
+Bounding Box:168,64,224,95
+ship:
+Bounding Box:0,45,15,67
+frame 248:
+Objects:
+
+ship:
+Bounding Box:109,94,179,130
+car:
+Bounding Box:160,63,216,94
+frame 249:
+Objects:
+
+ship:
+Bounding Box:100,93,169,129
+car:
+Bounding Box:152,63,207,93
+frame 250:
+Objects:
+
+ship:
+Bounding Box:90,92,160,128
+car:
+Bounding Box:143,62,198,93
+frame 251:
+Objects:
+
+ship:
+Bounding Box:82,91,150,127
+car:
+Bounding Box:135,62,190,93
+frame 252:
+Objects:
+
+ship:
+Bounding Box:73,91,140,126
+car:
+Bounding Box:126,61,183,92
+plane:
+Bounding Box:253,88,268,117
+frame 253:
+Objects:
+
+ship:
+Bounding Box:64,90,131,125
+car:
+Bounding Box:118,61,174,91
+car:
+Bounding Box:244,88,268,117
+frame 254:
+Objects:
+
+ship:
+Bounding Box:56,89,122,124
+car:
+Bounding Box:110,60,166,91
+car:
+Bounding Box:235,86,268,117
+frame 255:
+Objects:
+
+ship:
+Bounding Box:47,88,112,123
+car:
+Bounding Box:103,60,158,91
+car:
+Bounding Box:227,86,268,117
+frame 256:
+Objects:
+
+car:
+Bounding Box:39,87,103,122
+car:
+Bounding Box:218,85,268,117
+car:
+Bounding Box:95,59,150,90
+frame 257:
+Objects:
+
+car:
+Bounding Box:31,86,94,121
+truck:
+Bounding Box:209,85,268,116
+car:
+Bounding Box:88,59,142,89
+frame 258:
+Objects:
+
+car:
+Bounding Box:24,85,85,120
+car:
+Bounding Box:200,84,259,116
+car:
+Bounding Box:80,58,134,89
+frame 259:
+Objects:
+
+ship:
+Bounding Box:15,84,77,119
+truck:
+Bounding Box:191,84,251,116
+car:
+Bounding Box:73,58,125,88
+frame 260:
+Objects:
+
+car:
+Bounding Box:8,84,69,118
+car:
+Bounding Box:182,83,243,115
+car:
+Bounding Box:65,57,117,88
+frame 261:
+Objects:
+
+car:
+Bounding Box:2,83,60,117
+car:
+Bounding Box:173,83,234,115
+car:
+Bounding Box:58,57,109,87
+frame 262:
+Objects:
+
+car:
+Bounding Box:0,82,52,116
+car:
+Bounding Box:164,82,225,114
+car:
+Bounding Box:51,56,101,86
+frame 263:
+Objects:
+
+car:
+Bounding Box:155,82,216,114
+car:
+Bounding Box:0,81,45,115
+car:
+Bounding Box:44,56,93,86
+frame 264:
+Objects:
+
+car:
+Bounding Box:147,81,207,113
+car:
+Bounding Box:36,55,86,85
+car:
+Bounding Box:0,80,37,113
+frame 265:
+Objects:
+
+car:
+Bounding Box:137,80,198,112
+car:
+Bounding Box:30,55,79,85
+plane:
+Bounding Box:0,79,30,112
+frame 266:
+Objects:
+
+car:
+Bounding Box:128,80,190,112
+ship:
+Bounding Box:23,54,72,84
+bird:
+Bounding Box:0,79,23,111
+frame 267:
+Objects:
+
+car:
+Bounding Box:120,79,181,111
+car:
+Bounding Box:18,54,65,83
+plane:
+Bounding Box:0,80,16,110
+frame 268:
+Objects:
+
+car:
+Bounding Box:111,78,172,111
+car:
+Bounding Box:12,53,58,83
+frame 269:
+Objects:
+
+car:
+Bounding Box:103,78,163,110
+car:
+Bounding Box:5,53,51,82
+frame 270:
+Objects:
+
+car:
+Bounding Box:94,77,155,109
+ship:
+Bounding Box:0,53,44,82
+frame 271:
+Objects:
+
+car:
+Bounding Box:86,77,145,109
+ship:
+Bounding Box:0,52,38,81
+frame 272:
+Objects:
+
+car:
+Bounding Box:77,76,137,108
+ship:
+Bounding Box:0,52,31,80
+frame 273:
+Objects:
+
+car:
+Bounding Box:69,76,128,107
+plane:
+Bounding Box:0,51,25,80
+frame 274:
+Objects:
+
+car:
+Bounding Box:62,75,120,106
+ship:
+Bounding Box:0,53,19,79
+frame 275:
+Objects:
+
+car:
+Bounding Box:54,74,111,105
+ship:
+Bounding Box:0,56,13,79
+frame 276:
+Objects:
+
+car:
+Bounding Box:47,74,103,105
+frame 277:
+Objects:
+
+car:
+Bounding Box:40,73,95,104
+frame 278:
+Objects:
+
+car:
+Bounding Box:32,72,87,103
+frame 279:
+Objects:
+
+car:
+Bounding Box:25,72,79,102
+frame 280:
+Objects:
+
+car:
+Bounding Box:18,71,71,101
+frame 281:
+Objects:
+
+car:
+Bounding Box:11,70,64,101
+frame 282:
+Objects:
+
+car:
+Bounding Box:5,70,57,100
+frame 283:
+Objects:
+
+truck:
+Bounding Box:0,69,50,99
+frame 284:
+Objects:
+
+car:
+Bounding Box:0,69,42,98
+frame 285:
+Objects:
+
+ship:
+Bounding Box:0,68,35,97
+frame 286:
+Objects:
+
+car:
+Bounding Box:0,67,28,97
+frame 287:
+Objects:
+
+ship:
+Bounding Box:0,67,22,96
+frame 288:
+Objects:
+
+plane:
+Bounding Box:0,68,16,95
+frame 289:
+Objects:
+
+frame 290:
+Objects:
+
+frame 291:
+Objects:
+
+frame 292:
+Objects:
+
+frame 293:
+Objects:
+
+frame 294:
+Objects:
+
+frame 295:
+Objects:
+
+frame 296:
+Objects:
+
+ship:
+Bounding Box:252,70,268,97
+frame 297:
+Objects:
+
+truck:
+Bounding Box:244,68,268,97
+ship:
+Bounding Box:250,109,268,133
+frame 298:
+Objects:
+
+truck:
+Bounding Box:236,67,268,97
+plane:
+Bounding Box:238,107,268,133
+frame 299:
+Objects:
+
+truck:
+Bounding Box:228,106,268,133
+truck:
+Bounding Box:228,67,268,97
+frame 300:
+Objects:
+
+truck:
+Bounding Box:217,106,268,133
+truck:
+Bounding Box:219,67,268,96
+frame 301:
+Objects:
+
+truck:
+Bounding Box:205,105,268,133
+truck:
+Bounding Box:211,66,265,96
+frame 302:
+Objects:
+
+truck:
+Bounding Box:195,105,262,133
+truck:
+Bounding Box:203,66,256,96
+frame 303:
+Objects:
+
+truck:
+Bounding Box:183,104,252,133
+car:
+Bounding Box:194,65,248,95
+frame 304:
+Objects:
+
+truck:
+Bounding Box:171,103,241,133
+car:
+Bounding Box:185,65,240,95
+frame 305:
+Objects:
+
+truck:
+Bounding Box:160,103,230,133
+car:
+Bounding Box:177,64,232,94
+frame 306:
+Objects:
+
+truck:
+Bounding Box:149,102,219,133
+car:
+Bounding Box:168,63,224,94
+frame 307:
+Objects:
+
+truck:
+Bounding Box:138,101,208,133
+car:
+Bounding Box:160,63,215,93
+frame 308:
+Objects:
+
+truck:
+Bounding Box:127,100,196,133
+car:
+Bounding Box:151,62,207,93
+frame 309:
+Objects:
+
+truck:
+Bounding Box:116,100,185,133
+car:
+Bounding Box:143,62,198,92
+frame 310:
+Objects:
+
+truck:
+Bounding Box:104,99,174,133
+car:
+Bounding Box:134,61,190,92
+frame 311:
+Objects:
+
+car:
+Bounding Box:94,98,163,133
+car:
+Bounding Box:126,61,181,91
+frame 312:
+Objects:
+
+car:
+Bounding Box:84,97,152,133
+car:
+Bounding Box:117,60,173,91
+frame 313:
+Objects:
+
+car:
+Bounding Box:74,96,140,132
+car:
+Bounding Box:109,60,164,90
+frame 314:
+Objects:
+
+car:
+Bounding Box:64,95,129,131
+car:
+Bounding Box:101,59,156,89
+frame 315:
+Objects:
+
+car:
+Bounding Box:54,94,119,130
+car:
+Bounding Box:93,59,148,89
+frame 316:
+Objects:
+
+car:
+Bounding Box:44,93,108,129
+car:
+Bounding Box:86,58,139,88
+frame 317:
+Objects:
+
+car:
+Bounding Box:35,92,98,127
+car:
+Bounding Box:78,58,131,87
+frame 318:
+Objects:
+
+car:
+Bounding Box:26,92,88,126
+car:
+Bounding Box:70,57,123,87
+frame 319:
+Objects:
+
+car:
+Bounding Box:17,90,78,125
+car:
+Bounding Box:63,57,115,86
+frame 320:
+Objects:
+
+car:
+Bounding Box:8,90,68,124
+car:
+Bounding Box:55,56,107,86
+frame 321:
+Objects:
+
+car:
+Bounding Box:1,89,59,122
+car:
+Bounding Box:48,56,100,85
+ship:
+Bounding Box:251,107,268,133
+frame 322:
+Objects:
+
+car:
+Bounding Box:0,88,50,121
+car:
+Bounding Box:41,55,92,85
+truck:
+Bounding Box:241,106,268,133
+frame 323:
+Objects:
+
+car:
+Bounding Box:0,87,41,120
+truck:
+Bounding Box:229,104,268,133
+car:
+Bounding Box:34,55,84,84
+frame 324:
+Objects:
+
+ship:
+Bounding Box:218,104,268,133
+car:
+Bounding Box:27,54,77,83
+plane:
+Bounding Box:0,86,32,119
+frame 325:
+Objects:
+
+car:
+Bounding Box:207,103,268,133
+car:
+Bounding Box:21,54,70,83
+plane:
+Bounding Box:0,85,24,117
+frame 326:
+Objects:
+
+ship:
+Bounding Box:196,102,263,133
+car:
+Bounding Box:14,54,63,82
+plane:
+Bounding Box:0,88,16,116
+frame 327:
+Objects:
+
+car:
+Bounding Box:185,102,252,133
+car:
+Bounding Box:9,53,56,82
+frame 328:
+Objects:
+
+car:
+Bounding Box:173,101,241,133
+car:
+Bounding Box:3,53,49,81
+frame 329:
+Objects:
+
+car:
+Bounding Box:162,101,230,133
+car:
+Bounding Box:0,52,42,80
+frame 330:
+Objects:
+
+ship:
+Bounding Box:150,100,219,133
+car:
+Bounding Box:0,52,35,80
+frame 331:
+Objects:
+
+ship:
+Bounding Box:139,99,208,133
+car:
+Bounding Box:0,52,29,79
+frame 332:
+Objects:
+
+car:
+Bounding Box:128,98,196,133
+car:
+Bounding Box:0,51,23,79
+frame 333:
+Objects:
+
+ship:
+Bounding Box:116,97,185,132
+plane:
+Bounding Box:0,51,17,78
+frame 334:
+Objects:
+
+car:
+Bounding Box:105,96,174,131
+frame 335:
+Objects:
+
+car:
+Bounding Box:95,95,163,130
+frame 336:
+Objects:
+
+car:
+Bounding Box:85,95,152,129
+frame 337:
+Objects:
+
+car:
+Bounding Box:74,94,141,128
+frame 338:
+Objects:
+
+car:
+Bounding Box:64,93,130,127
+frame 339:
+Objects:
+
+ship:
+Bounding Box:54,92,119,126
+frame 340:
+Objects:
+
+car:
+Bounding Box:45,90,108,125
+frame 341:
+Objects:
+
+car:
+Bounding Box:36,89,98,124
+frame 342:
+Objects:
+
+car:
+Bounding Box:27,89,87,123
+frame 343:
+Objects:
+
+car:
+Bounding Box:18,88,77,121
+frame 344:
+Objects:
+
+car:
+Bounding Box:9,87,68,120
+plane:
+Bounding Box:248,86,268,117
+frame 345:
+Objects:
+
+car:
+Bounding Box:1,86,58,119
+ship:
+Bounding Box:239,84,268,117
+frame 346:
+Objects:
+
+car:
+Bounding Box:0,85,49,118
+car:
+Bounding Box:230,82,268,117
+frame 347:
+Objects:
+
+car:
+Bounding Box:220,82,268,117
+car:
+Bounding Box:0,84,40,116
+frame 348:
+Objects:
+
+car:
+Bounding Box:211,81,268,117
+ship:
+Bounding Box:0,83,32,115
+frame 349:
+Objects:
+
+car:
+Bounding Box:201,81,268,116
+ship:
+Bounding Box:0,83,24,114
+frame 350:
+Objects:
+
+car:
+Bounding Box:192,80,260,116
+plane:
+Bounding Box:0,85,16,113
+frame 351:
+Objects:
+
+car:
+Bounding Box:182,80,251,116
+frame 352:
+Objects:
+
+car:
+Bounding Box:172,79,242,115
+frame 353:
+Objects:
+
+car:
+Bounding Box:162,79,232,115
+frame 354:
+Objects:
+
+car:
+Bounding Box:153,78,223,114
+frame 355:
+Objects:
+
+car:
+Bounding Box:143,78,214,114
+frame 356:
+Objects:
+
+car:
+Bounding Box:133,77,203,113
+frame 357:
+Objects:
+
+car:
+Bounding Box:123,76,194,113
+frame 358:
+Objects:
+
+car:
+Bounding Box:114,76,184,112
+frame 359:
+Objects:
+
+car:
+Bounding Box:105,75,174,111
+frame 360:
+Objects:
+
+car:
+Bounding Box:96,74,165,111
+frame 361:
+Objects:
+
+car:
+Bounding Box:87,74,155,110
+frame 362:
+Objects:
+
+car:
+Bounding Box:78,73,145,109
+frame 363:
+Objects:
+
+car:
+Bounding Box:69,72,136,108
+frame 364:
+Objects:
+
+car:
+Bounding Box:60,72,126,108
+frame 365:
+Objects:
+
+car:
+Bounding Box:52,71,117,107
+frame 366:
+Objects:
+
+car:
+Bounding Box:44,70,108,106
+frame 367:
+Objects:
+
+car:
+Bounding Box:36,70,99,105
+frame 368:
+Objects:
+
+car:
+Bounding Box:27,69,90,104
+frame 369:
+Objects:
+
+car:
+Bounding Box:19,68,81,103
+frame 370:
+Objects:
+
+car:
+Bounding Box:12,68,73,103
+frame 371:
+Objects:
+
+car:
+Bounding Box:5,67,64,101
+frame 372:
+Objects:
+
+car:
+Bounding Box:0,67,56,101
+frame 373:
+Objects:
+
+ship:
+Bounding Box:0,66,49,100
+frame 374:
+Objects:
+
+car:
+Bounding Box:0,65,41,99
+frame 375:
+Objects:
+
+bird:
+Bounding Box:0,65,33,98
+frame 376:
+Objects:
+
+cat:
+Bounding Box:0,64,26,97
+frame 377:
+Objects:
+
+dog:
+Bounding Box:0,65,18,96
+frame 378:
+Objects:
+
+frame 379:
+Objects:
+
+frame 380:
+Objects:
+
+frame 381:
+Objects:
+

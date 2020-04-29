@@ -20,62 +20,62 @@ frame 6:
 Objects:
 
 ship:
-Bounding Box:257,111,272,136
+Bounding Box:257,111,268,133
 frame 7:
 Objects:
 
 ship:
-Bounding Box:247,110,272,136
+Bounding Box:247,110,268,133
 frame 8:
 Objects:
 
 truck:
-Bounding Box:238,107,272,136
+Bounding Box:238,107,268,133
 frame 9:
 Objects:
 
 truck:
-Bounding Box:228,107,272,136
+Bounding Box:228,107,268,133
 frame 10:
 Objects:
 
 truck:
-Bounding Box:218,106,272,136
+Bounding Box:218,106,268,133
 frame 11:
 Objects:
 
 truck:
-Bounding Box:208,106,272,136
+Bounding Box:208,106,268,133
 frame 12:
 Objects:
 
 bird:
-Bounding Box:198,105,272,136
+Bounding Box:198,105,268,133
 frame 13:
 Objects:
 
 cat:
-Bounding Box:188,105,253,136
+Bounding Box:188,105,253,133
 frame 14:
 Objects:
 
 car:
-Bounding Box:178,104,243,136
+Bounding Box:178,104,243,133
 frame 15:
 Objects:
 
 car:
-Bounding Box:168,103,234,136
+Bounding Box:168,103,234,133
 frame 16:
 Objects:
 
 car:
-Bounding Box:158,103,224,136
+Bounding Box:158,103,224,133
 frame 17:
 Objects:
 
 car:
-Bounding Box:148,102,214,136
+Bounding Box:148,102,214,133
 frame 18:
 Objects:
 
@@ -87,42 +87,42 @@ Objects:
 car:
 Bounding Box:128,101,194,133
 ship:
-Bounding Box:253,86,272,114
+Bounding Box:253,86,268,114
 frame 20:
 Objects:
 
 car:
 Bounding Box:117,100,184,132
 ship:
-Bounding Box:244,84,272,114
+Bounding Box:244,84,268,114
 frame 21:
 Objects:
 
 car:
 Bounding Box:109,99,174,131
 plane:
-Bounding Box:236,83,272,114
+Bounding Box:236,83,268,114
 frame 22:
 Objects:
 
 car:
 Bounding Box:99,98,164,131
 plane:
-Bounding Box:228,83,272,114
+Bounding Box:228,83,268,114
 frame 23:
 Objects:
 
 car:
 Bounding Box:89,98,154,130
 truck:
-Bounding Box:221,82,272,114
+Bounding Box:221,82,268,114
 frame 24:
 Objects:
 
 car:
 Bounding Box:81,97,145,129
 truck:
-Bounding Box:213,82,272,114
+Bounding Box:213,82,268,114
 frame 25:
 Objects:
 
@@ -340,67 +340,67 @@ frame 62:
 Objects:
 
 ship:
-Bounding Box:248,112,272,136
+Bounding Box:248,112,268,133
 frame 63:
 Objects:
 
 truck:
-Bounding Box:237,110,272,136
+Bounding Box:237,110,268,133
 frame 64:
 Objects:
 
 truck:
-Bounding Box:225,109,272,136
+Bounding Box:225,109,268,133
 frame 65:
 Objects:
 
 truck:
-Bounding Box:215,109,272,136
+Bounding Box:215,109,268,133
 frame 66:
 Objects:
 
 dog:
-Bounding Box:205,108,264,136
+Bounding Box:205,108,264,133
 frame 67:
 Objects:
 
 truck:
-Bounding Box:193,108,254,136
+Bounding Box:193,108,254,133
 frame 68:
 Objects:
 
 truck:
-Bounding Box:181,107,243,136
+Bounding Box:181,107,243,133
 frame 69:
 Objects:
 
 truck:
-Bounding Box:170,107,232,136
+Bounding Box:170,107,232,133
 frame 70:
 Objects:
 
 truck:
-Bounding Box:159,106,220,136
+Bounding Box:159,106,220,133
 frame 71:
 Objects:
 
 truck:
-Bounding Box:147,105,209,136
+Bounding Box:147,105,209,133
 frame 72:
 Objects:
 
 truck:
-Bounding Box:137,104,198,136
+Bounding Box:137,104,198,133
 frame 73:
 Objects:
 
 truck:
-Bounding Box:125,103,187,136
+Bounding Box:125,103,187,133
 frame 74:
 Objects:
 
 truck:
-Bounding Box:114,103,176,136
+Bounding Box:114,103,176,133
 frame 75:
 Objects:
 
@@ -462,55 +462,55 @@ Objects:
 ship:
 Bounding Box:1,91,52,120
 ship:
-Bounding Box:250,108,272,136
+Bounding Box:250,108,268,133
 frame 87:
 Objects:
 
 ship:
 Bounding Box:0,91,43,119
 cat:
-Bounding Box:239,107,272,136
+Bounding Box:239,107,268,133
 frame 88:
 Objects:
 
 truck:
-Bounding Box:228,106,272,136
+Bounding Box:228,106,268,133
 ship:
 Bounding Box:0,89,34,118
 frame 89:
 Objects:
 
 truck:
-Bounding Box:217,107,272,136
+Bounding Box:217,107,268,133
 plane:
 Bounding Box:0,88,26,116
 frame 90:
 Objects:
 
 truck:
-Bounding Box:205,106,264,136
+Bounding Box:205,106,264,133
 plane:
 Bounding Box:0,90,18,115
 frame 91:
 Objects:
 
 truck:
-Bounding Box:194,105,254,136
+Bounding Box:194,105,254,133
 frame 92:
 Objects:
 
 car:
-Bounding Box:183,105,243,136
+Bounding Box:183,105,243,133
 frame 93:
 Objects:
 
 car:
-Bounding Box:171,104,232,136
+Bounding Box:171,104,232,133
 frame 94:
 Objects:
 
 car:
-Bounding Box:159,104,220,136
+Bounding Box:159,104,220,133
 frame 95:
 Objects:
 
@@ -552,35 +552,35 @@ Objects:
 truck:
 Bounding Box:72,97,131,128
 plane:
-Bounding Box:256,90,272,113
+Bounding Box:256,90,268,113
 frame 103:
 Objects:
 
 car:
 Bounding Box:62,97,120,127
 plane:
-Bounding Box:247,88,272,114
+Bounding Box:247,88,268,114
 frame 104:
 Objects:
 
 car:
 Bounding Box:52,96,109,126
 cat:
-Bounding Box:238,87,272,114
+Bounding Box:238,87,268,114
 frame 105:
 Objects:
 
 truck:
 Bounding Box:42,96,98,125
 car:
-Bounding Box:229,86,272,114
+Bounding Box:229,86,268,114
 frame 106:
 Objects:
 
 truck:
 Bounding Box:33,95,89,124
 car:
-Bounding Box:220,86,272,114
+Bounding Box:220,86,268,114
 frame 107:
 Objects:
 
@@ -817,52 +817,52 @@ frame 159:
 Objects:
 
 plane:
-Bounding Box:254,81,272,116
+Bounding Box:254,81,268,116
 frame 160:
 Objects:
 
 plane:
-Bounding Box:245,80,272,116
+Bounding Box:245,80,268,116
 frame 161:
 Objects:
 
 plane:
-Bounding Box:237,75,272,116
+Bounding Box:237,75,268,116
 frame 162:
 Objects:
 
 truck:
-Bounding Box:228,72,272,117
+Bounding Box:228,72,268,117
 frame 163:
 Objects:
 
 truck:
-Bounding Box:219,72,272,117
+Bounding Box:219,72,268,117
 frame 164:
 Objects:
 
 truck:
-Bounding Box:210,71,272,117
+Bounding Box:210,71,268,117
 frame 165:
 Objects:
 
 truck:
-Bounding Box:202,71,272,117
+Bounding Box:202,71,268,117
 frame 166:
 Objects:
 
 truck:
-Bounding Box:193,70,272,117
+Bounding Box:193,70,268,117
 frame 167:
 Objects:
 
 truck:
-Bounding Box:183,69,272,119
+Bounding Box:183,69,268,119
 frame 168:
 Objects:
 
 truck:
-Bounding Box:174,69,272,117
+Bounding Box:174,69,268,117
 frame 169:
 Objects:
 
@@ -874,35 +874,35 @@ Objects:
 truck:
 Bounding Box:156,68,253,117
 cat:
-Bounding Box:254,70,272,95
+Bounding Box:254,70,268,95
 frame 171:
 Objects:
 
 truck:
 Bounding Box:147,67,245,116
 ship:
-Bounding Box:246,67,272,95
+Bounding Box:246,67,268,95
 frame 172:
 Objects:
 
 truck:
 Bounding Box:139,67,236,115
 truck:
-Bounding Box:237,66,272,95
+Bounding Box:237,66,268,95
 frame 173:
 Objects:
 
 truck:
 Bounding Box:130,66,227,115
 truck:
-Bounding Box:229,66,272,95
+Bounding Box:229,66,268,95
 frame 174:
 Objects:
 
 truck:
 Bounding Box:121,66,219,114
 truck:
-Bounding Box:221,65,272,95
+Bounding Box:221,65,268,95
 frame 175:
 Objects:
 
@@ -1065,7 +1065,7 @@ Bounding Box:0,56,34,97
 truck:
 Bounding Box:32,53,83,82
 ship:
-Bounding Box:257,92,272,113
+Bounding Box:257,92,268,113
 frame 198:
 Objects:
 
@@ -1074,7 +1074,7 @@ Bounding Box:25,53,75,82
 bird:
 Bounding Box:0,57,27,97
 plane:
-Bounding Box:249,91,272,115
+Bounding Box:249,91,268,115
 frame 199:
 Objects:
 
@@ -1083,28 +1083,28 @@ Bounding Box:18,53,68,81
 bird:
 Bounding Box:0,57,21,95
 plane:
-Bounding Box:241,89,272,115
+Bounding Box:241,89,268,115
 frame 200:
 Objects:
 
 car:
 Bounding Box:12,52,60,80
 plane:
-Bounding Box:233,87,272,115
+Bounding Box:233,87,268,115
 ship:
 Bounding Box:0,75,13,94
 frame 201:
 Objects:
 
 truck:
-Bounding Box:224,87,272,115
+Bounding Box:224,87,268,115
 ship:
 Bounding Box:6,52,53,80
 frame 202:
 Objects:
 
 ship:
-Bounding Box:217,86,272,115
+Bounding Box:217,86,268,115
 car:
 Bounding Box:0,51,47,79
 frame 203:
@@ -1158,48 +1158,48 @@ Objects:
 truck:
 Bounding Box:148,82,208,111
 deer:
-Bounding Box:257,60,272,77
+Bounding Box:257,60,268,77
 frame 211:
 Objects:
 
 truck:
 Bounding Box:140,82,200,111
 dog:
-Bounding Box:252,110,272,136
+Bounding Box:252,110,268,133
 plane:
-Bounding Box:249,59,272,81
+Bounding Box:249,59,268,81
 frame 212:
 Objects:
 
 truck:
 Bounding Box:131,81,192,110
 plane:
-Bounding Box:242,103,272,136
+Bounding Box:242,103,268,133
 car:
-Bounding Box:241,55,272,82
+Bounding Box:241,55,268,82
 frame 213:
 Objects:
 
 car:
 Bounding Box:123,80,182,110
 plane:
-Bounding Box:232,103,272,136
+Bounding Box:232,103,268,133
 car:
-Bounding Box:232,56,272,82
+Bounding Box:232,56,268,82
 frame 214:
 Objects:
 
 plane:
-Bounding Box:221,102,272,136
+Bounding Box:221,102,268,133
 car:
 Bounding Box:115,80,175,109
 truck:
-Bounding Box:224,55,272,82
+Bounding Box:224,55,268,82
 frame 215:
 Objects:
 
 truck:
-Bounding Box:211,102,272,136
+Bounding Box:211,102,268,133
 car:
 Bounding Box:107,79,166,109
 car:
@@ -1208,7 +1208,7 @@ frame 216:
 Objects:
 
 truck:
-Bounding Box:200,101,272,136
+Bounding Box:200,101,268,133
 car:
 Bounding Box:99,78,157,108
 car:
@@ -1217,7 +1217,7 @@ frame 217:
 Objects:
 
 truck:
-Bounding Box:189,101,267,136
+Bounding Box:189,101,267,133
 truck:
 Bounding Box:91,78,149,107
 car:
@@ -1226,7 +1226,7 @@ frame 218:
 Objects:
 
 truck:
-Bounding Box:179,100,258,136
+Bounding Box:179,100,258,133
 car:
 Bounding Box:84,77,141,107
 car:
@@ -1235,7 +1235,7 @@ frame 219:
 Objects:
 
 truck:
-Bounding Box:168,99,248,136
+Bounding Box:168,99,248,133
 car:
 Bounding Box:76,77,132,106
 truck:
@@ -1244,7 +1244,7 @@ frame 220:
 Objects:
 
 truck:
-Bounding Box:157,99,237,136
+Bounding Box:157,99,237,133
 car:
 Bounding Box:68,76,124,105
 car:
@@ -1253,7 +1253,7 @@ frame 221:
 Objects:
 
 ship:
-Bounding Box:146,98,227,136
+Bounding Box:146,98,227,133
 car:
 Bounding Box:61,75,116,104
 car:
@@ -1262,7 +1262,7 @@ frame 222:
 Objects:
 
 truck:
-Bounding Box:136,97,216,136
+Bounding Box:136,97,216,133
 car:
 Bounding Box:54,75,108,104
 car:
@@ -1271,7 +1271,7 @@ frame 223:
 Objects:
 
 truck:
-Bounding Box:125,96,206,136
+Bounding Box:125,96,206,133
 car:
 Bounding Box:47,74,101,103
 car:
@@ -1280,7 +1280,7 @@ frame 224:
 Objects:
 
 truck:
-Bounding Box:115,96,195,136
+Bounding Box:115,96,195,133
 car:
 Bounding Box:136,48,192,77
 car:
@@ -1289,7 +1289,7 @@ frame 225:
 Objects:
 
 truck:
-Bounding Box:105,95,185,136
+Bounding Box:105,95,185,133
 car:
 Bounding Box:128,49,184,76
 car:
@@ -1298,7 +1298,7 @@ frame 226:
 Objects:
 
 truck:
-Bounding Box:95,94,175,136
+Bounding Box:95,94,175,133
 truck:
 Bounding Box:119,47,175,76
 car:
@@ -1307,7 +1307,7 @@ frame 227:
 Objects:
 
 truck:
-Bounding Box:85,93,164,136
+Bounding Box:85,93,164,133
 car:
 Bounding Box:111,48,166,75
 car:
@@ -1316,7 +1316,7 @@ frame 228:
 Objects:
 
 truck:
-Bounding Box:75,92,154,136
+Bounding Box:75,92,154,133
 car:
 Bounding Box:103,46,158,75
 car:
@@ -1376,7 +1376,7 @@ Bounding Box:56,44,107,72
 plane:
 Bounding Box:0,68,23,94
 ship:
-Bounding Box:248,107,272,133
+Bounding Box:248,107,268,133
 frame 235:
 Objects:
 
@@ -1385,7 +1385,7 @@ Bounding Box:14,86,84,126
 car:
 Bounding Box:49,45,99,71
 plane:
-Bounding Box:238,103,272,136
+Bounding Box:238,103,268,133
 ship:
 Bounding Box:0,71,17,93
 frame 236:
@@ -1396,29 +1396,29 @@ Bounding Box:6,85,74,125
 car:
 Bounding Box:41,44,91,70
 ship:
-Bounding Box:230,103,272,133
+Bounding Box:230,103,268,133
 frame 237:
 Objects:
 
 ship:
 Bounding Box:0,84,66,124
 ship:
-Bounding Box:220,103,272,133
+Bounding Box:220,103,268,133
 truck:
 Bounding Box:35,44,84,70
 plane:
-Bounding Box:252,73,272,95
+Bounding Box:252,73,268,95
 frame 238:
 Objects:
 
 truck:
 Bounding Box:0,83,57,123
 truck:
-Bounding Box:210,102,272,133
+Bounding Box:210,102,268,133
 car:
 Bounding Box:28,43,75,69
 plane:
-Bounding Box:244,71,272,95
+Bounding Box:244,71,268,95
 frame 239:
 Objects:
 
@@ -1429,7 +1429,7 @@ Bounding Box:199,102,264,133
 car:
 Bounding Box:21,42,67,69
 truck:
-Bounding Box:236,70,272,95
+Bounding Box:236,70,268,95
 frame 240:
 Objects:
 
@@ -1440,7 +1440,7 @@ Bounding Box:0,82,40,120
 car:
 Bounding Box:14,43,60,69
 truck:
-Bounding Box:228,69,272,95
+Bounding Box:228,69,268,95
 frame 241:
 Objects:
 
@@ -1449,7 +1449,7 @@ Bounding Box:180,101,245,132
 ship:
 Bounding Box:0,82,32,119
 car:
-Bounding Box:220,69,272,95
+Bounding Box:220,69,268,95
 car:
 Bounding Box:9,42,53,68
 frame 242:
@@ -1546,7 +1546,7 @@ Bounding Box:75,93,138,124
 ship:
 Bounding Box:128,63,181,90
 plane:
-Bounding Box:255,90,272,115
+Bounding Box:255,90,268,115
 frame 253:
 Objects:
 
@@ -1555,7 +1555,7 @@ Bounding Box:66,92,129,123
 ship:
 Bounding Box:120,63,172,89
 ship:
-Bounding Box:246,90,272,115
+Bounding Box:246,90,268,115
 frame 254:
 Objects:
 
@@ -1564,7 +1564,7 @@ Bounding Box:58,91,120,122
 car:
 Bounding Box:112,62,164,89
 car:
-Bounding Box:237,88,272,115
+Bounding Box:237,88,268,115
 frame 255:
 Objects:
 
@@ -1573,14 +1573,14 @@ Bounding Box:49,90,110,121
 truck:
 Bounding Box:105,62,156,89
 car:
-Bounding Box:229,88,272,115
+Bounding Box:229,88,268,115
 frame 256:
 Objects:
 
 ship:
 Bounding Box:41,89,101,120
 truck:
-Bounding Box:220,87,272,115
+Bounding Box:220,87,268,115
 car:
 Bounding Box:97,61,148,88
 frame 257:
@@ -1828,96 +1828,96 @@ frame 296:
 Objects:
 
 ship:
-Bounding Box:254,72,272,95
+Bounding Box:254,72,268,95
 frame 297:
 Objects:
 
 plane:
-Bounding Box:246,70,272,95
+Bounding Box:246,70,268,95
 ship:
-Bounding Box:252,111,272,136
+Bounding Box:252,111,268,133
 frame 298:
 Objects:
 
 plane:
-Bounding Box:238,69,272,95
+Bounding Box:238,69,268,95
 truck:
-Bounding Box:240,109,272,136
+Bounding Box:240,109,268,133
 frame 299:
 Objects:
 
 truck:
-Bounding Box:230,108,272,136
+Bounding Box:230,108,268,133
 car:
-Bounding Box:230,69,272,95
+Bounding Box:230,69,268,95
 frame 300:
 Objects:
 
 ship:
-Bounding Box:219,108,272,136
+Bounding Box:219,108,268,133
 truck:
-Bounding Box:221,69,272,94
+Bounding Box:221,69,268,94
 frame 301:
 Objects:
 
 truck:
-Bounding Box:207,107,272,136
+Bounding Box:207,107,268,133
 car:
 Bounding Box:213,68,263,94
 frame 302:
 Objects:
 
 truck:
-Bounding Box:197,107,260,136
+Bounding Box:197,107,260,133
 truck:
 Bounding Box:205,68,254,94
 frame 303:
 Objects:
 
 truck:
-Bounding Box:185,106,250,136
+Bounding Box:185,106,250,133
 car:
 Bounding Box:196,67,246,93
 frame 304:
 Objects:
 
 truck:
-Bounding Box:173,105,239,136
+Bounding Box:173,105,239,133
 car:
 Bounding Box:187,67,238,93
 frame 305:
 Objects:
 
 truck:
-Bounding Box:162,105,228,136
+Bounding Box:162,105,228,133
 car:
 Bounding Box:179,66,230,92
 frame 306:
 Objects:
 
 truck:
-Bounding Box:151,104,217,136
+Bounding Box:151,104,217,133
 truck:
 Bounding Box:170,65,222,92
 frame 307:
 Objects:
 
 truck:
-Bounding Box:140,103,206,136
+Bounding Box:140,103,206,133
 car:
 Bounding Box:162,65,213,91
 frame 308:
 Objects:
 
 truck:
-Bounding Box:129,102,194,136
+Bounding Box:129,102,194,133
 truck:
 Bounding Box:153,64,205,91
 frame 309:
 Objects:
 
 truck:
-Bounding Box:118,102,183,136
+Bounding Box:118,102,183,133
 truck:
 Bounding Box:145,64,196,90
 frame 310:
@@ -2005,7 +2005,7 @@ Bounding Box:3,91,57,120
 car:
 Bounding Box:50,58,98,83
 ship:
-Bounding Box:253,109,272,136
+Bounding Box:253,109,268,133
 frame 322:
 Objects:
 
@@ -2014,21 +2014,21 @@ Bounding Box:0,90,48,119
 car:
 Bounding Box:43,57,90,83
 plane:
-Bounding Box:243,108,272,136
+Bounding Box:243,108,268,133
 frame 323:
 Objects:
 
 ship:
 Bounding Box:0,89,39,118
 plane:
-Bounding Box:231,106,272,136
+Bounding Box:231,106,268,133
 car:
 Bounding Box:36,57,82,82
 frame 324:
 Objects:
 
 ship:
-Bounding Box:220,106,272,136
+Bounding Box:220,106,268,133
 car:
 Bounding Box:29,56,75,81
 plane:
@@ -2037,7 +2037,7 @@ frame 325:
 Objects:
 
 car:
-Bounding Box:209,105,272,136
+Bounding Box:209,105,268,133
 car:
 Bounding Box:23,56,68,81
 plane:
@@ -2046,7 +2046,7 @@ frame 326:
 Objects:
 
 ship:
-Bounding Box:198,104,261,136
+Bounding Box:198,104,261,133
 car:
 Bounding Box:16,56,61,80
 plane:
@@ -2055,14 +2055,14 @@ frame 327:
 Objects:
 
 ship:
-Bounding Box:187,104,250,136
+Bounding Box:187,104,250,133
 car:
 Bounding Box:11,55,54,80
 frame 328:
 Objects:
 
 ship:
-Bounding Box:175,103,239,136
+Bounding Box:175,103,239,133
 car:
 Bounding Box:5,55,47,79
 frame 329:
@@ -2156,33 +2156,33 @@ Objects:
 ship:
 Bounding Box:11,89,66,118
 plane:
-Bounding Box:250,88,272,115
+Bounding Box:250,88,268,115
 frame 345:
 Objects:
 
 car:
 Bounding Box:3,88,56,117
 plane:
-Bounding Box:241,86,272,115
+Bounding Box:241,86,268,115
 frame 346:
 Objects:
 
 ship:
 Bounding Box:0,87,47,116
 plane:
-Bounding Box:232,84,272,115
+Bounding Box:232,84,268,115
 frame 347:
 Objects:
 
 ship:
-Bounding Box:222,84,272,115
+Bounding Box:222,84,268,115
 ship:
 Bounding Box:0,86,38,114
 frame 348:
 Objects:
 
 ship:
-Bounding Box:213,83,272,115
+Bounding Box:213,83,268,115
 ship:
 Bounding Box:0,85,30,113
 frame 349:

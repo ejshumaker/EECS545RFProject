@@ -3,8 +3,8 @@ Objects:
 car:
 Bounding Box:0,83,57,123
 ship:
-Bounding Box:210,102,272,133
+Bounding Box:210,102,268,133
 car:
 Bounding Box:28,43,75,69
 dog:
-Bounding Box:244,71,272,95
+Bounding Box:244,71,268,95

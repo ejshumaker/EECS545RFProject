@@ -1,8 +1,8 @@
 Objects:
 
 plane:
-Bounding Box:221,102,272,136
+Bounding Box:221,102,268,133
 car:
 Bounding Box:115,80,175,109
 truck:
-Bounding Box:224,55,272,82
+Bounding Box:224,55,268,82

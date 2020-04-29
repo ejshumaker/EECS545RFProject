@@ -37,12 +37,12 @@ $ python3 classification_accuracy.py
 ```
 #### Results of our method compared to Tiny YOLOv3 on the *streetlight* video
 ```
-           **Our Method**              **Tiny YOLOv3**
-FPS             14.03                       0.850
-IoU             0.729                       0.029
-Accuracy        71.63%                      43.36%
-Precision       0.997                       0.999
-Recall          0.878                       0.597
+           **fastMCD + XNOR NIN**      **fastMCD + BWN NIN**        **Tiny YOLOv3**
+FPS             14.03                         13.08                      0.850
+IoU             0.747                         0.747                      0.029
+Accuracy        71.63%                        78.50%                     43.36%
+Precision       0.997                         0.977                      0.999
+Recall          0.878                         0.952                      0.597
 ```
 
 ### MNIST Proof Of Concept

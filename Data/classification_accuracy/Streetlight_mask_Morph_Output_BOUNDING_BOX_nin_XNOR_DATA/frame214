@@ -3,6 +3,6 @@ Objects:
 car:
 Bounding Box:123,80,182,110
 plane:
-Bounding Box:232,103,272,136
+Bounding Box:232,103,268,133
 car:
-Bounding Box:232,56,272,82
+Bounding Box:232,56,268,82

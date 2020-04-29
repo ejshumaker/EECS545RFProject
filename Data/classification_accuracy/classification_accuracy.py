@@ -1,8 +1,8 @@
 import os
 
 GT_path = './streelight_GT_DATA'
-YOLO_path = './Median_BOUNDING_BOX_resnet34_normal_DATA'
-
+# YOLO_path = './Median_BOUNDING_BOX_resnet34_normal_DATA'
+YOLO_path = './Streetlight_mask_Morph_Output_BOUNDING_BOX_nin_BWN_buf12_DATA'
 GT_objects = 0
 YOLO_objects = 0
 IOU = 0
@@ -56,6 +56,9 @@ for filename in sorted(os.listdir(GT_path)):
 
         GT_bb_frame = []
         YOLO_bb_frame = []
+
+        if filename == '.DS_Store':
+            continue
 
         with open(os.path.join(GT_path, filename), 'r', encoding="utf8", errors='ignore') as GT:
             for line_GT in GT:

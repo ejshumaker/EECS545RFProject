@@ -3,6 +3,6 @@ Objects:
 car:
 Bounding Box:140,82,200,111
 horse:
-Bounding Box:252,110,272,136
+Bounding Box:252,110,268,133
 cat:
-Bounding Box:249,59,272,81
+Bounding Box:249,59,268,81
