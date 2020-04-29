@@ -17,7 +17,7 @@ Run fastMCD output through Resnet34 (requires download). This outputs a file of 
 ```bash
 $ cd <REPO ROOT>/XNOR-Net-PyTorch/PyTorch_CIFAR10
 $ python3 cifar10_download.py
-$ python3 cifar10_test.py --classifier resnet34 --fastMCD ../../fastMCD_output/streetlight_results --label 1
+$ python3 cifar10_test.py --classifier resnet34 --fastMCD --data ../../fastMCD_output/streetlight_results --label 1
 ```
 
 ### Evaluation Scripts
